@@ -292,13 +292,13 @@ select {
   position: relative;
   overflow-x: hidden;
   margin-block: 6rem;
-  padding: 0;
+  /* padding: 3rem; */
   height: 16rem;
 }
 .banner-wrapper .heading-major {
   position: absolute;
   white-space: nowrap;
-  line-height: 3rem;
+  /* line-height: 3rem; */
 }
 
 .banner-wrapper .heading-1 { top: 0; }
@@ -310,6 +310,7 @@ select {
 
 @media (max-width: 564px) {
   .banner { height: 7rem; }
+  .banner-wrapper .heading-2 { bottom: 1rem; }
 }
 
 /* about */
@@ -377,6 +378,12 @@ select {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: 1fr 1fr;
+}
+
+.projects .project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (max-width: 786px) {
