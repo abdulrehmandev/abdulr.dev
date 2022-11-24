@@ -116,6 +116,14 @@ button { cursor:pointer; }
   background-color: rgb(255, 64, 108, 0.4);
 }
 
+::-webkit-scrollbar { width: 1rem; }
+::-webkit-scrollbar-track { background: var(--clr-white); }
+::-webkit-scrollbar-thumb {
+  background: var(--btn-gradient);
+  border-radius: 100vh;
+  border: 5px solid var(--clr-white);
+}
+
 /* 
   Utility Classes
 */
