@@ -351,7 +351,7 @@ button {
 	width: 1.5rem;
 	border: none;
 	background: none;
-	background-image: url(./images/icon-theme-dark.png);
+	background-image: url(./assets/images/icon-theme-dark.png);
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -359,7 +359,7 @@ button {
 }
 
 .theme-toggle[data-toggled] {
-	background-image: url(./images/icon-theme-light.png);
+	background-image: url(./assets/images/icon-theme-light.png);
 }
 
 @media (max-width: 786px) {
@@ -383,13 +383,13 @@ button {
 		aspect-ratio: 1;
 		border: none;
 		background: none;
-		background-image: url(./images/icon-menu.svg);
+		background-image: url(./assets/images/icon-menu.svg);
 		background-repeat: no-repeat;
 		background-position: center;
 	}
 
 	.header-toggle[data-toggled] {
-		background-image: url(./images/icon-menu-light.svg);
+		background-image: url(./assets/images/icon-menu-light.svg);
 	}
 
 	.theme-toggle {
