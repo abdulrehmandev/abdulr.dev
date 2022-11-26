@@ -12,11 +12,11 @@
 		<link href="./style.css" rel="stylesheet" />
 		<title>Abdul Rehman</title>
 	</head>
-	<body>
+	<body class="dark-theme">
 		<header class="header" data-md-expanded="false">
 			<div class="container">
 				<div class="header-wrapper flex align-center">
-					<button class="header-toggle"></button>
+					<button class="header-toggle" data-toggled></button>
 					<div
 						class="primary-navigation w-100 flex justify-between align-center"
 					>
@@ -106,7 +106,7 @@
 								</a>
 							</li>
 						</ul>
-						<button class="theme-toggle"></button>
+						<button class="theme-toggle" data-toggled></button>
 						<ul class="header-main-nav nav gap-2 justify-center">
 							<li class="nav-item">
 								<a href="#about" class="nav-link active">About</a>
@@ -140,7 +140,7 @@
 						really like the simple and elegant style.
 					</p>
 					<a href="#" download="Abdul Rehman - Resume">
-						<button class="btn-primary">Download my resume.</button>
+						<button class="btn-primary">Download my resume</button>
 					</a>
 				</div>
 			</div>
@@ -297,11 +297,11 @@
 					</div>
 				</div>
 
-				<div class="other-projects p-block">
+				<div class="other-projects">
 					<div class="container">
-						<h1 class="heading text-center">
+						<!-- <h1 class="heading text-center">
 							Some other projects I did in my spare time
-						</h1>
+						</h1> -->
 						<div class="projects">
 							<div class="project-top project">
 								<a
@@ -345,13 +345,22 @@
 			</div>
 		</div>
 
+		<div class="space"></div>
 		<div class="cta p-block" id="contact">
 			<div class="container">
 				<div class="cta-wrapper text-center">
 					<h1 class="heading-primary">Let's talk about the next big thing.</h1>
-					<a href="#" download="Abdul Rehman - Resume">
-						<button class="btn-primary">Download my resume.</button>
-					</a>
+					<!-- <a href="https://3cl85zhq004.typeform.com/to/eF3DJmD6">
+						<button class="btn-primary">Write a message</button>
+					</a> -->
+					<button
+						class="btn-primary"
+						data-tf-slider="eF3DJmD6"
+						data-tf-position="right"
+						data-tf-button-color="#0445AF"
+					>
+						Write a message
+					</button>
 				</div>
 			</div>
 		</div>
@@ -361,12 +370,13 @@
 		<footer class="footer">
 			<div class="container">
 				<div class="footer-wrapper flex justify-between align-center">
-					<p class="contact small-link">(312) 739 8185</p>
+					<p class="contact small-link">+92 312 739 8185</p>
 					<p class="email small-link">beingabdulr@gmail.com</p>
-					<p class="location nav-link">PB, PK</p>
+					<p class="location nav-link">Punjab, Pakistan</p>
 				</div>
 			</div>
 		</footer>
 		<script type="module" src="/main.js"></script>
+		<script src="//embed.typeform.com/next/embed.js"></script>
 	</body>
 </html>
