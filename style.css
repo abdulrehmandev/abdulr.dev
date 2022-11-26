@@ -35,6 +35,7 @@
 	--border-radius: 1.5rem;
 }
 
+/* for tablets */
 @media (max-width: 786px) {
 	:root {
 		--fs-medium: 1.3rem;
@@ -44,6 +45,7 @@
 	}
 }
 
+/* for mobiles and smaller screens */
 @media (max-width: 564px) {
 	:root {
 		--fs-medium: 1.1rem;
@@ -55,10 +57,10 @@
 	}
 }
 
+/* dark mode */
 .dark-theme {
 	--clr-text: #ffffff;
 	--clr-bg: #231f20;
-	/* --clr-accent: #E34F26; */
 	--clr-light-grey: #505050;
 }
 
@@ -95,6 +97,7 @@ ol[role="list"] {
 	scroll-behavior: smooth;
 }
 
+/* reset and fixes for project */
 body {
 	min-height: 100vh;
 	text-rendering: optimizeSpeed;
@@ -129,10 +132,12 @@ button {
 	cursor: pointer;
 }
 
+/* text selection */
 ::selection {
 	background-color: rgb(255, 64, 108, 0.4);
 }
 
+/* website scrollbar */
 ::-webkit-scrollbar {
 	width: 1rem;
 }
@@ -211,6 +216,7 @@ button {
 	text-align: center;
 }
 
+/* headings */
 .heading-major {
 	font-weight: var(--fw-semi);
 	font-size: var(--fs-extra-large);
@@ -246,6 +252,7 @@ button {
 	}
 }
 
+/* texts and links */
 .text {
 	font-size: 1rem;
 	font-weight: var(--fw-regular);
@@ -302,6 +309,7 @@ button {
 	margin: 0;
 }
 
+/* buttons */
 .btn-primary {
 	background: var(--btn-gradient);
 	filter: var(--btn-shadow);
@@ -337,6 +345,7 @@ button {
 	display: none;
 }
 
+/* theme toggle to switch themes */
 .theme-toggle {
 	height: 1.5rem;
 	width: 1.5rem;
@@ -391,7 +400,6 @@ button {
 }
 
 /* hero */
-
 .hero-entry {
 	font-size: var(--fs-medium);
 	font-weight: var(--fw-medium);
@@ -413,7 +421,6 @@ button {
 }
 
 /* banner */
-
 .banner {
 	position: relative;
 	overflow-x: hidden;
@@ -470,8 +477,7 @@ button {
 	}
 }
 
-/* work */
-
+/* work and projects */
 .work .heading-primary {
 	margin-bottom: var(--fs-semi-large);
 }
@@ -544,8 +550,7 @@ button {
 	}
 }
 
-/* cta */
-
+/* call to action */
 .cta-wrapper .heading-primary {
 	margin-bottom: 6rem;
 }
@@ -556,7 +561,7 @@ button {
 	}
 }
 
-/* footer */
+/* primary footer */
 .footer {
 	position: fixed;
 	bottom: 0;

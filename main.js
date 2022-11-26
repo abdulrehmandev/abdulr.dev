@@ -1,3 +1,5 @@
+
+// mobile navbar toggle
 const headerToggle = document.querySelector('.header-toggle')
 const header = document.querySelector('.header')
 
@@ -8,6 +10,7 @@ headerToggle.addEventListener('click', () => {
     )
 })
 
+// theme toggle button
 const themeToggle = document.querySelector('.theme-toggle')
 
 themeToggle.addEventListener('click', () => {
@@ -16,6 +19,7 @@ themeToggle.addEventListener('click', () => {
     headerToggle.toggleAttribute('data-toggled')    
 })
 
+// moving banner
 const bannerHead1 = document.querySelector('.heading-1')
 const bannerHead2 = document.querySelector('.heading-2')
 
