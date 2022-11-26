@@ -8,6 +8,14 @@ headerToggle.addEventListener('click', () => {
     )
 })
 
+const themeToggle = document.querySelector('.theme-toggle')
+
+themeToggle.addEventListener('click', () => {
+    themeToggle.toggleAttribute('data-toggled')
+    document.body.classList.toggle('dark-theme')
+    headerToggle.toggleAttribute('data-toggled')    
+})
+
 const bannerHead1 = document.querySelector('.heading-1')
 const bannerHead2 = document.querySelector('.heading-2')
 
