@@ -599,51 +599,8 @@ button {
 }
 
 /* primary footer */
-/* .footer {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	background-color: var(--clr-bg);
-	border-top: 1px solid var(--clr-light-grey);
-}
-
-.footer-wrapper {
-	height: 34px;
-}
-
-.footer .small-link {
-	text-decoration: none;
-}
-.footer .small-link:hover {
-	opacity: 1;
-}
-
-@media (max-width: 992px) {
-	body {
-		padding: 0;
-	}
-	.footer {
-		position: relative;
-	}
-}
-
-@media (max-width: 564px) {
-	.footer-wrapper {
-		padding-block: 1rem;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 0.3rem;
-	}
-
-	.footer-wrapper .location {
-		margin-top: 1rem;
-		margin-left: auto;
-		font-size: 0.8rem;
-	}
-} */
 
 .footer {
-	/* background-color: pink; */
 	border-top: 1px solid var(--clr-light-grey);
 }
 
