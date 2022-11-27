@@ -148,11 +148,19 @@
 						really like the simple and elegant style.
 					</p>
 					<a
+						class="resume-link"
 						href="./Abdul Rehman - Resume.pdf"
 						download="Abdul Rehman - Resume"
+						>Download my resume</a
 					>
-						<button class="btn-primary">Download my resume</button>
-					</a>
+					<button
+						class="btn-primary"
+						data-tf-slider="eF3DJmD6"
+						data-tf-position="right"
+						data-tf-button-color="#0445AF"
+					>
+						Write a message
+					</button>
 				</div>
 			</div>
 		</div>
@@ -175,36 +183,16 @@
 						<h3 class="heading-secondary">Expertise</h3>
 						<ul class="about-nav nav">
 							<li class="nav-item">
-								<a
-									href="https://en.wikipedia.org/wiki/Front-end_web_development"
-									target="_blank"
-									class="link"
-									>Frontend Developement</a
-								>
+								<p class="text">Frontend Developement</p>
 							</li>
 							<li class="nav-item">
-								<a
-									href="https://en.wikipedia.org/wiki/Web_design"
-									target="_blank"
-									class="link"
-									>Web Design</a
-								>
+								<p class="text">Web Design</p>
 							</li>
 							<li class="nav-item">
-								<a
-									href="https://en.wikipedia.org/wiki/User_interface_design"
-									target="_blank"
-									class="link"
-									>UiUx Design</a
-								>
+								<p class="text">UiUx Design</p>
 							</li>
 							<li class="nav-item">
-								<a
-									href="https://en.wikipedia.org/wiki/Graphic_design"
-									target="_blank"
-									class="link"
-									>Graphic Design</a
-								>
+								<p class="text" t>Graphic Design</p>
 							</li>
 						</ul>
 					</div>
@@ -212,63 +200,76 @@
 						<h3 class="heading-secondary">Skills</h3>
 						<ul class="about-nav nav">
 							<li class="nav-item">
-								<a
-									href="https://en.wikipedia.org/wiki/HTML"
-									target="_blank"
-									class="link"
-									>Html</a
-								>
+								<p class="text">Html</p>
 							</li>
 							<li class="nav-item">
-								<a
-									href="https://en.wikipedia.org/wiki/CSS"
-									target="_blank"
-									class="link"
-									>CSS</a
-								>
+								<p class="text">CSS</p>
 							</li>
 							<li class="nav-item">
-								<a
-									href="https://en.wikipedia.org/wiki/JavaScript"
-									target="_blank"
-									class="link"
-									>JavaScript</a
-								>
+								<p class="text">JavaScript</p>
 							</li>
 							<li class="nav-item">
-								<a
-									href="https://en.wikipedia.org/wiki/React_(JavaScript_library)"
-									target="_blank"
-									class="link"
-									>React</a
-								>
+								<p class="text">React</p>
 							</li>
 							<li class="nav-item">
-								<a
-									href="https://en.wikipedia.org/wiki/Figma_(software)"
-									target="_blank"
-									class="link"
-									>Figma</a
-								>
+								<p class="text">Figma</p>
 							</li>
 							<li class="nav-item">
-								<a
-									href="https://en.wikipedia.org/wiki/Adobe_XD"
-									class="link"
-									target="_blank"
-									>Adobe XD</a
-								>
+								<p class="text">Adobe XD</p>
 							</li>
 							<li class="nav-item">
-								<a
-									href="https://en.wikipedia.org/wiki/Adobe_Illustrator"
-									target="_blank"
-									class="link"
-									>Adobe Illustrator</a
-								>
+								<p class="text" t>Adobe Illustrator</p>
 							</li>
 						</ul>
 					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tools p-block">
+			<div class="container">
+				<h1 class="heading-primary">Tools</h1>
+				<div class="tools-icon-wrapper container">
+					<img
+						class="tool-icon"
+						src="./assets/images/icon-notion.png"
+						alt="Notion"
+					/>
+					<img
+						class="tool-icon"
+						src="./assets/images/icon-vs-code.png"
+						alt="Visual Studio Code"
+					/>
+					<img
+						class="tool-icon"
+						src="./assets/images/icon-chrome.png"
+						alt="Google Chrome"
+					/>
+					<img
+						class="tool-icon"
+						src="./assets/images/icon-git.png"
+						alt="Git Version Control"
+					/>
+					<img
+						class="tool-icon"
+						src="./assets/images/icon-figma.png"
+						alt="Figma"
+					/>
+					<img
+						class="tool-icon"
+						src="./assets/images/other-icon.png"
+						alt="Other tools including Bootstrap, Devtools, Docs and Google fonts"
+					/>
+					<img
+						class="tool-icon"
+						src="./assets/images/icon-codepen.png"
+						alt="Codepen"
+					/>
+					<img
+						class="tool-icon"
+						src="./assets/images/icon-less.png"
+						alt="Less Compiler"
+					/>
 				</div>
 			</div>
 		</div>
@@ -380,7 +381,7 @@
 		<div class="space"></div>
 
 		<!-- primary footer -->
-		<footer class="footer">
+		<!-- <footer class="footer">
 			<div class="container">
 				<div class="footer-wrapper flex justify-between align-center">
 					<p class="contact small-link">+92 312 739 8185</p>
@@ -388,7 +389,34 @@
 					<p class="location nav-link">Punjab, Pakistan</p>
 				</div>
 			</div>
+		</footer> -->
+
+		<footer class="footer">
+			<div class="container">
+				<div class="footer-wrapper p-block flex justify-between">
+					<div class="footer-block flex flex-column gap">
+						<p class="text">+92 312 739 8185</p>
+						<p class="email text">beingabdulr@gmail.com</p>
+						<p class="location text">Punjab, Pakistan</p>
+					</div>
+					<nav class="footer-navigation">
+						<ul class="footer-nav nav flex-column text-right gap">
+							<li class="nav-item">
+								<a href="#about" class="nav-link">About</a>
+							</li>
+							<li class="nav-item">
+								<a href="#work" class="nav-link">Work</a>
+							</li>
+							<li class="nav-item">
+								<a href="#contact" class="nav-link">Contact</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<p class="footer-credit text">Designed and Coded by Abdul Rehman</p>
+			</div>
 		</footer>
+
 		<script type="module" src="/main.js"></script>
 
 		<!-- script for the typeform's form -->
