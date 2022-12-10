@@ -60,7 +60,6 @@
 /* dark mode */
 .dark-theme {
 	--clr-text: #ffffff;
-	/* --clr-bg: #231f20; */
 	--clr-bg: #181818;
 	--clr-light-grey: #505050;
 }
