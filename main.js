@@ -1,13 +1,12 @@
 
 // mobile navbar toggle
 const headerToggle = document.querySelector('.header-toggle')
-const header = document.querySelector('.header')
+const primayNav = document.querySelector('.primary-navigation')
 
 headerToggle.addEventListener('click', () => {
-    header.setAttribute(
-        'data-md-expanded',
-        header.getAttribute('data-md-expanded') === 'false'
-    )
+    let ariaExpanded = primayNav.getAttribute('aria-expanded') === 'false'
+    primayNav.setAttribute('aria-expanded', ariaExpanded)
+    document.body.style.overflow = ariaExpanded ? 'hidden' : 'auto'
 })
 
 // theme toggle button
