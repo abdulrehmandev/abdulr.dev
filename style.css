@@ -3,7 +3,7 @@
 */
 
 :root {
-	--clr-text: #231f20;
+	--clr-text: #181818;
 	--clr-bg: #ffffff;
 	--clr-accent: #e34f26;
 	--clr-light-grey: #e0e0e0;
@@ -32,7 +32,7 @@
 		drop-shadow(0px 0px 0px rgba(255, 0, 0, 0.1));
 	--btn-gradient: linear-gradient(263.8deg, #ef652a -8.67%, #ff416c 86.09%);
 
-	--border-radius: 1.5rem;
+	--border-radius: 2rem;
 }
 
 /* for tablets */
@@ -60,7 +60,8 @@
 /* dark mode */
 .dark-theme {
 	--clr-text: #ffffff;
-	--clr-bg: #231f20;
+	/* --clr-bg: #231f20; */
+	--clr-bg: #181818;
 	--clr-light-grey: #505050;
 }
 
@@ -243,6 +244,11 @@ button {
 .heading-secondary {
 	font-weight: var(--fw-semi);
 	font-size: var(--fs-semi-large);
+}
+
+.heading-small {
+	font-weight: var(--fw-medium);
+	font-size: var(--fs-medium);
 }
 
 @media (max-width: 564px) {
@@ -515,75 +521,66 @@ button {
 }
 
 /* work and projects */
-.work .heading-primary {
-	margin-bottom: var(--fs-semi-large);
+.projects-wrapper {
+	margin-block: var(--p-block);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.5rem;
+	max-width: 992px;
 }
 
-.project-wrapper .container {
-	--max-width: 900px;
+.projects-wrapper img {
+	border-radius: 1rem;
+}
+
+@media (max-width: 586px) {
+	.projects-wrapper img {
+		border-radius: 0.5rem;
+	}
+}
+
+.project {
+	border-radius: var(--border-radius);
+	color: #fff;
+	overflow: hidden;
+	padding: 2rem;
+	justify-content: center;
+}
+.project .text a {
+	transition: all ease 200ms;
+}
+.project .text a:hover {
+	opacity: 0.7;
 }
 
 .project-space {
-	color: #fff;
+	grid-column: 1 / -1;
 	background: linear-gradient(254.03deg, #2c3e50 52.72%, #bdc3c7 100%);
 }
 
-.project-img {
-	margin-top: 2rem;
-	border-radius: var(--border-radius);
-	transition: all ease 700ms;
-}
-.project-img:hover {
-	scale: 1.03;
+.project-bonsai {
+	background-color: #99d6cc;
+	color: #000;
 }
 
-.other-projects .projects {
-	margin-top: 4rem;
-	display: grid;
-	gap: 1.5rem;
-	grid-template-columns: 1fr 1fr;
+.project-sunnyside {
+	grid-row: 2 / 4;
+	background-color: #fedb63;
+	color: #000;
 }
 
-.projects .project img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.project-udacity {
+	background-color: #381fd1;
 }
 
-@media (max-width: 786px) {
-	.other-projects .projects {
-		display: flex;
-		flex-direction: column;
-	}
+.project-manage {
+	grid-column: 1 / -1;
+	background-color: #fc6f6b;
 }
 
-.projects .project {
-	overflow: hidden;
-	border-radius: var(--border-radius);
-	height: 100%;
-	border: 2px solid var(--clr-light-grey);
-	transition: all ease 500ms;
-}
-
-.projects .project:hover {
-	box-shadow: 3px 3px 10px var(--clr-light-grey);
-}
-
-.projects .project-top {
-	grid-column-start: 1;
-	grid-column-end: 3;
-	grid-row-start: 1;
-}
-
-@media (max-width: 564px) {
-	.project-wrapper .project .project-body {
-		flex-direction: column;
-	}
-	.project-wrapper .project .project-body .project-title-details {
-		align-self: flex-start;
-	}
-	.project-wrapper .project .project-body .project-links {
-		gap: 0.5rem;
+@media (max-width: 764px) {
+	.projects-wrapper {
+		grid-template-columns: 1fr;
 	}
 }
 
