@@ -383,7 +383,7 @@ button {
 		padding-block: 5rem 1.5rem;
 		background-color: var(--clr-bg);
 		border-bottom: 1px solid var(--clr-light-grey);
-		transition: all ease 300ms;
+		transition: all ease 500ms;
 		box-shadow: 0 4px 7px rgb(0, 0, 0, 0.25);
 	}
 
