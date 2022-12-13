@@ -360,7 +360,7 @@ button {
 	width: 1.5rem;
 	border: none;
 	background: none;
-	background-image: url(./assets/images/icon-theme-dark.png);
+	background-image: url(./assets/icons/icon-theme-dark.png);
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -368,7 +368,7 @@ button {
 }
 
 .theme-toggle[data-toggled] {
-	background-image: url(./assets/images/icon-theme-light.png);
+	background-image: url(./assets/icons/icon-theme-light.png);
 }
 
 @media (max-width: 786px) {
@@ -399,13 +399,13 @@ button {
 		aspect-ratio: 1;
 		border: none;
 		background: none;
-		background-image: url(./assets/images/icon-menu.svg);
+		background-image: url(./assets/icons/icon-menu.svg);
 		background-repeat: no-repeat;
 		background-position: center;
 	}
 
 	.header-toggle[data-toggled] {
-		background-image: url(./assets/images/icon-menu-light.svg);
+		background-image: url(./assets/icons/icon-menu-light.svg);
 	}
 
 	.theme-toggle {
@@ -589,6 +589,46 @@ button {
 	}
 }
 
+/* mini-porjects */
+.mini-projects {
+	overflow-x: auto;
+}
+
+/* .mini-projects > a {
+	cursor:
+} */
+
+.mini-project {
+	min-width: 250px;
+	aspect-ratio: 1;
+	background-color: #2c3e50;
+	border-radius: calc(var(--border-radius) / 2);
+	overflow: hidden;
+	position: relative;
+}
+
+.mini-project img {
+	object-fit: cover;
+}
+
+.mini-project-body {
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	background-color: rgb(255, 255, 255, 0.25);
+	backdrop-filter: blur(6px);
+	transition: all ease 500ms;
+}
+
+.mini-project:hover .mini-project-body {
+	opacity: 1;
+}
+
+.mini-project-body .heading-small {
+	max-width: 250px;
+	color: var(--clr-accent);
+}
+
 /* contact */
 .contact {
 	color: #fff;
@@ -603,7 +643,7 @@ button {
 .cta-wrapper {
 	padding-top: 6rem;
 	height: 100%;
-	background-image: url(./assets/images/image-blob-texture.png);
+	background-image: url(./assets/image-blob-texture.png);
 	background-position: right;
 	background-repeat: no-repeat;
 	background-size: 22rem;
@@ -630,7 +670,7 @@ button {
 }
 
 .footer-credit {
-	color: var(--clr-text);
+	color: #fff;
 	opacity: 0.7;
 	font-size: 0.7rem;
 	margin-bottom: 1rem;
