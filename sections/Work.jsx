@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import SkillButton from "@/components/SkillButton";
+import GithubProfile from "@/components/profiles/GithubProfile";
 import LargeHeading from "@/components/ui/LargeHeading";
 import PrimaryLink from "@/components/ui/PrimaryLink";
 import SectionDescription from "@/components/ui/SectionDescription";
@@ -13,17 +14,20 @@ const Work = () => {
       <Container>
         <LargeHeading text="My Work" />
         <SectionDescription text="Projects That Showcase My Skills" />
-        <div className="grid md:grid-cols-2 w-fit mx-auto gap-6 mt-20">
+        <div className="grid md:grid-cols-2 w-fit mx-auto gap-6 mt-14 sm:mt-20">
           {work.map((project) => (
             <ProjectCard key={project.id} {...project} />
           ))}
         </div>
-        <PrimaryLink
+        {/* <PrimaryLink
           className="mx-auto mt-20"
           href="https://github.com/abdulrehmandev/"
         >
           <span>More Projects on Github</span> <FiExternalLink />
-        </PrimaryLink>
+        </PrimaryLink> */}
+        <div className="mx-auto mt-20 w-fit">
+          <GithubProfile text="More Projects on Github" />
+        </div>
       </Container>
     </div>
   );
@@ -42,7 +46,7 @@ const ProjectCard = ({ title, skills, image, github, preview }) => {
       <h4 className="text-xl sm:text-2xl tracking-tight font-semibold">
         {title}
       </h4>
-      <div className="flex items-center flex-wrap gap-2 mt-5 mb-3">
+      <div className="flex items-center flex-wrap gap-2 mt-5 mb-5">
         {skills.map((skill) => (
           <SkillButton text={skill} />
         ))}
@@ -64,15 +68,5 @@ const ProjectCard = ({ title, skills, image, github, preview }) => {
     </div>
   );
 };
-
-// const ServiceCard = ({ title, text }) => {
-//   return (
-//     <div className="text-left py-6 p-8 rounded-lg hover:bg-stone-200 hover:dark:bg-stone-800">
-//       <FiMoon className="text-2xl mb-4" />
-//       <h4 className="text-xl tracking-tight font-medium">{title}</h4>
-//       <p className="opacity-60 mt-3">{text}</p>
-//     </div>
-//   );
-// };
 
 export default Work;

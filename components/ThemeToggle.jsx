@@ -1,12 +1,11 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { FiSun, FiMoon } from "react-icons/fi";
+import { FiMoon } from "react-icons/fi";
 import { RiSunLine } from "react-icons/ri";
 
 const ThemeToggle = () => {
-  const { systemTheme, theme, setTheme } = useTheme();
-  const currentTheme = theme === "system" ? systemTheme : theme;
+  const { theme, setTheme } = useTheme();
 
   return (
     <button

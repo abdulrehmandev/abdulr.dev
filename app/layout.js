@@ -2,13 +2,13 @@
 
 import Navbar from "@/components/Navbar";
 import "./globals.css";
-import { Open_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import Providers from "@/components/Providers";
 import Footer from "@/components/Footer";
 
-const openSans = Open_Sans({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={openSans.className}>
+      <body className={inter.className}>
         <Providers>
           <Navbar />
 

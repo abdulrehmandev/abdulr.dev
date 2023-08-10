@@ -1,28 +1,40 @@
 import Container from "@/components/Container";
+import ProfileCard from "@/components/ProfileCard";
+import GithubProfile from "@/components/profiles/GithubProfile";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import PrimaryLink from "@/components/ui/PrimaryLink";
 import { FiArrowRight, FiExternalLink } from "react-icons/fi";
 
 const Hero = () => {
   return (
-    <div className="bg-signature-gradient pt-32 xl:pt-44 pb-20 xl:text-center">
-      <Container className="px-6">
-        <h1 className="font-bold text-4xl md:text-5xl xl:text-6xl max-w-md xl:max-w-2xl xl:mx-auto mb-4 tracking-tight">
-          Bringing Your Brand to Life Online
-        </h1>
-        <p className="opacity-60 text-lg font-medium xl:max-w-xl xl:mx-auto">
-          Hi, I am Abdul Rehman. I am a Web and Mobile App Developer from
-          Pakistan. Check out my work and let's connect.
+    <div className="bg-signature-gradient pt-44 pb-20">
+      <Container className="px-8 sm:px-10">
+        <p className="font-medium tracking-wide text-2xl md:text-3xl lg:text-4xl max-w-4xl">
+          <span className="bg-amber-400 text-stone-900 pt-1 font-serif italic tracking-tighter ">
+            Abdul Rehman
+          </span>
+          <span className="h-[2px] md:h-[3px] w-8 mb-[6px] md:mb-2 mx-[2px] dark:bg-white bg-black inline-block"></span>
+          Full-stack Web and Mobile developer. I love to building beautiful and
+          functional web & mobile apps.
         </p>
-        <div className="w-fit flex flex-wrap items-center gap-3 sm:gap-5 xl:mx-auto mt-12">
-          <PrimaryButton href="/">
-            <span>Download Resume</span>
-            <FiArrowRight size={18} />
+        <div className="w-fit flex flex-wrap items-center gap-3 sm:gap-5 mt-12">
+          <PrimaryButton
+            className="group overflow-hidden h-9"
+            href="mailto:beingabdulr@gmail.com"
+          >
+            <span className="animated-green-light mr-2">
+              <span className="animated-green-light__inner"></span>
+            </span>
+            <span className="flex flex-col gap-4 translate-y-[32%] group-hover:-translate-y-[32%] transition duration-200">
+              <span>Available for Work</span>
+              <span>Contact Now</span>
+            </span>
           </PrimaryButton>
-          <PrimaryLink href="/">
+          {/* <PrimaryLink href="/">
             <span>Github</span>
             <FiExternalLink />
-          </PrimaryLink>
+          </PrimaryLink> */}
+          <GithubProfile />
         </div>
       </Container>
     </div>

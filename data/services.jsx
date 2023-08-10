@@ -47,6 +47,7 @@ export const services = [
       "Python",
       "JavaScript",
       "Strapi",
+      "Firebase",
       "Node.js",
       "Express",
       "EJS",

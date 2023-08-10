@@ -8,9 +8,9 @@ const Services = () => {
   return (
     <div id="about" className="py-20 text-center">
       <Container>
-        <LargeHeading text="Services" />
+        <LargeHeading text="What I Do" />
         <SectionDescription text="Your One-Stop for All Your Needs Online" />
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-14 sm:mt-20">
           {services.map((service) => (
             <ServiceCard key={service.id} {...service} />
           ))}
@@ -28,7 +28,7 @@ const ServiceCard = ({ title, text, skills, icon }) => {
       <p className="opacity-60 mt-3">{text}</p>
       <div className="flex items-center flex-wrap gap-2 mt-8">
         {skills.map((skill) => (
-          <SkillButton text={skill} />
+          <SkillButton key={skill} text={skill} />
         ))}
       </div>
     </div>
