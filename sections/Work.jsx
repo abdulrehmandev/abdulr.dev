@@ -14,7 +14,7 @@ const Work = () => {
       <Container>
         <LargeHeading text="My Work" />
         <SectionDescription text="Projects That Showcase My Skills" />
-        <div className="grid md:grid-cols-2 w-fit mx-auto gap-6 mt-14 sm:mt-20">
+        <div className="md:columns-2 w-fit mx-auto gap-6 mt-14 sm:mt-20">
           {work.map((project) => (
             <ProjectCard key={project.id} {...project} />
           ))}
@@ -35,7 +35,7 @@ const Work = () => {
 
 const ProjectCard = ({ title, skills, image, github, preview }) => {
   return (
-    <div className="text-left p-4 md:p-8 mx-auto max-w-lg md:max-w-lg w-full rounded-xl transition-all duration-300 bg-stone-200/50 dark:bg-stone-800/75 border dark:border-stone-800 border-stone-200 h-fit">
+    <div className="text-left p-4 md:p-8 mx-auto max-w-lg md:max-w-lg w-full rounded-xl transition-all duration-300 bg-stone-200/50 dark:bg-stone-800/75 border dark:border-stone-800 border-stone-200 h-fit mb-6">
       <Image
         className="w-full aspect-[4/3] rounded-lg mb-4 object-cover"
         src={image}
@@ -43,7 +43,7 @@ const ProjectCard = ({ title, skills, image, github, preview }) => {
         height={800}
         alt={title}
       />
-      <h4 className="text-xl sm:text-2xl tracking-tight font-semibold">
+      <h4 className="text-xl sm:text-2xl mt-6 tracking-tight font-semibold">
         {title}
       </h4>
       <div className="flex items-center flex-wrap gap-2 mt-5 mb-5">
@@ -51,7 +51,7 @@ const ProjectCard = ({ title, skills, image, github, preview }) => {
           <SkillButton text={skill} />
         ))}
       </div>
-      {(preview || github) && (
+      {preview || github ? (
         <div className="flex w-fit gap-3 ml-auto justify-self-end">
           {preview && (
             <PrimaryLink href={preview}>
@@ -64,6 +64,10 @@ const ProjectCard = ({ title, skills, image, github, preview }) => {
             </PrimaryLink>
           )}
         </div>
+      ) : (
+        <p className="mx-auto w-fit mt-6 text-xs tracking-wide opacity-60">
+          Client Confidential
+        </p>
       )}
     </div>
   );

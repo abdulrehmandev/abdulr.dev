@@ -14,8 +14,8 @@ const Hero = () => {
             Abdul Rehman
           </span>
           <span className="h-[2px] md:h-[3px] w-8 mb-[6px] md:mb-2 mx-[2px] dark:bg-white bg-black inline-block"></span>
-          Full-stack Web and Mobile developer. I love to building beautiful and
-          functional web & mobile apps.
+          Full-stack Web developer from Pakistan. I love to build beautiful and
+          functional web applications.
         </p>
         <div className="w-fit flex flex-wrap items-center gap-3 sm:gap-5 mt-12">
           <PrimaryButton

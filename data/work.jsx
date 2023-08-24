@@ -1,7 +1,7 @@
 export const work = [
   {
     id: 1,
-    title: "Project Title",
+    title: "Let's Learn German",
     skills: [
       "Next.js",
       "Chakra UI",
@@ -10,9 +10,8 @@ export const work = [
       "React Query",
       "Postgres SQL",
     ],
-    image: "/static/temp-project-img.webp",
-    github: "/",
-    preview: "/",
+    image: "/static/img-lets-learn-german.jpg",
+    // preview: "https://lets-learn-german.netlify.app/",
   },
   {
     id: 2,
