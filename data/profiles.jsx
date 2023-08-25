@@ -3,8 +3,8 @@ export const github = {
   username: "abdulrehmandev",
   avatar: "https://avatars.githubusercontent.com/u/86829257?v=4",
   profileUrl: "https://github.com/abdulrehmandev",
-  followers: 10,
-  following: 17,
+  followers: 11,
+  following: 19,
   bio: "!false",
 };
 
