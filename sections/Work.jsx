@@ -19,12 +19,6 @@ const Work = () => {
             <ProjectCard key={project.id} {...project} />
           ))}
         </div>
-        {/* <PrimaryLink
-          className="mx-auto mt-20"
-          href="https://github.com/abdulrehmandev/"
-        >
-          <span>More Projects on Github</span> <FiExternalLink />
-        </PrimaryLink> */}
         <div className="mx-auto mt-20 w-fit">
           <GithubProfile text="More Projects on Github" />
         </div>
@@ -35,40 +29,42 @@ const Work = () => {
 
 const ProjectCard = ({ title, skills, image, github, preview }) => {
   return (
-    <div className="text-left p-4 md:p-8 mx-auto max-w-lg md:max-w-lg w-full rounded-xl transition-all duration-300 bg-stone-200/50 dark:bg-stone-800/75 border dark:border-stone-800 border-stone-200 h-fit mb-6">
+    <div className="text-left mx-auto max-w-lg md:max-w-lg w-full rounded-xl transition-all duration-300 bg-morph h-fit mb-4 md:mb-6 overflow-hidden">
       <Image
-        className="w-full aspect-[4/3] rounded-lg mb-4 object-cover"
+        className="w-full aspect-[4/3] mb-4 object-cover"
         src={image}
         width={800}
         height={800}
         alt={title}
       />
-      <h4 className="text-xl sm:text-2xl mt-6 tracking-tight font-semibold">
-        {title}
-      </h4>
-      <div className="flex items-center flex-wrap gap-2 mt-5 mb-5">
-        {skills.map((skill) => (
-          <SkillButton text={skill} />
-        ))}
-      </div>
-      {preview || github ? (
-        <div className="flex w-fit gap-3 ml-auto justify-self-end">
-          {preview && (
-            <PrimaryLink href={preview}>
-              <span>Preview</span> <FiExternalLink />
-            </PrimaryLink>
-          )}
-          {github && (
-            <PrimaryLink href={github}>
-              <span>Github</span> <FiExternalLink />
-            </PrimaryLink>
-          )}
+      <div className="px-4 pb-4 md:px-8">
+        <h4 className="text-xl sm:text-2xl mt-8 tracking-tight font-semibold">
+          {title}
+        </h4>
+        <div className="flex items-center flex-wrap gap-2 mt-5 mb-5">
+          {skills.map((skill) => (
+            <SkillButton text={skill} />
+          ))}
         </div>
-      ) : (
-        <p className="mx-auto w-fit mt-6 text-xs tracking-wide opacity-60">
-          Client Confidential
-        </p>
-      )}
+        {preview || github ? (
+          <div className="flex w-fit gap-3 ml-auto justify-self-end">
+            {preview && (
+              <PrimaryLink href={preview}>
+                <span>Preview</span> <FiExternalLink />
+              </PrimaryLink>
+            )}
+            {github && (
+              <PrimaryLink href={github}>
+                <span>Github</span> <FiExternalLink />
+              </PrimaryLink>
+            )}
+          </div>
+        ) : (
+          <p className="mx-auto w-fit mt-8 mb-2 text-xs tracking-wide opacity-60">
+            Client Confidential
+          </p>
+        )}
+      </div>
     </div>
   );
 };
