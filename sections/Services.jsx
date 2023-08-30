@@ -9,9 +9,10 @@ const Services = () => {
   return (
     <div id="about" className="py-20 text-center relative">
       <Image
-        className="min-w-[700px] w-full absolute top-64 inset-x-0 z-[-1]"
+        className="mt-48 absolute inset-x-0 z-[-1]"
         src="/static/img-swiglls.svg"
-        layout="fill"
+        // layout="fill"
+        fill={true}
         alt="Background"
       />
       <Container>

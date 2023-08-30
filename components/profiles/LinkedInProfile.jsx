@@ -10,7 +10,7 @@ const LinkedInProfile = () => {
     <HoverCard.Root>
       <HoverCard.Trigger asChild>
         <Link
-          className="py-2 px-5 rounded-full text-sm flex items-center gap-2 w-fit font-semibold hover:bg-stone-300 hover:dark:bg-stone-700 transition duration-200"
+          className="py-2 px-5 rounded-full text-sm flex items-center gap-2 w-fit font-semibold hover:bg-gray-300 hover:dark:bg-gray-700 transition duration-200"
           href="/"
         >
           <span>LinkedIn</span>
@@ -19,7 +19,7 @@ const LinkedInProfile = () => {
       </HoverCard.Trigger>
       <HoverCard.Portal>
         <HoverCard.Content
-          className="w-[300px] shadow-lg border-primary border-2 rounded-md bg-stone-100 dark:bg-stone-800 p-5 mx-3"
+          className="w-[300px] shadow-lg border-primary border-2 rounded-md bg-gray-100 dark:bg-gray-800 p-5 mx-3"
           sideOffset={5}
         >
           <div className="flex flex-col gap-2">
@@ -51,7 +51,7 @@ const LinkedInProfile = () => {
             </div>
           </div>
 
-          <HoverCard.Arrow className="fill-stone-200 dark:fill-stone-800 scale-[200%]" />
+          <HoverCard.Arrow className="fill-gray-200 dark:fill-gray-800 scale-[200%]" />
         </HoverCard.Content>
       </HoverCard.Portal>
     </HoverCard.Root>
