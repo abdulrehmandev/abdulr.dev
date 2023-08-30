@@ -25,7 +25,7 @@ export const work = [
     id: 3,
     title: "Kanban Task Management",
     skills: ["Next.js", "Tailwind CSS", "Radix UI", "Firebase", "Firestore"],
-    image: "/static/img-kanban.jpg",
+    image: "/static/img-kanban-manager.jpg",
     github: "https://github.com/abdulrehmandev/kanban-task-manager",
     preview: "https://task-manager-abdulrdev.vercel.app/",
   },

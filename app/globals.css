@@ -4,13 +4,13 @@
 
 @layer base {
   body {
-    @apply bg-stone-100 dark:bg-stone-900 text-stone-900 dark:text-stone-100;
+    @apply bg-gray-50 dark:bg-gray-950 text-gray-950 dark:text-gray-50;
   }
 }
 
 @layer components {
   .border-primary {
-    @apply border-stone-200 dark:border-stone-700/75;
+    @apply border-gray-200 dark:border-gray-700/75;
   }
 }
 
@@ -26,16 +26,16 @@ html {
   );
 }
 
-.dark .bg-morph {
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+.bg-morph {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 2px solid rgb(235, 235, 235);
 }
 
-.bg-morph {
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+.dark .bg-morph {
+  background: rgba(72, 72, 72, 0.1);
+  border-color: rgb(30, 30, 30);
 }
 
 @keyframes dimming-light {
@@ -57,10 +57,11 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(0, 208, 0, 0.4);
+  /* background-color: rgb(0, 208, 0, 0.2); */
+  border: 0.5px solid rgb(0, 208, 0, 0.4);
   border-radius: 50%;
   animation-name: dimming-light;
-  animation-duration: 4s;
+  animation-duration: 5s;
   animation-iteration-count: infinite;
 }
 
@@ -83,6 +84,6 @@ html {
   background-color: rgb(0, 208, 0);
   border-radius: 50%;
   animation-name: dimming-light__inner;
-  animation-duration: 4s;
+  animation-duration: 5s;
   animation-iteration-count: infinite;
 }
