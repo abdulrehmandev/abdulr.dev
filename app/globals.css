@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-50 text-black;
+  }
+}
+
+.scrollbar::-webkit-scrollbar {
+  @apply bg-transparent w-3;
+}
+.scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-neutral-200 rounded-full;
+}
