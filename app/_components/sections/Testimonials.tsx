@@ -6,36 +6,34 @@ import { motion } from "framer-motion";
 const CARDS = [
   {
     id: 0,
-    name: "Manu Arora",
-    designation: "Senior Software Engineer",
+    name: "Usama bin Amjad",
+    designation: "Client at Upwork",
     content: (
       <p>
-        &quot;These cards are amazing, I want to use them in my project. Framer
-        motion is a godsend ngl tbh fam 🙏&quot;
+        &quot;Abdul is a expert in his work. He completed the job in just a few
+        hours. Highly recommended&quot;
       </p>
     ),
   },
   {
     id: 1,
-    name: "Elon Musk",
-    designation: "Senior Shitposter",
+    name: "Paul Zamor",
+    designation: "Co-founder of Developers World LLC",
     content: (
       <p>
-        &quot;I dont like this Twitter thing, deleting it right away because
-        yolo. Instead, I would like to call it X.com so that it can easily be
-        confused with adult sites.&quot;
+        &quot;Abdul was such a pleasure to work with. Talented, communicative
+        and fast. Highly recommend!&quot;
       </p>
     ),
   },
   {
     id: 2,
-    name: "Tyler Durden",
-    designation: "Manager Project Mayhem",
+    name: "David Mancusi",
+    designation: "Architect at Ability Beyond",
     content: (
       <p>
-        &quot;The first rule of Fight Club is that you do not talk about fight
-        club. The second rule of Fight club is that you DO NOT TALK about fight
-        club.&quot;
+        &quot;Abdul have done an incredible job, and the whole team is amazed by
+        his skills.&quot;
       </p>
     ),
   },
@@ -94,12 +92,12 @@ export const CardStack = ({
   };
 
   return (
-    <div className="relative mx-auto h-60 w-60 md:h-60 md:w-96">
+    <div className="relative mx-auto h-60 w-72 md:w-96">
       {cards.map((card, index) => {
         return (
           <motion.div
             key={card.id}
-            className="absolute bg-neutral-50 h-48 w-60 md:h-48 md:w-96 rounded-xl p-4 shadow-xl border border-neutral-200 shadow-black/[0.1] flex flex-col justify-between"
+            className="absolute bg-neutral-50 h-48 w-72 md:w-96 rounded-xl p-4 shadow-xl border border-neutral-200 shadow-black/[0.1] flex flex-col justify-between"
             style={{
               transformOrigin: "top center",
             }}
@@ -108,14 +106,17 @@ export const CardStack = ({
               scale: 1 - index * SCALE_FACTOR, // decrease scale for cards that are behind
               zIndex: cards.length - index, //  decrease z-index for the cards that are behind
               // borderColor: index === 0 ? "#FFA500" : "rgb(229, 229, 229)",
-              background: index === 0 ? "white" : "rgb(232, 232, 232)",
+              background:
+                index === 0 ? "rgb(255, 255, 255)" : "rgb(232, 232, 232)",
               opacity: index === 0 ? 1 : 0.8,
             }}
             transition={{
               duration: 0.5,
             }}
           >
-            <div className="font-normal text-neutral-700">{card.content}</div>
+            <div className="font-normal text-neutral-700 hyphens-auto">
+              {card.content}
+            </div>
             <div>
               <p className="text-neutral-500 font-medium">{card.name}</p>
               <p className="text-neutral-400 font-normal">{card.designation}</p>

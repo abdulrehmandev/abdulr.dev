@@ -4,6 +4,7 @@ import React from "react";
 import { Drawer } from "vaul";
 
 import ContactForm from "./ContactForm";
+import Link from "next/link";
 
 const BookDrawer = () => {
   return (
@@ -20,16 +21,20 @@ const BookDrawer = () => {
               Send in a message or book a call with us. We&apos;re always happy
               to help.
             </Drawer.Description>
-            <div className="my-20 grid grid-cols-1 md:grid-cols-2 justify-center md:max-w-[70%] mx-auto">
-              <div className="mt-20">
+            <div className="my-20 gap-20 md:gap-20 grid grid-cols-1 md:grid-cols-2 justify-center md:max-w-[70%] mx-auto">
+              <div className="md:mt-20">
                 <h2 className="text-3xl text-neutral-700 font-primary">
                   Perfer to talk directly?
                   <br />
                   Schedule a call
                 </h2>
-                <button className="hover:scale-105 transition-all rounded-full mt-4 bg-black text-white font-semibold text-lg py-4 px-8">
+                <Link
+                  href="https://cal.com/abdulrdev/consultations"
+                  target="_blank"
+                  className="block w-fit mx-auto hover:scale-105 transition-all rounded-full mt-4 bg-black text-white font-semibold text-lg py-4 px-8"
+                >
                   Book a call 🗓️
-                </button>
+                </Link>
               </div>
 
               <ContactForm />

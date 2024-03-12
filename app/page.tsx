@@ -1,4 +1,5 @@
 import CTA from "./_components/sections/CTA";
+import Footer from "./_components/sections/Footer";
 import Hero from "./_components/sections/Hero";
 import Stack from "./_components/sections/Stack";
 import Testimonials from "./_components/sections/Testimonials";
@@ -14,6 +15,7 @@ export default function Home() {
       <Work />
       <Testimonials />
       <CTA />
+      <Footer />
     </main>
   );
 }

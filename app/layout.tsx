@@ -26,13 +26,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${calsans.variable} scrollbar font-sans min-h-screen bg-grid-neutral-200/70`}
+        className={`${inter.variable} ${calsans.variable} scrollbar font-sans min-h-screen bg-grid-neutral-100`}
       >
         {/* <div vaul-drawer-wrapper=""> */}
         <FloatingNav />
         <Navbar />
         {children}
-        <span className="fixed bottom-10 md:bottom-14 left-14 md:left-20 text-zinc-400 text-xs">
+        <span className="fixed bottom-10 md:bottom-20 left-14 md:left-20 text-zinc-400 text-xs">
           v.2024
         </span>
         {/* </div> */}

@@ -12,12 +12,12 @@ const Hero = () => {
         Driven Websites with Beautiful Design
       </h1>
 
-      <p className="text-center text-neutral-500 text-lg md:text-xl mt-4 max-w-[300px] md:max-w-full">
+      <p className="text-center text-neutral-500 text-lg md:text-xl mt-4 max-w-[300px] sm:max-w-full">
         I build websites that drive results and help your business grow.
         I&apos;ve worked with startups and small businesses{" "}
         <br className="hidden md:block" />
-        to build and scale their web applications. I perfer to call my self{" "}
-        <span className="font-medium">problem solver</span>
+        to build and scale their web applications. I call my self{" "}
+        <span className="font-medium">problemo solver</span>
       </p>
 
       <Drawer.Root shouldScaleBackground>

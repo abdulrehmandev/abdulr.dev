@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Drawer } from "vaul";
 import BookDrawer from "../ui/BookDrawer";
@@ -17,18 +19,17 @@ const CTA = () => {
         </div>
       </div>
       <div className="w-full py-32 text-center flex flex-col items-center group">
-        <button className="mt-8 text-lg md:text-2xl font-semibold text-white bg-black relative border border-neutral-200 py-2 md:py-4 px-6 md:px-8 rounded-full transition-all shadow-2xl shadow-neutral-500 hover:shadow-orange-200 duration-500 hover:scale-[102%]">
-          <span>Book a call</span>
-          <span className="absolute inset-x-0 w-2/3 mx-auto bottom-0 bg-gradient-to-r from-transparent via-orange-500 to-transparent h-[2px]" />
-        </button>
-        {/* <Drawer.Root shouldScaleBackground>
+        <Drawer.Root shouldScaleBackground>
           <Drawer.Trigger asChild>
-            
+            <button className="mt-8 text-lg md:text-2xl font-semibold text-white bg-black relative border border-neutral-200 py-2 md:py-4 px-6 md:px-8 rounded-full transition-all shadow-2xl shadow-neutral-500 hover:shadow-orange-200 duration-500 hover:scale-[102%]">
+              <span>Book a call</span>
+              <span className="absolute inset-x-0 w-2/3 mx-auto bottom-0 bg-gradient-to-r from-transparent via-orange-500 to-transparent h-[2px]" />
+            </button>
           </Drawer.Trigger>
           <BookDrawer />
-        </Drawer.Root> */}
+        </Drawer.Root>
         <span className="text-black text-sm md:text-base font-normal rounded-md px-4 mt-6 group-hover:animate-pulse">
-          and get started on your project
+          and let&apos;s get started on your project
         </span>
       </div>
     </div>

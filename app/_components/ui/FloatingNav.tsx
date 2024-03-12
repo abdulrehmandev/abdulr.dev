@@ -60,7 +60,7 @@ export const FloatingNav = () => {
           Home
         </Link>
         <Link
-          href={""}
+          href={"#work"}
           className={cn(
             "relative text-neutral-50 items-center flex space-x-1 hover:text-neutral-300 text-sm"
           )}
@@ -68,12 +68,12 @@ export const FloatingNav = () => {
           Work
         </Link>
         <Link
-          href={""}
+          href={"#contact"}
           className={cn(
             "relative text-neutral-50 items-center flex space-x-1 hover:text-neutral-300 text-sm"
           )}
         >
-          About
+          Contact
         </Link>
 
         <Drawer.Root shouldScaleBackground>
