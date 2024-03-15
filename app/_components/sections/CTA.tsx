@@ -12,7 +12,7 @@ const CTA = () => {
           <div className="absolute -right-8 bottom-0 -left-8 h-px bg-slate-900/[0.1] [mask-image:linear-gradient(to_right,transparent,white_4rem,white_calc(100%-4rem),transparent)]"></div>
         </div>
         <div className="absolute bottom-0 left-20 flex h-8 items-end overflow-hidden">
-          <div className="flex -mb-px h-[2px] w-80 -scale-x-100">
+          <div className="flex -mb-px h-[2px] w-64 sm:w-80 -scale-x-100">
             <div className="w-full flex-none blur-sm [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
             <div className="-ml-[100%] w-full flex-none blur-[1px] [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
           </div>

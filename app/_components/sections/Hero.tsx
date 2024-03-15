@@ -17,7 +17,7 @@ const Hero = () => {
         I&apos;ve worked with startups and small businesses{" "}
         <br className="hidden md:block" />
         to build and scale their web applications. I call my self{" "}
-        <span className="font-medium">problemo solver</span>
+        <span className="font-medium">problemo solver 🐧</span>
       </p>
 
       <Drawer.Root shouldScaleBackground>

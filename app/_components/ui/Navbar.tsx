@@ -38,46 +38,63 @@ const Navbar = () => {
 
       <NavToggler opened={opened} setOpened={setOpened} />
 
-      <motion.div
-        animate={{ translateY: opened ? "0%" : "-100%" }}
-        transition={{ ease: "circInOut", duration: 0.5 }}
-        className="fixed top-0 inset-x-0 bg-white z-20 pt-20 pb-10 flex md:hidden flex-col items-center gap-8 shadow-xl"
-      >
-        <div className="flex flex-col items-center justify-center gap-8 font-medium text-sm text-zinc-600">
-          <Link className="hover:text-zinc-800 transition-colors" href="#work">
-            Work
-          </Link>
-          <Link
-            className="hover:text-zinc-800 transition-colors"
-            href="#contact"
+      <AnimatePresence>
+        {opened && (
+          <motion.div
+            transition={{ duration: 0.5 }}
+            exit={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            className="fixed top-0 inset-0 bg-white z-20 py-20 flex md:hidden flex-col items-center justify-center gap-6 shadow-xl"
           >
-            Contact
-          </Link>
-        </div>
+            <div className="flex flex-col items-center gap-8 mb-32">
+              <div className="flex flex-col items-center justify-center gap-6 font-medium text-sm text-zinc-600">
+                <Link
+                  className="hover:text-zinc-800 transition-colors"
+                  href="#work"
+                >
+                  Work
+                </Link>
+                <Link
+                  className="hover:text-zinc-800 transition-colors"
+                  href="#contact"
+                >
+                  Contact
+                </Link>
+              </div>
 
-        <a
-          className="hover:scale-105 transition-all rounded-full bg-black text-white text-xs font-semibold py-1.5 px-3"
-          href="/Full Stack Developer - Abdul Rehman.pdf"
-          download
-        >
-          Download Resume
-        </a>
+              <a
+                className="hover:scale-105 transition-all rounded-full bg-black text-white text-xs font-semibold py-1.5 px-3"
+                href="/Full Stack Developer - Abdul Rehman.pdf"
+                download
+              >
+                Download Resume
+              </a>
 
-        <div className="flex items-center gap-3 sm:gap-6">
-          <Link href="https://www.github.com/abdulrehmandev" target="_blank">
-            <Icons.github className="w-6 h-6" />
-          </Link>
-          <Link href="https://www.linkedin.com/in/abdulrdev" target="_blank">
-            <Icons.linkedin className="w-6 h-6" />
-          </Link>
-          <Link
-            href="https://join.skype.com/invite/r2KpCXhsWync"
-            target="_blank"
-          >
-            <Icons.skype className="w-6 h-6" />
-          </Link>
-        </div>
-      </motion.div>
+              <div className="flex items-center gap-3 sm:gap-6">
+                <Link
+                  href="https://www.github.com/abdulrehmandev"
+                  target="_blank"
+                >
+                  <Icons.github className="w-6 h-6" />
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/abdulrdev"
+                  target="_blank"
+                >
+                  <Icons.linkedin className="w-6 h-6" />
+                </Link>
+                <Link
+                  href="https://join.skype.com/invite/r2KpCXhsWync"
+                  target="_blank"
+                >
+                  <Icons.skype className="w-6 h-6" />
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

@@ -4,6 +4,7 @@ import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import Image from "next/legacy/image";
 import useMeasure from "react-use-measure";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Work = () => {
   return (
@@ -12,8 +13,8 @@ const Work = () => {
         A glimpse into the <br />
         <span className="text-orange-500">web apps</span> that I have built.
       </h2>
-      <p className="text-neutral-500 text-base md:text-lg mt-4 max-w-[400px] mx-auto">
-        We take pride in building custom solutions that help founders turn their
+      <p className="text-neutral-500 text-base md:text-lg mt-4 max-w-[500px] mx-auto">
+        I take pride in building custom solutions that help startups turn their
         dreams into reality!
       </p>
       <div className="grid grid-cols-1 gap-y-6 md:gap-y-12 md:grid-cols-2 place-items-center mt-16 md:mt-32 max-w-[800px] mx-auto">
@@ -29,6 +30,22 @@ const Work = () => {
           }
           image="/images/einwelt.jpg"
           href="einwelt.com"
+        />
+        <WorkCard
+          title="NY Pedicab Services"
+          description={
+            <>
+              Built a next-gen booking platform for a NYC Pedicab service using
+              Next.js 14, Prisma & PostgreSQL for data management, with
+              real-time pricing powered by{" "}
+              <span className="font-medium">Google Maps API</span> and{" "}
+              <span className="font-medium">Stripe</span> integration for
+              seamless payments (
+              <span className="font-medium">Google Pay & Apple Pay</span>{" "}
+              supported).
+            </>
+          }
+          image="/images/ny-pedicab.jpg"
         />
         <WorkCard
           title="Ability Beyond Org"
@@ -62,22 +79,6 @@ const Work = () => {
           }
           image="/images/dahelpquest.jpg"
           href="affiliate.dahelpquest.com"
-        />
-        <WorkCard
-          title="NY Pedicab Services"
-          description={
-            <>
-              Built a next-gen booking platform for a NYC Pedicab service using
-              Next.js 14, Prisma & PostgreSQL for data management, with
-              real-time pricing powered by{" "}
-              <span className="font-medium">Google Maps API</span> and{" "}
-              <span className="font-medium">Stripe</span> integration for
-              seamless payments (
-              <span className="font-medium">Google Pay & Apple Pay</span>
-              supported).
-            </>
-          }
-          image="/images/ny-pedicab.jpg"
         />
         <WorkCard
           title="AI Engineer"
@@ -129,17 +130,15 @@ export const WorkCard: React.FC<WorkCardProps> = ({
         }}
         onHoverEnd={() => setIsHovered(false)}
         onClick={() => {
-          if (href) {
-            router.push("https://" + href);
-          }
+          setIsHovered((prevState) => !prevState);
         }}
-        initial={{ scale: 1, zIndex: 0 }}
+        initial={{ scale: 1, zIndex: 1 }}
         animate={{ scale: isHovered ? 1.05 : 1, zIndex: isHovered ? 1001 : 0 }}
-        exit={{ scale: 1, zIndex: 0 }}
+        exit={{ scale: 1, zIndex: 1 }}
         transition={{ ...transition, duration: 0.6 }}
-        className="cursor-pointer rounded-xl max-w-[360px] w-full bg-white border-neutral-200 border text-left pt-6 px-6 pb-3 overflow-hidden"
+        className="cursor-pointer rounded-xl max-w-[360px] w-full bg-white border-neutral-200 border-2 text-left pt-6 px-6 pb-3 overflow-hidden"
       >
-        <div className="w-full aspect-video relative rounded-lg overflow-hidden mb-6">
+        <div className="w-full aspect-[4/3] relative rounded-lg overflow-hidden mb-6">
           <Image layout="fill" objectFit="cover" src={image} alt="title" />
         </div>
         <h4 className="font-bold text-xl mb-2 text-neutral-700">{title}</h4>
@@ -156,17 +155,23 @@ export const WorkCard: React.FC<WorkCardProps> = ({
                   className="overflow-hidden"
                 >
                   <p className="text-base text-black">{description}</p>
-                  {href && (
-                    <p className="w-fit mt-3 mx-auto block border border-neutral-300 text-neutral-500 font-medium text-xs px-2 py-1 rounded-full">
+                  {href ? (
+                    <Link
+                      href={"https://" + href}
+                      target={"_blank"}
+                      className="w-fit mt-3 mx-auto block border border-neutral-300 text-neutral-500 hover:text-black font-medium text-xs px-2 py-1 rounded-full transition-colors"
+                    >
                       {href}
-                    </p>
+                    </Link>
+                  ) : (
+                    <span className="h-3 block" />
                   )}
                 </motion.div>
               )}
             </AnimatePresence>
             {!isHovered && (
               <p className="text-center text-xs text-neutral-400 animate-pulse font-light">
-                hover over
+                Hover me
               </p>
             )}
           </div>
@@ -175,9 +180,10 @@ export const WorkCard: React.FC<WorkCardProps> = ({
       <AnimatePresence>
         {isHovered && (
           <motion.div
+            onClick={() => setIsHovered(false)}
             key={"overlay"}
             initial={{ opacity: 0, zIndex: 0 }}
-            animate={{ opacity: 1, zIndex: 1000 }}
+            animate={{ opacity: 1, zIndex: 100 }}
             exit={{ opacity: 0, zIndex: 0 }}
             className="bg-dot-neutral-100/50 fixed inset-0 bg-black/20 backdrop-blur-sm"
           />

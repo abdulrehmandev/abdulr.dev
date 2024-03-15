@@ -14,15 +14,18 @@ const ContactForm = () => {
       <Input placeholder="and email?" />
       <ReactTextareaAutosize
         minRows={3}
-        // maxRows={5}
         onResize={() => {}}
         spellCheck
         placeholder="now write your message..."
         className="bg-neutral-50 border border-neutral-200 placeholder:text-neutral-400 rounded-lg py-2 px-4 text-neutral-700 focus:outline-orange-500 font-medium scrollbar"
       />
-      <button className="w-fit mx-auto hover:bg-black/80 transition-all mt-3 rounded-full bg-black text-white font-medium text-lg py-2 px-6">
+      <button
+        disabled
+        className="w-fit mx-auto hover:bg-black/80 transition-all mt-3 rounded-full bg-black text-white font-medium text-lg py-2 px-6 disabled:bg-black/70 disabled:cursor-not-allowed"
+      >
         Submit
       </button>
+      <p className="text-xs font-light">Message comming soon*</p>
     </div>
   );
 };
