@@ -31,7 +31,7 @@ const BookDrawer = () => {
                 <Link
                   href="https://cal.com/abdulrdev/consultations"
                   target="_blank"
-                  className="block w-fit mx-auto hover:scale-105 transition-all rounded-full mt-4 bg-black text-white font-semibold text-lg py-4 px-8"
+                  className="block w-fit mx-auto hover:scale-105 transition-all rounded-full mt-4 bg-black text-white font-semibold text-lg py-4 px-8 whitespace-nowrap"
                 >
                   Book a call 🗓️
                 </Link>

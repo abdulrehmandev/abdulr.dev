@@ -136,7 +136,7 @@ export const WorkCard: React.FC<WorkCardProps> = ({
         animate={{ scale: isHovered ? 1.05 : 1, zIndex: isHovered ? 1001 : 0 }}
         exit={{ scale: 1, zIndex: 1 }}
         transition={{ ...transition, duration: 0.6 }}
-        className="cursor-pointer rounded-xl max-w-[360px] w-full bg-white border-neutral-200 border-2 text-left pt-6 px-6 pb-3 overflow-hidden"
+        className="cursor-pointer rounded-xl max-w-[360px] w-full bg-white border-neutral-200/60 border-2 text-left pt-6 px-6 pb-3 overflow-hidden"
       >
         <div className="w-full aspect-[4/3] relative rounded-lg overflow-hidden mb-6">
           <Image layout="fill" objectFit="cover" src={image} alt="title" />
@@ -171,7 +171,8 @@ export const WorkCard: React.FC<WorkCardProps> = ({
             </AnimatePresence>
             {!isHovered && (
               <p className="text-center text-xs text-neutral-400 animate-pulse font-light">
-                Hover me
+                <span className="hidden md:inline-block">Hover</span>
+                <span className="inline-block md:hidden">Press</span> me
               </p>
             )}
           </div>

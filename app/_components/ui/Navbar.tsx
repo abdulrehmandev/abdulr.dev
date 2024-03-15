@@ -8,7 +8,9 @@ import { Icons } from "@/app/icons";
 const Navbar = () => {
   const [opened, setOpened] = React.useState(false);
   return (
-    <nav className="h-16 sm:h-16 md:h-24 px-4 sm:px-10 md:px-20 flex justify-end md:justify-between items-center">
+    <nav className="h-16 sm:h-16 md:h-24 px-4 sm:px-10 md:px-20 flex justify-between items-center">
+      <span className="block md:hidden">🐧</span>
+
       <div className="hidden md:flex items-center gap-3 sm:gap-6">
         <Link href="https://www.github.com/abdulrehmandev" target="_blank">
           <Icons.github className="w-6 h-6" />
