@@ -9,10 +9,7 @@ interface HightlightProps {
 const Hightlight: React.FC<HightlightProps> = ({ className, children }) => {
   return (
     <span
-      className={cn(
-        "text-primary font-semibold tracking-tight text-xl",
-        className
-      )}
+      className={cn("text-primary font-semibold tracking-tight", className)}
     >
       {children}
     </span>

@@ -26,7 +26,7 @@ const Hero = () => {
               Software Engineer
             </p>
             <H1 className="mb-4">Hey, this is Abdul Rehman</H1>
-            <P className="text-xl mb-4">
+            <P className="mb-4">
               I am from a small and beautiful city{" "}
               <Tooltip side="top" content="Check out my city on Google Maps">
                 <Link href="https://www.google.com/maps/place/Gujrat,+Punjab/@32.5822315,73.9881378,25099m/data=!3m1!1e3!4m6!3m5!1s0x391f1b031e43442d:0x870fd23543d684c!8m2!3d32.5730725!4d74.1005044!16zL20vMDIwbnF3?entry=ttu">

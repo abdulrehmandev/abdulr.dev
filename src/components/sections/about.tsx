@@ -134,7 +134,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   timeline,
 }) => {
   return (
-    <div className="grid grid-cols-3  md:grid-cols-4 gap-2 md:gap-6 p-5 rounded-md group hover:bg-neutral-100/80 hover:ring-1 ring-neutral-200 w-full transition-all">
+    <div className="grid grid-cols-3 md:grid-cols-4 gap-2 md:gap-6 p-5 rounded-md group hover:bg-neutral-100/80 hover:ring-1 ring-neutral-200 w-full transition-all">
       <p className="uppercase text-neutral-400 mt-2 font-medium text-xs break-keep whitespace-nowrap">
         {timeline}
       </p>
