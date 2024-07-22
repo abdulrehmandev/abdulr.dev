@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 347.92 75.36% 58.63%;
+  }
+  * {
+    @apply selection:bg-primary/50 selection:text-neutral-800;
+  }
+}
+
+@layer utilities {
+  .before-border-fade {
+    @apply relative before:w-0.5 before:absolute before:inset-y-0 before:bg-gradient-to-b before:from-transparent before:via-neutral-200 before:via-15% before:to-transparent before:to-100%;
+  }
+}
