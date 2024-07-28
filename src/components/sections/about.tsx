@@ -102,7 +102,7 @@ const About = () => {
         </div>
 
         <Link
-          href="/Full Stack Developer - Abdul Rehman.pdf"
+          href="/resume.pdf"
           target="_blank"
           className={cn(
             buttonVariants({

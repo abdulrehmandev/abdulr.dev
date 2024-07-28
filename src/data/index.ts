@@ -11,8 +11,6 @@ export const PrimaryColors = [
 ];
 
 export const MailLink = "mailto:beingabdulr@gmail.com";
-export const UpworkLink =
-  "https://www.upwork.com/freelancers/~019f38c3c43522ea21";
 export const GithubLink = "https://github.com/abdulrehmandev";
 export const ConsultationLink = "https://cal.com/abdulrdev/consultations";
 export const PortfolioRepoLink = "https://github.com/abdulrehmandev/abdulr.dev";
@@ -133,7 +131,7 @@ export const ExperienceList: {
       "SQL",
       "Node.js",
     ],
-    companyLink: UpworkLink,
+    companyLink: "https://www.upwork.com",
   },
   {
     company: "Ability Beyond",
