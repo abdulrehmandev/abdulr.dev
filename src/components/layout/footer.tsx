@@ -2,12 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import Container from "./container";
-import {
-  ConsultationLink,
-  PortfolioRepoLink,
-  SocialLinks,
-  UpworkLink,
-} from "@/data";
+import { ConsultationLink, PortfolioRepoLink, SocialLinks } from "@/data";
 import { cn } from "@/lib";
 import { buttonVariants, Icon } from "../ui";
 
@@ -26,24 +21,6 @@ const Footer = () => {
             )}
           >
             Book a Call
-          </Link>
-
-          <Link
-            href={UpworkLink}
-            target="_blank"
-            className={cn(
-              buttonVariants({
-                variant: "link",
-              }),
-              "gap-2 group"
-            )}
-          >
-            Hire on Upwork{" "}
-            <Icon
-              className="w-0 group-hover:w-5 transition-all text-green-500"
-              name="upwork"
-              size={20}
-            />
           </Link>
         </nav>
 

@@ -4,7 +4,7 @@ import { buttonVariants, H1, Icon, P, Highlight, Tooltip } from "../ui";
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib";
-import { ConsultationLink, DayIStarted, SocialLinks, UpworkLink } from "@/data";
+import { ConsultationLink, DayIStarted, SocialLinks } from "@/data";
 
 const Hero = () => {
   const totalDays = React.useMemo(() => {
@@ -78,17 +78,6 @@ const Hero = () => {
                 )}
               >
                 Book a Call
-              </Link>
-              <Link
-                href={UpworkLink}
-                className={cn(
-                  buttonVariants({
-                    variant: "link",
-                  }),
-                  "gap-1.5"
-                )}
-              >
-                Hire on Upwork <Icon name="arrow-up-right" size={16} />
               </Link>
             </div>
           </div>
