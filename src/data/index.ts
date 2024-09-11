@@ -27,19 +27,13 @@ export const SocialLinks: {
     href: "https://linkedin.com/in/abdulrdev",
     icon: "linkedin",
   },
-  { label: "Twitter", href: "https://x.com/iiiabdulrehman", icon: "twitter" },
-  {
-    label: "Instagram",
-    href: "https://instagram.com/iiiabdulrehman",
-    icon: "instagram",
-  },
 ];
 
 export const TestimonialsList = [
   {
     name: "Shariq Ansar",
     title: "Founder, myTpen",
-    quote: "Glad I found you..Shukriya to Allah again",
+    quote: "Working with Abdul has been a delight. A next-gen developer having patience, empathy and provides guidance  plus his smooth communication on his availability makes it easy for everyone in the team.",
   },
   {
     name: "David Mancusi",
@@ -107,15 +101,6 @@ export const ExperienceList: {
   companyLink?: string;
 }[] = [
   {
-    company: "Instantly Creative",
-    role: "Junior UI Developer",
-    timeline: "May 2024 — Present",
-    description:
-      "Developed and maintained a real estate web app, collaborating closely with team members to create user interfaces and style components with enhanced functionality.",
-    coreSkills: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    companyLink: "https://www.instantlycreative.com/",
-  },
-  {
     company: "Upwork",
     role: "Top Rated Freelance Developer",
     timeline: "Aug 2023 — Present",
@@ -132,6 +117,15 @@ export const ExperienceList: {
       "Node.js",
     ],
     companyLink: "https://www.upwork.com",
+  },
+  {
+    company: "Instantly Creative",
+    role: "Junior UI Developer",
+    timeline: "May 2024 — Aug 2024",
+    description:
+      "Developed and maintained a real estate web app, collaborating closely with team members to create user interfaces and style components with enhanced functionality.",
+    coreSkills: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+    companyLink: "https://www.instantlycreative.com/",
   },
   {
     company: "Ability Beyond",
