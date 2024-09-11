@@ -117,7 +117,7 @@ export const ExperienceList: {
       "Node.js",
     ],
     companyLink: "https://www.upwork.com",
-  },e
+  },
   {
     company: "Instantly Creative",
     role: "Junior UI Developer",
