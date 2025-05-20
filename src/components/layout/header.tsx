@@ -1,0 +1,40 @@
+import Link from "next/link";
+import { Button } from "../ui";
+import { Container } from "./container";
+import { data } from "@/data";
+import { ThemeToggle } from "../theme-toggle";
+
+export function Header() {
+  return (
+    <header>
+      <Container className="flex items-center justify-between">
+        <div className="space-y-0.5">
+          <div className="flex items-end gap-3">
+            {/* Logo */}
+            <Link
+              href="/"
+              className="uppercase tracking-tighter text-xl font-light leading-4.5"
+            >
+              <span className="font-bold">Abdul R</span>
+              <span className="text-muted-foreground">ehman</span>
+            </Link>
+
+            <p className="text-xs font-light uppercase tracking-wide leading-3">
+              Full Stack Software Engineer,
+            </p>
+          </div>
+          <p className="text-xs font-light uppercase leading-3">
+            Building Accessible Digital Experiences for Everyone.
+          </p>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <Button variant="outline" asChild>
+            <Link href={`mailto:${data.contact.email}`}>Contact</Link>
+          </Button>
+        </div>
+      </Container>
+    </header>
+  );
+}
