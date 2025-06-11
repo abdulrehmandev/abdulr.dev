@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { Button } from "../ui";
+import { Button, IconButton } from "../ui";
 import { Container } from "./container";
 import { data } from "@/data";
-import { ThemeToggle } from "../theme-toggle";
+import { Mail } from "lucide-react";
+import { ContactDrawer } from "../contact-drawer";
 
 export function Header() {
   return (
@@ -20,19 +21,23 @@ export function Header() {
             </Link>
 
             <p className="text-xs font-light uppercase tracking-wide leading-3">
-              Full Stack Software Engineer,
+              Freelance Software Engineer
             </p>
           </div>
           <p className="text-xs font-light uppercase leading-3">
-            Building Accessible Digital Experiences for Everyone.
+            Building Accessible Digital Experiences across web
           </p>
         </div>
 
         <div className="flex items-center gap-3">
-          <ThemeToggle />
-          <Button variant="outline" asChild>
-            <Link href={`mailto:${data.contact.email}`}>Contact</Link>
-          </Button>
+          <IconButton asChild>
+            <Link href={data.contact.email} target="_blank">
+              <Mail />
+            </Link>
+          </IconButton>
+          <ContactDrawer
+            trigger={<Button variant="secondary">Let&apos;s Connect</Button>}
+          />
         </div>
       </Container>
     </header>

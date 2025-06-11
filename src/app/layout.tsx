@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     // suppressHydrationWarning is used to prevent hydration errors when using next-themes, it would only affect one level deep, other elements would still be hydrated
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body className={`${funnelSans.className} antialiased`}>
         <Providers>
           <Header />

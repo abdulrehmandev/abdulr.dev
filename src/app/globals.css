@@ -118,3 +118,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.liquid-glass {
+  @apply backdrop-blur-sm bg-background/50 text-foreground rounded-md border border-border/50;
+}
