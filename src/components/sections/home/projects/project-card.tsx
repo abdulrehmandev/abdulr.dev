@@ -17,7 +17,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         width={680}
         className="object-cover w-full h-fit"
       />
-      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute bottom-4 inset-x-4 rounded-md text-background dark:text-foreground bg-foreground/30 dark:bg-background/40 py-3 px-4 backdrop-blur-sm font-light">
+      <div className="liquid-glass opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute bottom-4 inset-x-4 rounded-md py-3 px-4 font-light">
         <div className="flex items-ceter justify-between">
           <div className="flex items-center gap-2">
             <h3 className="font-normal">{project.title}</h3>

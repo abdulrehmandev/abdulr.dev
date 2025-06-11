@@ -1,4 +1,5 @@
-import { ThemeProvider } from "next-themes";
+"use client";
+
 import { PropsWithChildren } from "react";
 import { Lenis } from "./lenis";
 
@@ -7,14 +8,8 @@ import { Lenis } from "./lenis";
  */
 export function Providers({ children }: PropsWithChildren) {
   return (
-    <Lenis>
-      <ThemeProvider
-        defaultTheme="dark"
-        attribute="class"
-        disableTransitionOnChange
-      >
-        {children}
-      </ThemeProvider>
-    </Lenis>
+    <>
+      <Lenis>{children}</Lenis>
+    </>
   );
 }
