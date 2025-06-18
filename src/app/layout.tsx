@@ -11,8 +11,8 @@ const funnelSans = Funnel_Sans({
 const jsonLd = {
   "@context": "https://schema.org/",
   "@type": "WebSite",
-  name: "Abdul Rehmann - Software Engineer",
-  url: "https://mytpen.app/",
+  name: "Abdul Rehman - Software Engineer",
+  url: "https://abdulr.dev/",
 };
 
 export const metadata: Metadata = {
@@ -23,16 +23,20 @@ export const metadata: Metadata = {
   },
   description: "Building digital accessible experiences across web. Pakistan",
   keywords: [
-    "abdul rehmann",
+    "abdulrehman",
     "abdul rehman",
     "abdul rehman dev",
-    "abdul rehmann dev",
+    "abdulrehmandev",
+    "abdulrdev",
     "software engineer",
     "web developer",
     "full stack developer",
     "freelance developer",
     "accessible web development",
     "digital experiences",
+    "ai integrations",
+    "custom workflows",
+    "sdk development",
   ],
   alternates: {
     canonical: "/",
