@@ -1,9 +1,13 @@
-import { Projects } from "@/components/sections";
+import {
+  Intro,
+  // Projects
+} from "@/components/sections";
 
 export default function Home() {
   return (
     <main>
-      <Projects />
+      {/* <Projects /> */}
+      <Intro />
     </main>
   );
 }
