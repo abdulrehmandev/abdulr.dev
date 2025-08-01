@@ -20,23 +20,23 @@ export function Intro() {
           </div>
 
           <p>
-            I'm a Full-Stack AI Engineer with a focus on building scalable
+            I&apos;m a Full-Stack AI Engineer with a focus on building scalable
             Micro-SaaS products, AI-powered platforms, and custom tools for
             fast-moving startups and visionary founders. Over the past 3+ years,
-            I've shipped over 6 production-ready applications involving custom
-            OpenAI, GPT and custom LLM-based workflows, across industries like
-            edtech, healthcare, and e-commerce.
+            I&apos;ve shipped over 6 production-ready applications involving
+            custom OpenAI, GPT and custom LLM-based workflows, across industries
+            like edtech, healthcare, and e-commerce.
           </p>
 
           <p>
             My stack includes Next.js, TypeScript, NestJS, PostgreSQL, Prisma,
-            Python, and OpenAI APIs. I’ve worked with early-stage startups to
-            design and deploy modular, extensible systems: from multi-app SaaS
-            suites to real-time analytics platforms and AI-assisted
+            Python, and OpenAI APIs. I&apos;ve worked with early-stage startups
+            to design and deploy modular, extensible systems: from multi-app
+            SaaS suites to real-time analytics platforms and AI-assisted
             decision-making tools.
           </p>
 
-          <p>I'm particularly skilled at:</p>
+          <p>I&apos;m particularly skilled at:</p>
 
           <ul className="list-disc list-inside font-normal">
             <li> AI integration (LLMs, embeddings, AI agents)</li>
@@ -53,10 +53,10 @@ export function Intro() {
           </p>
 
           <p>
-            If you're a founder or startup operator looking for a technical
-            partner to prototype, scale, or optimize your product, I'm currently
-            open to fractional CTO-style roles, one-off builds, or long-term
-            freelance engagements.
+            If you&apos;re a founder or startup operator looking for a technical
+            partner to prototype, scale, or optimize your product, I&apos;m
+            currently open to fractional CTO-style roles, one-off builds, or
+            long-term freelance engagements.
           </p>
 
           {/* Available */}
