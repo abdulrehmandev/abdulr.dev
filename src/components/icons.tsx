@@ -57,10 +57,10 @@ export const Icons = {
         y2="12.793"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="#f0f0f0"></stop>
-        <stop offset=".253" stop-color="#e9eaea"></stop>
-        <stop offset=".615" stop-color="#d7d9db"></stop>
-        <stop offset="1" stop-color="#bbc1c4"></stop>
+        <stop offset="0" stopColor="#f0f0f0"></stop>
+        <stop offset=".253" stopColor="#e9eaea"></stop>
+        <stop offset=".615" stopColor="#d7d9db"></stop>
+        <stop offset="1" stopColor="#bbc1c4"></stop>
       </linearGradient>
       <path
         fill="url(#UupP5oROdIHlmj_r4DasAa_LOMmAcNN0FrU_gr1)"
@@ -74,11 +74,11 @@ export const Icons = {
         y2="9.807"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="#1c5ab5"></stop>
-        <stop offset=".097" stop-color="#2168c1"></stop>
-        <stop offset=".24" stop-color="#2673cb"></stop>
-        <stop offset=".441" stop-color="#287ad0"></stop>
-        <stop offset="1" stop-color="#297cd2"></stop>
+        <stop offset="0" stopColor="#1c5ab5"></stop>
+        <stop offset=".097" stopColor="#2168c1"></stop>
+        <stop offset=".24" stopColor="#2673cb"></stop>
+        <stop offset=".441" stopColor="#287ad0"></stop>
+        <stop offset="1" stopColor="#297cd2"></stop>
       </linearGradient>
       <path
         fill="url(#UupP5oROdIHlmj_r4DasAb_LOMmAcNN0FrU_gr2)"
@@ -92,8 +92,8 @@ export const Icons = {
         y2="35"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="#42a3f2"></stop>
-        <stop offset="1" stop-color="#42a4eb"></stop>
+        <stop offset="0" stopColor="#42a3f2"></stop>
+        <stop offset="1" stopColor="#42a4eb"></stop>
       </linearGradient>
       <path
         fill="url(#UupP5oROdIHlmj_r4DasAc_LOMmAcNN0FrU_gr3)"
@@ -120,7 +120,7 @@ export const Icons = {
         gradientUnits="userSpaceOnUse"
       >
         <stop offset=".069"></stop>
-        <stop offset="1" stop-opacity="0"></stop>
+        <stop offset="1" stopOpacity="0"></stop>
       </radialGradient>
       <circle
         cx="32.5"
@@ -137,7 +137,7 @@ export const Icons = {
         gradientUnits="userSpaceOnUse"
       >
         <stop offset=".069"></stop>
-        <stop offset="1" stop-opacity="0"></stop>
+        <stop offset="1" stopOpacity="0"></stop>
       </radialGradient>
       <circle
         cx="15.5"

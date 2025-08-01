@@ -25,8 +25,4 @@ export const socials = {
     url: data.socials.x,
     icon: Icons.x,
   },
-  consultation: {
-    url: data.contact.consultation,
-    icon: Icons.calendar,
-  },
 };
