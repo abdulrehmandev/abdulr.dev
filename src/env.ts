@@ -10,17 +10,19 @@ export const env = createEnv({
    * The prefix that client-side variables must have. This is enforced both at
    * a type-level and at runtime.
    */
-  clientPrefix: "PUBLIC_",
+  clientPrefix: "NEXT_PUBLIC_",
 
   client: {
-    // PUBLIC_CLIENT_SECRET: z.string().min(1),
+    NEXT_PUBLIC_APP_URL: z.string().min(1),
   },
 
   /**
    * Makes sure you explicitly access **all** environment variables
    * from `server` and `client` in your `runtimeEnv`.
    */
-  runtimeEnvStrict: {},
+  runtimeEnvStrict: {
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+  },
 
   /**
    * By default, this library will feed the environment variables directly to
