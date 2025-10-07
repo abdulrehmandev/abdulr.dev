@@ -1,9 +1,11 @@
-import LightRays from "@/components/light-rays-bg";
-import { Intro } from "@/components/sections";
+import LightRays from "@/app/_components/light-rays-bg";
+import { Intro } from "./_components/intro";
+import { Experience } from "./_components/experience";
+import { CaseStudies } from "./_components/case-studies";
 
 export default function Home() {
   return (
-    <main className="relative">
+    <main className="relative pb-20">
       <Intro />
       <LightRays
         raysOrigin="top-center"
@@ -17,6 +19,8 @@ export default function Home() {
         distortion={0.05}
         className="fixed z-[-1] inset-0"
       />
+      <CaseStudies />
+      <Experience />
       <div className="mask-to-b backdrop-blur-2xl h-32 w-full fixed -bottom-1 z-10 inset-x-0" />
     </main>
   );
