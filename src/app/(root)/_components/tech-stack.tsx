@@ -16,35 +16,51 @@ const techStack = [
   //     "Framer Motion",
   //     "Tanstack Query",
   //   ],
-  // },
+  // }, Full-Stack, Cloud, AI & Automation, APIs, Data, UI/UX, Systems, Open Source
   {
-    name: "Backend",
-    techs: ["Node.js", "Hono.js", "Express.js", "tRPC", "pnpm"],
-  },
-  {
-    name: "Database & Services",
+    name: "Technicals",
     techs: [
-      "AWS Lambda",
-      "Cloudflare Workers",
-      "Docker",
-      "Supabase",
-      "Postman",
-      "Prisma ORM",
-      "Drizzle ORM",
-      "Postgres",
-      "MongoDB",
+      "Node.js",
+      "TypeScript",
+      "Python",
+      "AI",
+      "LLMs",
+      "Cloud",
+      "APIs",
+      "Agents",
+      "Automations",
+      "Cloud Workflows",
+      "Open Source",
     ],
   },
+  // {
+  //   name: "Database & Services",
+  //   techs: [
+  //     "AWS Lambda",
+  //     "Cloudflare Workers",
+  //     "Docker",
+  //     "Supabase",
+  //     "Postman",
+  //     "Prisma ORM",
+  //     "Drizzle ORM",
+  //     "Postgres",
+  //     "MongoDB",
+  //   ],
+  // },
 ];
 
-const currentlyLearning = ["Prompt Engineering", "Agentic Automations"];
+const currentlyLearning = [
+  "Prompt Engineering",
+  "Agentic Workflows",
+  "Human-in-loop Systems",
+];
 
 export function TechStack({ className }: { className?: string }) {
   return (
     <Card asChild>
       <aside
         className={cn(
-          "group/tech-stack *:cursor-default px-6 pt-2.5 pb-4 h-full",
+          "group/tech-stack *:cursor-default px-6 pt-4 pb-4 h-full",
           className,
         )}
       >
@@ -53,10 +69,10 @@ export function TechStack({ className }: { className?: string }) {
             <span>{"{"}</span>
             <span>{"}"}</span>
           </div>
-          <H2>Tech</H2>
+          <H2>Crafts</H2>
         </div>
 
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 mt-2">
           {techStack.map((stack) => (
             <div key={stack.name}>
               <h3 className="font-medium text-sm">{stack.name}</h3>

@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "abdulrdev",
+  name: "abdulr.dev",
   url: "https://abdulr.dev",
   ogImage: "https://abdulr.dev/og.jpg", // @todo
   description: "Portfolio", // @todo

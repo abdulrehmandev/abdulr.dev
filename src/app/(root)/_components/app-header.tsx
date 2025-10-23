@@ -12,7 +12,7 @@ export function AppHeader() {
         <div className="flex items-center gap-6 w-fit">
           <Link
             href="/"
-            className="font-medium font-serif text-primary text-2xl"
+            className="font-semibold font-serif text-primary text-xl"
           >
             Abdul R.
           </Link>

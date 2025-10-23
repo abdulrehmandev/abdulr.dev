@@ -1,6 +1,6 @@
 import React from "react";
 import NextLink from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { cn } from "@src/lib/utils";
 import { Card, CardDescription, CardTitle } from "@src/ui/card";
 import { Icons } from "@src/components/icons";
@@ -14,25 +14,18 @@ export function ProfileDescriptionCard({
 }: React.ComponentProps<"div">) {
   return (
     <Card className={cn("px-6 py-4 gap-4", className)} {...props}>
+      <P>Hi there, I’m Abdul.</P>
+
       <P>
-        Hello, I&apos;m a{" "}
-        {new Date().getFullYear() - new Date("Feb 5, 2003").getFullYear()} years
-        old Developer based in Gujrat, Pakistan. I work freelance on AI apps.
-        I've been coding for for {new Date().getFullYear() - 2020} years and
-        freelancing for the second half.
+        I’m an full stack developer with a love for ai saas, building technical
+        solution and cloud workflows. I’m currently working as freelance dev and
+        consultant remotely.
       </P>
 
       <P>
-        As a full stack developer, I specialize in crafting end-to-end solutions
-        through freelance contracts, focusing on AI-powered applications and
-        automations. My approach is outcome-driven, ensuring every project
-        delivers measurable value and exceeds client expectations.
-      </P>
-
-      <P>
-        You can <Link href="/">read my writing</Link> or{" "}
+        You can <Link href="/blogs">read my writing</Link> or{" "}
         <Link href={socials.github}>code</Link>, or{" "}
-        <Link href="/links">follow me online</Link>.{" "}
+        <Link href={socials.x}>follow me online</Link>.{" "}
         <Link href={`mailto:${socials.mail}`}>Reach out</Link> if interested.
       </P>
     </Card>
@@ -77,8 +70,8 @@ export function MytpenCard({
         Leading Development at myTpen
       </h2>
       <p className="text-sm">
-        Collaborating with individuals in building the future of EdTech SaaS in
-        India
+        Collaborating with global product teams in building the future of EdTech
+        SaaS.
       </p>
       <NextLink
         href="https://mytpen.app"
@@ -137,10 +130,11 @@ export function RecentProjectsCard({
 
   return (
     <div className={cn("space-y-3 flex flex-col", className)} {...props}>
-      <Card className="p-6 pb-4 gap-1 h-full">
+      <Card className="p-6 pb-4 gap-1 h-full justify-between group/projects-header">
         <H2 className="">Recent Work</H2>
         <p className="text-sm">
-          Recently completed and note-worthy contracts to mention
+          Notable client projects and experiments that define my recent work{" "}
+          <ArrowDown className="size-3 animate-bounce inline ml-1 group-hover/projects-header:opacity-100 opacity-0 transition" />
         </p>
       </Card>
       {projects
