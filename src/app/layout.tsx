@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 
 import { META_THEME_COLORS, siteConfig } from "@src/lib/config";
 import { fontVariables } from "@src/lib/fonts";
@@ -85,10 +86,17 @@ export default function RootLayout({
       <body
         className={cn(
           "text-foreground group/body overscroll-none font-sans antialiased",
-          fontVariables
+          fontVariables,
         )}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
