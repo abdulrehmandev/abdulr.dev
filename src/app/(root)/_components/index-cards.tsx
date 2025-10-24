@@ -6,7 +6,7 @@ import { Card, CardDescription, CardTitle } from "@src/ui/card";
 import { Icons } from "@src/components/icons";
 import { H2, Link, P } from "@src/ui/typography";
 import { socials } from "@src/lib/config";
-import { getAllStudies } from "@src/lib/mdx";
+import { getAllCaseStudies } from "@src/content/studies";
 
 export function ProfileDescriptionCard({
   className,
@@ -89,7 +89,7 @@ export function RecentCaseStudiesCard({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  const cStudies = getAllStudies();
+  const cStudies = getAllCaseStudies();
   return (
     <div className={cn("grid grid-rows-2 gap-3", className)} {...props}>
       {cStudies

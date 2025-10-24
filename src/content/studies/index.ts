@@ -1,12 +1,10 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import { useMDXComponents } from "@src/components/mdx-components";
 
 const studiesDirectory = path.join(process.cwd(), "src/content/studies");
 
-export interface StudyMeta {
+export interface CaseStudyMeta {
   title: string;
   description: string;
   date: string;
@@ -15,12 +13,12 @@ export interface StudyMeta {
   slug: string;
 }
 
-export interface Study {
-  meta: StudyMeta;
+export interface CaseStudy {
+  meta: CaseStudyMeta;
   content: string;
 }
 
-export function getAllStudies(): StudyMeta[] {
+export function getAllCaseStudies(): CaseStudyMeta[] {
   try {
     if (!fs.existsSync(studiesDirectory)) {
       return [];
@@ -58,7 +56,7 @@ export function getAllStudies(): StudyMeta[] {
   }
 }
 
-export function getStudyBySlug(slug: string): Study | null {
+export function getCaseStudyBySlug(slug: string): CaseStudy | null {
   try {
     if (!fs.existsSync(studiesDirectory)) {
       return null;
@@ -87,14 +85,4 @@ export function getStudyBySlug(slug: string): Study | null {
     console.error("Error reading study:", error);
     return null;
   }
-}
-
-export function MDXContent({ content }: { content: string }) {
-  const components = useMDXComponents({});
-  
-  return (
-    <div className="prose prose-gray dark:prose-invert max-w-none">
-      <MDXRemote source={content} components={components} />
-    </div>
-  );
 }

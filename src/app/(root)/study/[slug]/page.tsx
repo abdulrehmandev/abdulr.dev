@@ -1,28 +1,27 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import Link from "next/link";
-import { ArrowLeft, Calendar, Clock } from "lucide-react";
-import { Button } from "@src/ui/button";
-import { Separator } from "@src/ui/separator";
-import { getStudyBySlug, MDXContent } from "@src/lib/mdx";
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeader,
   PageHeaderHeading,
 } from "@src/components/page-header";
+import { MDXContent } from "@src/content/mdx";
+import { getCaseStudyBySlug } from "@src/content/studies";
+import { Separator } from "@src/ui/separator";
+import { Clock } from "lucide-react";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 interface StudyPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({
   params,
 }: StudyPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const study = getStudyBySlug(slug);
+  const study = getCaseStudyBySlug(slug);
 
   if (!study) {
     return {
@@ -37,7 +36,7 @@ export async function generateMetadata({
 }
 
 export default async function StudyDetailPage({ params }: StudyPageProps) {
-  const study = getStudyBySlug((await params).slug);
+  const study = getCaseStudyBySlug((await params).slug);
 
   if (!study) {
     notFound();

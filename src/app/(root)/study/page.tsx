@@ -4,7 +4,7 @@ import {
   PageHeaderHeading,
 } from "@src/components/page-header";
 import { PrimaryCard } from "@src/components/primary-card";
-import { getAllStudies } from "@src/lib/mdx";
+import { getAllCaseStudies } from "@src/content/studies";
 import { Expand, RabbitIcon } from "lucide-react";
 import { Metadata } from "next";
 
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 export default function StudyPage() {
-  const caseStudies = getAllStudies();
+  const caseStudies = getAllCaseStudies();
 
   return (
     <div className="space-y-8">
