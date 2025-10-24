@@ -11,7 +11,7 @@ const socials = [
     icon: <Icons.mail className="size-5" />,
   },
   {
-    name: "X",
+    name: "X / Twitter",
     href: socialVars.x,
     icon: <Icons.x className="size-3.5" />,
   },

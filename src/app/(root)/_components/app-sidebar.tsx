@@ -2,7 +2,6 @@
 
 import { cn } from "@src/lib/utils";
 import { Button } from "@src/ui/button";
-import { SheetClose } from "@src/ui/sheet";
 import {
   Sidebar,
   SidebarContent,
@@ -12,32 +11,39 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarTrigger,
   useSidebar,
 } from "@src/ui/sidebar";
 import { X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import React from "react";
 
 const links = [
   { label: "About", href: "/" },
   { label: "Case studies", href: "/study", disabled: false },
-  { label: "Work", href: "/work", disabled: true },
+  { label: "Work", href: "/work", disabled: false },
   { label: "Blogs", href: "/blogs", disabled: true },
 ];
 
 export function AppSidebar() {
   const pathname = usePathname();
   const { toggleSidebar } = useSidebar();
+
+  const isLinkActive = React.useCallback((href: string) => {
+    if (href === "/") return pathname === href;
+    return (
+      pathname.startsWith(href) &&
+      (pathname.length === href.length || pathname.charAt(href.length) === "/")
+    );
+  }, []);
+
   return (
     <Sidebar>
       <SidebarHeader className="flex md:hidden px-6 mt-8">
-        {/* <SidebarTrigger /> */}
         <Button variant="ghost" size="icon" onClick={toggleSidebar}>
           <X />
         </Button>
       </SidebarHeader>
-      {/* <SidebarHeader /> */}
       <SidebarContent className="h-full justify-center px-4">
         <SidebarGroup className="mb-64">
           <SidebarGroupContent>
@@ -46,7 +52,7 @@ export function AppSidebar() {
                 <SidebarMenuItem key={link.label}>
                   <SidebarMenuButton
                     asChild
-                    isActive={pathname === link.href}
+                    isActive={isLinkActive(link.href)}
                     disabled={link.disabled}
                     title={link.label}
                   >
@@ -65,7 +71,6 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      {/* <SidebarFooter /> */}
     </Sidebar>
   );
 }
