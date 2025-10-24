@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@src/lib/utils";
+import { siteConfig } from "@src/lib/config";
 import { Button } from "@src/ui/button";
 import {
   Sidebar,
@@ -17,13 +17,6 @@ import { X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-
-const links = [
-  { label: "About", href: "/" },
-  { label: "Case studies", href: "/study", disabled: false },
-  { label: "Work", href: "/work", disabled: false },
-  { label: "Blogs", href: "/blogs", disabled: true },
-];
 
 export function AppSidebar() {
   const pathname = usePathname();
@@ -48,22 +41,14 @@ export function AppSidebar() {
         <SidebarGroup className="mb-64">
           <SidebarGroupContent>
             <SidebarMenu>
-              {links.map((link) => (
+              {siteConfig.navItems.map((link) => (
                 <SidebarMenuItem key={link.label}>
                   <SidebarMenuButton
                     asChild
                     isActive={isLinkActive(link.href)}
-                    disabled={link.disabled}
                     title={link.label}
                   >
-                    <Link
-                      href={link.href}
-                      className={cn({
-                        "pointer-events-none opacity-50": link.disabled,
-                      })}
-                    >
-                      {link.label}
-                    </Link>
+                    <Link href={link.href}>{link.label}</Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

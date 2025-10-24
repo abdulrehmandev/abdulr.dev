@@ -7,11 +7,18 @@ export const siteConfig = {
     twitter: "https://twitter.com/iiiabdulrehman",
     github: "https://github.com/abdulrehmandev",
   },
+  keywords: [
+    "abdulrdev",
+    "ai engineer",
+    "full stack developer",
+    "freelance",
+    "automations",
+  ],
   navItems: [
-    {
-      href: "/about",
-      label: "About",
-    }, // @todo
+    { href: "/", label: "About" },
+    { label: "Case studies", href: "/study" },
+    { label: "Work", href: "/work" },
+    { label: "Blogs", href: "/blogs" },
   ],
 };
 

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 
+import { env } from "@src/env";
 import { META_THEME_COLORS, siteConfig } from "@src/lib/config";
 import { fontVariables } from "@src/lib/fonts";
 import { cn } from "@src/lib/utils";
-import { env } from "@src/env";
 
 import "@src/styles/globals.css";
 
@@ -15,13 +15,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL!),
   description: siteConfig.description,
-  keywords: [
-    "abdulrdev",
-    "ai engineer",
-    "full stack developer",
-    "freelance",
-    "automations",
-  ],
+  keywords: siteConfig.keywords,
   authors: [
     {
       name: "Abdul Rehman",
@@ -38,7 +32,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: `${env.NEXT_PUBLIC_APP_URL}/opengraph-image.png`, // @todo
+        url: `${env.NEXT_PUBLIC_APP_URL}/opengraph-image.png`,
         width: 1200,
         height: 630,
         alt: siteConfig.name,
@@ -49,13 +43,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [`${env.NEXT_PUBLIC_APP_URL}/opengraph-image.png`], // @todo
+    images: [`${env.NEXT_PUBLIC_APP_URL}/opengraph-image.png`],
     creator: "@iiiabdulrehman",
   },
   icons: {
     icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png", // @todo
-    apple: "/apple-touch-icon.png", // @todo
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
   },
 };
 
