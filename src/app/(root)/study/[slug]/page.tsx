@@ -4,12 +4,12 @@ import {
   PageHeaderHeader,
   PageHeaderHeading,
 } from "@src/components/page-header";
-import { MDXContent } from "@src/content/mdx";
 import { getCaseStudyBySlug } from "@src/content/studies";
-import { Separator } from "@src/ui/separator";
+import { Badge } from "@src/ui/badge";
 import { Clock } from "lucide-react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { CaseStudyMdxContent } from "../_components/mdx-study-content";
 
 interface StudyPageProps {
   params: Promise<{
@@ -32,6 +32,7 @@ export async function generateMetadata({
   return {
     title: study.meta.title,
     description: study.meta.description,
+    keywords: study.meta.tags,
   };
 }
 
@@ -46,42 +47,57 @@ export default async function StudyDetailPage({ params }: StudyPageProps) {
     <div className="pb-20">
       <PageHeader>
         <PageHeaderHeader>
-          <p>
+          <p className="font-medium">
             {new Date(study.meta.date).toLocaleDateString("en-US", {
               month: "long",
-              day: "numeric",
               year: "numeric",
             })}
           </p>
-          <p className="text-muted-foreground">Product</p>
+          {/*<p className="text-muted-foreground">Product</p>*/}
         </PageHeaderHeader>
-        <PageHeaderHeading>{study.meta.title}</PageHeaderHeading>
-        <PageHeaderDescription className="max-w-3xl mx-auto">
-          {study.meta.description}
-        </PageHeaderDescription>
+        <PageHeaderHeading className="max-w-3xl">
+          {study.meta.title}
+        </PageHeaderHeading>
+        <PageHeaderDescription>{study.meta.description}</PageHeaderDescription>
       </PageHeader>
 
-      <Separator className="mt-10 mb-4 max-w-3xl mx-auto" />
-
-      <div className="flex items-center justify-between gap-4 mb-20  max-w-3xl mx-auto">
-        <div className="flex items-center gap-2">
-          <Clock className="size-3.5" />
-          <span className="text-sm">{study.meta.readTime}</span>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12">
+        <div className="space-y-1 w-full">
+          <p className="uppercase font-mono text-xs">Client</p>
+          <h4 className="text-base sm:text-lg text-primary font-serif font-semibold">
+            {study.meta.client}
+          </h4>
         </div>
 
-        <div className="flex flex-wrap gap-2">
-          {study.meta.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full bg-muted px-3 py-1 text-xs font-medium"
-            >
-              {tag}
-            </span>
-          ))}
+        <div className="space-y-1 w-full">
+          <p className="uppercase font-mono text-xs">Industry</p>
+          <h4 className="text-base sm:text-lg text-primary font-serif font-semibold">
+            {study.meta.industry}
+          </h4>
+        </div>
+
+        <div className="space-y-1 w-full">
+          <p className="uppercase font-mono text-xs">Scale</p>
+          <h4 className="text-base sm:text-lg text-primary font-serif font-semibold">
+            {study.meta.scale}
+          </h4>
         </div>
       </div>
 
-      <MDXContent content={study.content} />
+      <div className="inline-flex items-center justify-start flex-wrap mb-20 gap-2">
+        <div className="flex items-center gap-2 mr-8">
+          <Clock className="size-3" />
+          <span className="text-sm font-medium">{study.meta.readTime}</span>
+        </div>
+
+        {study.meta.tags.map((tag) => (
+          <Badge key={tag} size="sm">
+            {tag}
+          </Badge>
+        ))}
+      </div>
+
+      <CaseStudyMdxContent content={study.content} />
     </div>
   );
 }

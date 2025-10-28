@@ -28,13 +28,13 @@ export default function StudyPage() {
         <PageHeaderHeading>{title}</PageHeaderHeading>
         <PageHeaderDescription>{description}</PageHeaderDescription>
       </PageHeader>
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-3">
         {caseStudies.map((study) => (
           <PrimaryCard
             key={study.title}
             image="https://images.ctfassets.net/kftzwdyauwt9/6bU3sUQ4xHv1r7eyHJxaWO/868bcc4d42d2c06d406ada5b20a44237/Apps_in_ChatGPT.png?w=1920&q=90&fm=webp"
             title={study.title}
-            actions={[{ icon: <Expand />, label: "Expand" }]}
+            actions={[{ icon: <Expand />, label: "View" }]}
             href={`/study/${study.slug}`}
           >
             <div className="flex item-center gap-2 w-full justify-between">

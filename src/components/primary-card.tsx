@@ -26,13 +26,29 @@ export function PrimaryCard({
   ...props
 }: PrimaryCardProps) {
   const Comp = href ? NextLink : React.Fragment;
+
+  const actionClickHandler = React.useCallback(
+    // to eleminate direct execution of handler
+    (action?: () => void) =>
+      (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        if (action === undefined) return;
+        e.preventDefault();
+        e.stopPropagation();
+        action();
+      },
+    [],
+  );
+
   return (
     <Card
-      className={cn("group transition-all gap-0 block group/card", className)}
+      className={cn(
+        "group transition-all gap-0 block group/card cursor-pointer",
+        className,
+      )}
       asChild={href ? true : false}
       {...props}
     >
-      <Comp href={href!}>
+      <Comp href={href!} prefetch>
         <div className="relative p-1.5 border-b">
           <svg className="pointer-events-none absolute inset-0 size-full select-none text-blue-300 dark:text-blue-400/10">
             <defs>
@@ -67,13 +83,9 @@ export function PrimaryCard({
               {actions.map((act) => (
                 <button
                   key={act.label}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    e.preventDefault();
-                    act.onClick?.();
-                  }}
+                  onClick={actionClickHandler(act.onClick)}
                 >
-                  Expand {act.icon}
+                  {act.label} {act.icon}
                 </button>
               ))}
             </div>

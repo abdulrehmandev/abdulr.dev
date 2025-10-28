@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function NotFoundPage() {
   return (
-    <div className="font-mono min-h-svh flex items-center justify-center flex-col gap-2">
+    <div className="font-mono min-h-[calc(100vh-128px)] size-full flex items-center justify-center flex-col gap-2">
       <h1 className="font-medium">{title}</h1>
       <P className="text-sm">{description}</P>
 

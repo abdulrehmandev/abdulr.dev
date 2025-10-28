@@ -15,20 +15,47 @@ import {
 } from "@src/ui/sidebar";
 import { X } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
+
+/**
+ * PrefetchLink is a small wrapper around Next.js `Link` that
+ * triggers a prefetch for the given `href` as soon as the component
+ * mounts or the href changes. This keeps the component logic
+ * isolated and allows us to keep the JSX in the map clean.
+ */
+function PrefetchLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  const router = useRouter();
+
+  React.useEffect(() => {
+    // Trigger a prefetch for the route.
+    router.prefetch(href);
+  }, [router, href]);
+
+  return <Link href={href}>{children}</Link>;
+}
 
 export function AppSidebar() {
   const pathname = usePathname();
   const { toggleSidebar } = useSidebar();
 
-  const isLinkActive = React.useCallback((href: string) => {
-    if (href === "/") return pathname === href;
-    return (
-      pathname.startsWith(href) &&
-      (pathname.length === href.length || pathname.charAt(href.length) === "/")
-    );
-  }, []);
+  const isLinkActive = React.useCallback(
+    (href: string) => {
+      if (href === "/") return pathname === href;
+      return (
+        pathname.startsWith(href) &&
+        (pathname.length === href.length ||
+          pathname.charAt(href.length) === "/")
+      );
+    },
+    [pathname],
+  );
 
   return (
     <Sidebar>
@@ -48,7 +75,9 @@ export function AppSidebar() {
                     isActive={isLinkActive(link.href)}
                     title={link.label}
                   >
-                    <Link href={link.href}>{link.label}</Link>
+                    <Link href={link.href} prefetch>
+                      {link.label}
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

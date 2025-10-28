@@ -78,12 +78,7 @@ export function TechStack({ className }: { className?: string }) {
               <h3 className="font-medium text-sm">{stack.name}</h3>
               <div className="flex items-center flex-wrap gap-2 mt-2">
                 {stack.techs.map((tech) => (
-                  <div
-                    className="font-mono transition-all text-xs py-0.5 px-0.5 bg-accent hover:text-accent-foreground font-medium"
-                    key={tech}
-                  >
-                    {tech}
-                  </div>
+                  <Badge key={tech}>{tech}</Badge>
                 ))}
               </div>
             </div>

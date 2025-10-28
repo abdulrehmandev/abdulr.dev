@@ -11,6 +11,10 @@ export interface CaseStudyMeta {
   readTime: string;
   tags: string[];
   slug: string;
+  image: string;
+  industry: string;
+  scale: string;
+  client: string;
 }
 
 export interface CaseStudy {
@@ -40,7 +44,11 @@ export function getAllCaseStudies(): CaseStudyMeta[] {
           date: data.date || "",
           readTime: data.readTime || "",
           tags: data.tags || [],
-        };
+          client: data.client || "",
+          image: data.image || "",
+          industry: data.industry || "",
+          scale: data.scale || "",
+        } as CaseStudyMeta;
       });
 
     return allStudiesData.sort((a, b) => {
@@ -78,6 +86,10 @@ export function getCaseStudyBySlug(slug: string): CaseStudy | null {
         date: data.date || "",
         readTime: data.readTime || "",
         tags: data.tags || [],
+        client: data.client || "",
+        image: data.image || "",
+        industry: data.industry || "",
+        scale: data.scale || "",
       },
       content,
     };

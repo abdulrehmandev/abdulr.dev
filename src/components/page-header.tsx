@@ -3,7 +3,7 @@ import { cn } from "@src/lib/utils";
 function PageHeader({ children, ...props }: React.ComponentProps<"section">) {
   return (
     <section {...props}>
-      <div className="container flex flex-col items-start gap-2 py-8 text-left md:py-12 lg:py-12 xl:gap-4">
+      <div className="flex flex-col items-start gap-2 py-8 text-left md:py-12 lg:py-12 xl:gap-4">
         {children}
       </div>
     </section>
@@ -17,7 +17,7 @@ function PageHeaderHeader({
   return (
     <div
       className={cn(
-        "w-full flex items-center justify-center flex-wrap pb-2 gap-4 text-sm",
+        "w-full flex items-center justify-start flex-wrap pb-2 gap-6 text-sm",
         className,
       )}
       {...props}

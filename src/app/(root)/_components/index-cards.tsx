@@ -1,12 +1,12 @@
-import React from "react";
-import NextLink from "next/link";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { Icons } from "@src/components/icons";
+import { getAllCaseStudies } from "@src/content/studies";
+import { socials } from "@src/lib/config";
 import { cn } from "@src/lib/utils";
 import { Card, CardDescription, CardTitle } from "@src/ui/card";
-import { Icons } from "@src/components/icons";
 import { H2, Link, P } from "@src/ui/typography";
-import { socials } from "@src/lib/config";
-import { getAllCaseStudies } from "@src/content/studies";
+import { ArrowUpRight } from "lucide-react";
+import NextLink from "next/link";
+import React from "react";
 
 export function ProfileDescriptionCard({
   className,
@@ -103,7 +103,9 @@ export function RecentCaseStudiesCard({
           >
             <NextLink href={`/study/${c.slug}`}>
               <div className="flex items-center gap-2">
-                <CardTitle className="text-sm">{c.title}</CardTitle>
+                <CardTitle className="text-sm line-clamp-1">
+                  {c.title}
+                </CardTitle>
                 <ArrowUpRight className="size-3.5 group-hover/c-card:opacity-100 opacity-0 transition" />
               </div>
               <CardDescription className="line-clamp-2 text-xs">
@@ -133,8 +135,8 @@ export function RecentProjectsCard({
       <Card className="p-6 pb-4 gap-1 h-full justify-between group/projects-header">
         <H2 className="">Recent Work</H2>
         <p className="text-sm">
-          Notable client projects and experiments that define my recent work{" "}
-          <ArrowDown className="size-3 animate-bounce inline ml-1 group-hover/projects-header:opacity-100 opacity-0 transition" />
+          Notable client projects and experiments that define my recent
+          work{" "}
         </p>
       </Card>
       {projects
