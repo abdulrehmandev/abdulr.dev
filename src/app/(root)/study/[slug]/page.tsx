@@ -21,15 +21,9 @@ import { Separator } from "@src/ui/separator";
 import { Button } from "@src/ui/button";
 import Link from "next/link";
 
-interface StudyPageProps {
-  params: Promise<{
-    slug: string;
-  }>;
-}
-
 export async function generateMetadata({
   params,
-}: StudyPageProps): Promise<Metadata> {
+}: PageProps<"/study/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const study = getCaseStudyBySlug(slug);
 
@@ -46,7 +40,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function StudyDetailPage({ params }: StudyPageProps) {
+export default async function StudyDetailPage({
+  params,
+}: PageProps<"/study/[slug]">) {
   const { slug } = await params;
   const study = getCaseStudyBySlug(slug);
   const allCaseStudies = getAllCaseStudies();
