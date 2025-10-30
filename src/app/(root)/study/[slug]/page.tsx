@@ -4,12 +4,22 @@ import {
   PageHeaderHeader,
   PageHeaderHeading,
 } from "@src/components/page-header";
-import { getCaseStudyBySlug } from "@src/content/studies";
+import { getAllCaseStudies, getCaseStudyBySlug } from "@src/content/studies";
 import { Badge } from "@src/ui/badge";
-import { Clock } from "lucide-react";
+import { ArrowRight, Clock, Expand } from "lucide-react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CaseStudyMdxContent } from "../_components/mdx-study-content";
+import { PrimaryCard } from "@src/components/primary-card";
+import {
+  PageSection,
+  PageSectionDescription,
+  PageSectionHeader,
+  PageSectionHeading,
+} from "@src/components/page-section";
+import { Separator } from "@src/ui/separator";
+import { Button } from "@src/ui/button";
+import Link from "next/link";
 
 interface StudyPageProps {
   params: Promise<{
@@ -37,7 +47,13 @@ export async function generateMetadata({
 }
 
 export default async function StudyDetailPage({ params }: StudyPageProps) {
-  const study = getCaseStudyBySlug((await params).slug);
+  const { slug } = await params;
+  const study = getCaseStudyBySlug(slug);
+  const allCaseStudies = getAllCaseStudies();
+
+  const recent3CaseStudies = allCaseStudies
+    .filter((s) => s.slug !== slug)
+    .slice(0, 3);
 
   if (!study) {
     notFound();
@@ -98,6 +114,53 @@ export default async function StudyDetailPage({ params }: StudyPageProps) {
       </div>
 
       <CaseStudyMdxContent content={study.content} />
+
+      <Separator className="mt-20 rounded-full data-[orientation=horizontal]:h-0.75" />
+
+      {recent3CaseStudies.length > 0 && (
+        <PageSection>
+          <PageSectionHeader className="flex-row w-full justify-between items-center">
+            <div className="space-y-2">
+              <PageSectionHeading>More case studies</PageSectionHeading>
+              <PageSectionDescription>
+                Explore other case stydies I’ve worked on and see how I help
+                have helped clients in their ventures.
+              </PageSectionDescription>
+            </div>
+            <Button variant="outline" size="sm" asChild>
+              <Link href="/study">
+                View all <ArrowRight />
+              </Link>
+            </Button>
+          </PageSectionHeader>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {recent3CaseStudies.map((study) => (
+              <PrimaryCard
+                key={study.title}
+                image={study.image}
+                title={study.title}
+                actions={[{ icon: <Expand />, label: "View" }]}
+                href={`/study/${study.slug}`}
+              >
+                <div className="flex item-center gap-2 w-full justify-between">
+                  <div className="flex gap-3 items-center text-sm">
+                    <p className="font-medium">Product</p>
+                    <p className="text-muted-foreground text-xs">
+                      {new Date(study.date).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "short",
+                      })}
+                    </p>
+                  </div>
+                  <p className="text-xs text-right text-muted-foreground">
+                    {study.readTime}
+                  </p>
+                </div>
+              </PrimaryCard>
+            ))}
+          </div>
+        </PageSection>
+      )}
     </div>
   );
 }

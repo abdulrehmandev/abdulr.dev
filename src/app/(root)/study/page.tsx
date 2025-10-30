@@ -28,11 +28,11 @@ export default function StudyPage() {
         <PageHeaderHeading>{title}</PageHeaderHeading>
         <PageHeaderDescription>{description}</PageHeaderDescription>
       </PageHeader>
-      <div className="grid gap-4 grid-cols-1 md:grid-cols-3">
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {caseStudies.map((study) => (
           <PrimaryCard
             key={study.title}
-            image="https://images.ctfassets.net/kftzwdyauwt9/6bU3sUQ4xHv1r7eyHJxaWO/868bcc4d42d2c06d406ada5b20a44237/Apps_in_ChatGPT.png?w=1920&q=90&fm=webp"
+            image={study.image}
             title={study.title}
             actions={[{ icon: <Expand />, label: "View" }]}
             href={`/study/${study.slug}`}
@@ -53,13 +53,15 @@ export default function StudyPage() {
             </div>
           </PrimaryCard>
         ))}
-        <div className="p-4 w-full h-full flex flex-col gap-1 items-center justify-center text-muted-foreground group/more">
-          <RabbitIcon
-            className="size-8 group-hover/more:-scale-x-100"
-            strokeWidth={1}
-          />
-          <p className="text-xs">More coming soon!</p>
-        </div>
+        {caseStudies.length < 3 && (
+          <div className="p-4 min-h-48 w-full h-full flex flex-col gap-1 items-center justify-center text-muted-foreground group/more">
+            <RabbitIcon
+              className="size-8 group-hover/more:-scale-x-100"
+              strokeWidth={1}
+            />
+            <p className="text-xs">More coming soon!</p>
+          </div>
+        )}
       </div>
     </div>
   );
