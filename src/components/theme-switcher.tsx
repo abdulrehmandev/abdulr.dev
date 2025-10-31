@@ -27,6 +27,7 @@ export function ThemeSwitcher() {
           variant="ghost"
           size="icon-sm"
           onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          disabled
         >
           <Icons.contrast />
         </Button>
