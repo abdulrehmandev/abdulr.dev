@@ -1,3 +1,4 @@
+import { allWork } from "@src/app/work/all-work";
 import { Icons } from "@src/components/icons";
 import { getAllCaseStudies } from "@src/content/studies";
 import { socials } from "@src/lib/config";
@@ -122,14 +123,6 @@ export function RecentProjectsCard({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  // TODO remove temp project names
-  const projects = [
-    { title: "Lorem ipsum dolor sit amet, consectetur" },
-    { title: "Lorem ipsum dolor sit amet, consectetur" },
-    { title: "Lorem ipsum dolor sit amet, consectetur" },
-    { title: "Lorem ipsum dolor sit amet, consectetur" },
-  ];
-
   return (
     <div className={cn("space-y-3 flex flex-col", className)} {...props}>
       <Card className="p-6 pb-4 gap-1 h-full justify-between group/projects-header">
@@ -139,8 +132,8 @@ export function RecentProjectsCard({
           work{" "}
         </p>
       </Card>
-      {projects
-        // .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      {Object.values(allWork)
+        // .sort((a, b) => b.date?.getTime() - a.date?.getTime())
         .slice(0, 4)
         .map((p, i) => (
           <Card
