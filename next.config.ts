@@ -4,7 +4,7 @@ import createMDX from "@next/mdx";
 const nextConfig: NextConfig = {
   /* config options here */
   experimental: {
-    // globalNotFound: true,
+    viewTransition: true,
   },
   // Configure `pageExtensions` to include MDX files
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
