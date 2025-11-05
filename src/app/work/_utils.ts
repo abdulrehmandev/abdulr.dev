@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { allWork } from "./all-work";
 
 export function getWorkBySlug(slug: string) {
-  return Object.values(allWork).find((w) => w.content?.slug === slug) ?? null;
+  return Object.values(allWork).find((w) => w.slug === slug) ?? null;
 }
 
 export function generateWorkPageMetadata(slug: string): Metadata {

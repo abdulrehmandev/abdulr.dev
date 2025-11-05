@@ -1,26 +1,9 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { CaseStudy, CaseStudyMeta } from "@src/types/case-study.type";
 
 const studiesDirectory = path.join(process.cwd(), "src/content/studies");
-
-export interface CaseStudyMeta {
-  title: string;
-  description: string;
-  date: string;
-  readTime: string;
-  tags: string[];
-  slug: string;
-  image: string;
-  industry: string;
-  scale: string;
-  client: string;
-}
-
-export interface CaseStudy {
-  meta: CaseStudyMeta;
-  content: string;
-}
 
 export function getAllCaseStudies(): CaseStudyMeta[] {
   try {
@@ -37,6 +20,10 @@ export function getAllCaseStudies(): CaseStudyMeta[] {
         const fileContents = fs.readFileSync(fullPath, "utf8");
         const { data } = matter(fileContents);
 
+        if (!data.image && !data.icon) {
+          throw new Error(`Missing image or icon for study: ${slug}`);
+        }
+
         return {
           slug,
           title: data.title || "",
@@ -45,8 +32,9 @@ export function getAllCaseStudies(): CaseStudyMeta[] {
           readTime: data.readTime || "",
           tags: data.tags || [],
           client: data.client || "",
-          image: data.image || "",
-          industry: data.industry || "",
+          image: data.image || undefined,
+          icon: data.icon || undefined,
+          industry: data.industry || [],
           scale: data.scale || "",
         } as CaseStudyMeta;
       });
@@ -87,8 +75,9 @@ export function getCaseStudyBySlug(slug: string): CaseStudy | null {
         readTime: data.readTime || "",
         tags: data.tags || [],
         client: data.client || "",
-        image: data.image || "",
-        industry: data.industry || "",
+        image: data.image || undefined,
+        icon: data.icon || undefined,
+        industry: data.industry || [],
         scale: data.scale || "",
       },
       content,

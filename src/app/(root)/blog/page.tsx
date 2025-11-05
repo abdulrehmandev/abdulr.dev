@@ -7,7 +7,6 @@ import { FrownIcon } from "lucide-react";
 import { Metadata } from "next";
 
 export const dynamic = "force-static";
-export const revalidate = false;
 
 const title = "Writings";
 const description = "The writings I have done so far";

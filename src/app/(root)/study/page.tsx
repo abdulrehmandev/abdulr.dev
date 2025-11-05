@@ -3,13 +3,12 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from "@src/components/page-header";
-import { PrimaryCard } from "@src/components/primary-card";
 import { getAllCaseStudies } from "@src/content/studies";
-import { Expand, RabbitIcon } from "lucide-react";
-import { Metadata } from "next";
+import { RabbitIcon } from "lucide-react";
+import type { Metadata } from "next";
+import { CaseStudyCard } from "./_components/case-study-card";
 
 export const dynamic = "force-static";
-export const revalidate = false;
 
 const title = "Case Studies";
 const description = "Explore my case studies and projects";
@@ -28,30 +27,9 @@ export default function StudyPage() {
         <PageHeaderHeading>{title}</PageHeaderHeading>
         <PageHeaderDescription>{description}</PageHeaderDescription>
       </PageHeader>
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
         {caseStudies.map((study) => (
-          <PrimaryCard
-            key={study.title}
-            image={study.image}
-            title={study.title}
-            actions={[{ icon: <Expand />, label: "View" }]}
-            href={`/study/${study.slug}`}
-          >
-            <div className="flex item-center gap-2 w-full justify-between">
-              <div className="flex gap-3 items-center text-sm">
-                <p className="font-medium">Product</p>
-                <p className="text-muted-foreground text-xs">
-                  {new Date(study.date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "short",
-                  })}
-                </p>
-              </div>
-              <p className="text-xs text-right text-muted-foreground">
-                {study.readTime}
-              </p>
-            </div>
-          </PrimaryCard>
+          <CaseStudyCard key={study.title} study={study} />
         ))}
         {caseStudies.length < 3 && (
           <div className="p-4 min-h-48 w-full h-full flex flex-col gap-1 items-center justify-center text-muted-foreground group/more">

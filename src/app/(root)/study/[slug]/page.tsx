@@ -4,22 +4,24 @@ import {
   PageHeaderHeader,
   PageHeaderHeading,
 } from "@src/components/page-header";
-import { getAllCaseStudies, getCaseStudyBySlug } from "@src/content/studies";
-import { Badge } from "@src/ui/badge";
-import { ArrowRight, Clock, Expand } from "lucide-react";
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { CaseStudyMdxContent } from "../_components/mdx-study-content";
-import { PrimaryCard } from "@src/components/primary-card";
 import {
   PageSection,
   PageSectionDescription,
   PageSectionHeader,
   PageSectionHeading,
 } from "@src/components/page-section";
-import { Separator } from "@src/ui/separator";
+import { getAllCaseStudies, getCaseStudyBySlug } from "@src/content/studies";
+import { Badge } from "@src/ui/badge";
 import { Button } from "@src/ui/button";
+import { Separator } from "@src/ui/separator";
+import { ArrowRight, Clock } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+import { CaseStudyCard } from "../_components/case-study-card";
+import { CaseStudyMdxContent } from "../_components/mdx-study-content";
+
+export const dynamic = "force-static";
 
 export async function generateMetadata({
   params,
@@ -65,7 +67,6 @@ export default async function StudyDetailPage({
               year: "numeric",
             })}
           </p>
-          {/*<p className="text-muted-foreground">Product</p>*/}
         </PageHeaderHeader>
         <PageHeaderHeading className="max-w-3xl">
           {study.meta.title}
@@ -84,7 +85,7 @@ export default async function StudyDetailPage({
         <div className="space-y-1 w-full">
           <p className="uppercase font-mono text-xs">Industry</p>
           <h4 className="text-base sm:text-lg text-primary font-serif font-semibold">
-            {study.meta.industry}
+            {study.meta.industry.join(" / ")}
           </h4>
         </div>
 
@@ -131,28 +132,7 @@ export default async function StudyDetailPage({
           </PageSectionHeader>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {recent3CaseStudies.map((study) => (
-              <PrimaryCard
-                key={study.title}
-                image={study.image}
-                title={study.title}
-                actions={[{ icon: <Expand />, label: "View" }]}
-                href={`/study/${study.slug}`}
-              >
-                <div className="flex item-center gap-2 w-full justify-between">
-                  <div className="flex gap-3 items-center text-sm">
-                    <p className="font-medium">Product</p>
-                    <p className="text-muted-foreground text-xs">
-                      {new Date(study.date).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "short",
-                      })}
-                    </p>
-                  </div>
-                  <p className="text-xs text-right text-muted-foreground">
-                    {study.readTime}
-                  </p>
-                </div>
-              </PrimaryCard>
+              <CaseStudyCard key={study.title} study={study} />
             ))}
           </div>
         </PageSection>

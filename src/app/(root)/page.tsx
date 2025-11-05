@@ -15,11 +15,10 @@ import {
   RecentProjectsCard,
 } from "./_components/index-cards";
 
+export const dynamic = "force-static";
+
 const title = "Full Stack Developer";
 const description = "Freelance Full Stack Developer";
-
-export const dynamic = "force-static";
-export const revalidate = false;
 
 export const metadata: Metadata = {
   title,

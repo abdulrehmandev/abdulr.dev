@@ -133,15 +133,19 @@ export function RecentProjectsCard({
         </p>
       </Card>
       {Object.values(allWork)
-        // .sort((a, b) => b.date?.getTime() - a.date?.getTime())
+        .sort((a, b) => a.sortOrder - b.sortOrder)
         .slice(0, 4)
+        // Filter to only show those with case-studies or the expandable work (might even need to exclude case studies too)
         .map((p, i) => (
           <Card
             key={`${p.title}-${i}`}
             className="px-6 py-2.5 justify-center gap-1.5 group/c-card"
             asChild
           >
-            <NextLink href={`#`}>
+            {/* TODO: Update this when work parallel route is in function */}
+            <NextLink
+              href={p.type === "case-study" ? `/study/${p.slug}` : "/work"}
+            >
               <div className="flex items-center gap-2">
                 <CardTitle className="text-sm line-clamp-1">
                   {p.title}

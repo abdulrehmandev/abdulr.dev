@@ -1,25 +1,7 @@
+import { IconByName, IconName } from "@src/components/icon-mapper";
 import { MDXContent } from "@src/components/mdx-content";
 import { Badge } from "@src/ui/badge";
 import { Card, CardDescription, CardTitle } from "@src/ui/card";
-import {
-  ChartNoAxesColumn,
-  Goal,
-  Lightbulb,
-  RefreshCcw,
-  Search,
-  Zap,
-} from "lucide-react";
-
-// Icons set map for use in .mdx
-const icons = {
-  goal: Goal,
-  bulb: Lightbulb,
-  zap: Zap,
-  recycle: RefreshCcw,
-  chart: ChartNoAxesColumn,
-  search: Search,
-};
-type IconName = keyof typeof icons;
 
 // CUSTOM CASE STUDY COMPONENTS
 
@@ -58,10 +40,13 @@ function Feature({
   title: string;
   description: string;
 }) {
-  const Icon = icons[icon];
   return (
     <Card className="px-5 py-4">
-      {Icon ? <Icon className="w-6 h-6 text-primary" /> : <span>❓</span>}
+      {icon ? (
+        <IconByName name={icon} className="w-6 h-6 text-primary" />
+      ) : (
+        <span>❓</span>
+      )}
       <CardTitle className="mt-3">{title}</CardTitle>
       <CardDescription className="mt-2">{description}</CardDescription>
     </Card>
