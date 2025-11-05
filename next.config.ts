@@ -4,8 +4,10 @@ import createMDX from "@next/mdx";
 const nextConfig: NextConfig = {
   /* config options here */
   experimental: {
-    viewTransition: true,
+    // viewTransition: true,
   },
+  reactCompiler: true,
+  // cacheComponents: true,
   // Configure `pageExtensions` to include MDX files
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
 };
