@@ -148,3 +148,14 @@
     );
     color: var(--color-primary);
 }
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 6px;
+    padding: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 999px;
+}
