@@ -11,7 +11,7 @@ import { CaseStudyCard } from "./_components/case-study-card";
 export const dynamic = "force-static";
 
 const title = "Case Studies";
-const description = "Explore my case studies and projects";
+const description = "In-depth look at notable projects and their impact.";
 
 export const metadata: Metadata = {
   title,

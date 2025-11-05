@@ -19,7 +19,7 @@ export const dynamic = "force-static";
 
 const title = "Work";
 const description =
-  "Notable client projects and experiments that define my recent work";
+  "Notable client projects and experiments that showcase my recent work";
 
 export const metadata: Metadata = {
   title,

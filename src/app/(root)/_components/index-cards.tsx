@@ -128,8 +128,7 @@ export function RecentProjectsCard({
       <Card className="p-6 pb-4 gap-1 h-full justify-between group/projects-header">
         <H2 className="">Recent Work</H2>
         <p className="text-sm">
-          Notable client projects and experiments that define my recent
-          work{" "}
+          Notable client projects and experiments that showcase my recent work
         </p>
       </Card>
       {Object.values(allWork)

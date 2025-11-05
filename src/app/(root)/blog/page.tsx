@@ -9,7 +9,8 @@ import { Metadata } from "next";
 export const dynamic = "force-static";
 
 const title = "Writings";
-const description = "The writings I have done so far";
+const description =
+  "Articles and thoughts I've written on design, code, and ideas.";
 
 export const metadata: Metadata = {
   title,
@@ -25,9 +26,7 @@ export default function BlogPage() {
       </PageHeader>
       <div>
         <FrownIcon className="text-muted-foreground size-16" />
-        <p className="mt-6">
-          There is no content yet, coming soon, just hang on a little bit.
-        </p>
+        <p className="mt-6">No posts yet — new writings coming soon.</p>
       </div>
     </div>
   );
