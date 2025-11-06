@@ -20,6 +20,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CaseStudyCard } from "../_components/case-study-card";
 import { CaseStudyMdxContent } from "../_components/mdx-study-content";
+import { MoreComingSoon } from "@src/components/more-coming-soon";
 
 export const dynamic = "force-static";
 
@@ -68,7 +69,7 @@ export default async function StudyDetailPage({
             })}
           </p>
         </PageHeaderHeader>
-        <PageHeaderHeading className="max-w-3xl">
+        <PageHeaderHeading className="max-w-5xl">
           {study.meta.title}
         </PageHeaderHeading>
         <PageHeaderDescription>{study.meta.description}</PageHeaderDescription>
@@ -130,10 +131,11 @@ export default async function StudyDetailPage({
               </Link>
             </Button>
           </PageSectionHeader>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {recent3CaseStudies.map((study) => (
               <CaseStudyCard key={study.title} study={study} />
             ))}
+            {recent3CaseStudies.length < 2 && <MoreComingSoon />}
           </div>
         </PageSection>
       )}

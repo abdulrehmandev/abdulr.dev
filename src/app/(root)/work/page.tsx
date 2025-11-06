@@ -106,6 +106,10 @@ export default function StudyPage() {
             return content;
           })}
       </div>
+
+      <p className="text-muted-foreground text-sm text-center mb-8 mt-24">
+        More are coming! :)
+      </p>
     </div>
   );
 }

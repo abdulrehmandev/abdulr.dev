@@ -32,9 +32,9 @@ export function CaseStudyCard({
       {...props}
     >
       <CardHeader>
-        <CardTitle className="truncate">{study.title}</CardTitle>
+        <CardTitle className="truncate line-clamp-2">{study.title}</CardTitle>
       </CardHeader>
-      <CardContent className="flex item-center gap-2 w-full justify-between">
+      <CardContent className="flex item-center gap-2 w-full justify-between mt-1">
         <div className="flex gap-3 items-center text-sm">
           <div className="flex items-center gap-0.5">
             {study.industry.slice(0, 2).map((industry) => (
@@ -46,7 +46,7 @@ export function CaseStudyCard({
           <p className="text-muted-foreground text-xs">
             {new Date(study.date).toLocaleDateString("en-US", {
               year: "numeric",
-              month: "short",
+              month: "long",
             })}
           </p>
         </div>

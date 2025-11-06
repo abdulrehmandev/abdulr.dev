@@ -92,17 +92,20 @@ export function RecentCaseStudiesCard({
 }: React.ComponentProps<"div">) {
   const cStudies = getAllCaseStudies();
   return (
-    <div className={cn("grid grid-rows-2 gap-3", className)} {...props}>
+    <div className={cn("grid grid-rows-2 gap-2", className)} {...props}>
       {cStudies
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
         .slice(0, 2)
         .map((c) => (
           <Card
             key={c.title}
-            className="px-6 py-3 justify-center gap-1.5 group/c-card"
+            className="relative px-6 py-3 justify-center gap-1.5 group/c-card"
             asChild
           >
             <NextLink href={`/study/${c.slug}`}>
+              <span className="bg-primary/10 text-primary text-[10px] font-medium absolute top-1 right-1 px-0.5 py-px">
+                case study
+              </span>
               <div className="flex items-center gap-2">
                 <CardTitle className="text-sm line-clamp-1">
                   {c.title}
@@ -124,7 +127,7 @@ export function RecentProjectsCard({
   ...props
 }: React.ComponentProps<"div">) {
   return (
-    <div className={cn("space-y-3 flex flex-col", className)} {...props}>
+    <div className={cn("space-y-2 flex flex-col", className)} {...props}>
       <Card className="p-6 pb-4 gap-1 h-full justify-between group/projects-header">
         <H2 className="">Recent Work</H2>
         <p className="text-sm">
@@ -146,9 +149,7 @@ export function RecentProjectsCard({
               href={p.type === "case-study" ? `/study/${p.slug}` : "/work"}
             >
               <div className="flex items-center gap-2">
-                <CardTitle className="text-sm line-clamp-1">
-                  {p.title}
-                </CardTitle>
+                <CardTitle className="text-sm truncate">{p.title}</CardTitle>
                 <ArrowUpRight className="size-3.5 group-hover/c-card:opacity-100 opacity-0 transition" />
               </div>
             </NextLink>

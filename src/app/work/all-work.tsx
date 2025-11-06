@@ -1,6 +1,24 @@
 import { Work } from "@src/types/work.type";
 
 export const allWork: Record<string, Work> = {
+  mytpen: {
+    slug: "mytpen",
+    type: "case-study",
+    title: "myTpen EdTech SaaS Suite: 9 Apps in under 2 Years",
+    description:
+      "Leading the development of a complete AI and vision-powered EdTech SaaS platform, delivering 9 web and mobile apps in under 2 years. This suite leverages OCR, AI, and cross-platform integration to empower educators and streamline workflows.",
+    cover: {
+      type: "icon",
+      icon: "layers",
+    },
+    tags: ["micro SaaS", "AI", "OCR", "Cross-Platform"],
+    sortOrder: 2,
+    date: "August 2025",
+    client: "myTpen",
+    industry: ["EdTech", "SaaS"],
+    externalLink: "https://mytpen.app",
+  },
+
   matchingSystem: {
     slug: "matching-system",
     type: "case-study",

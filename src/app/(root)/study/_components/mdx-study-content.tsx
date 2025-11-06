@@ -1,5 +1,6 @@
 import { IconByName, IconName } from "@src/components/icon-mapper";
 import { MDXContent } from "@src/components/mdx-content";
+import { cn } from "@src/lib/utils";
 import { Badge } from "@src/ui/badge";
 import { Card, CardDescription, CardTitle } from "@src/ui/card";
 
@@ -35,19 +36,26 @@ function Feature({
   description,
   icon,
   title,
+  link,
 }: {
   icon: IconName;
   title: string;
   description: string;
+  link?: string;
 }) {
   return (
-    <Card className="px-5 py-4">
-      {icon ? (
-        <IconByName name={icon} className="w-6 h-6 text-primary" />
-      ) : (
-        <span>❓</span>
+    <Card className="p-5">
+      {icon && <IconByName name={icon} className="w-6 h-6 text-primary mb-3" />}
+      <CardTitle className="mt-0">{title}</CardTitle>
+      {link && (
+        <a
+          href={`https://${link}`}
+          target="_blank"
+          className="font-medium font-mono text-xs bg-muted w-fit mt-2"
+        >
+          {link}
+        </a>
       )}
-      <CardTitle className="mt-3">{title}</CardTitle>
       <CardDescription className="mt-2">{description}</CardDescription>
     </Card>
   );
@@ -75,10 +83,9 @@ function Metric({ label, value }: { label: string; value: string }) {
 
 function TechStack({ items }: { items: { names: string[]; role: string }[] }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-4 mb-8">
       {items.map((item) => (
         <Card key={item.role} className="p-4 justify-between">
-          {/*{Icon ? <Icon className="w-6 h-6 text-primary" /> : <span>❓</span>}*/}
           <div className="flex items-center gap-2 flex-wrap">
             {item.names.map((name) => (
               <Badge className="break-all" key={name}>
@@ -95,6 +102,28 @@ function TechStack({ items }: { items: { names: string[]; role: string }[] }) {
   );
 }
 
+function ArchitectureFlow({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
+  return <div className={cn("space-y-2", className)} {...props} />;
+}
+
+function ArchitectureFlowStep({
+  children,
+  number,
+}: {
+  number: number;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="bg-card border-b border-r flex flex-row items-center gap-3 px-4 py-2">
+      <span className="text-primary font-serif font-semibold">{number}.</span>
+      <p>{children}</p>
+    </div>
+  );
+}
+
 export function CaseStudyMdxContent({ content }: { content: string }) {
   return (
     <MDXContent
@@ -106,6 +135,8 @@ export function CaseStudyMdxContent({ content }: { content: string }) {
         MetricsGrid,
         Metric,
         TechStack,
+        ArchitectureFlow,
+        ArchitectureFlowStep,
       }}
     />
   );

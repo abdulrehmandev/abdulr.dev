@@ -4,9 +4,9 @@ import {
   PageHeaderHeading,
 } from "@src/components/page-header";
 import { getAllCaseStudies } from "@src/content/studies";
-import { RabbitIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { CaseStudyCard } from "./_components/case-study-card";
+import { MoreComingSoon } from "@src/components/more-coming-soon";
 
 export const dynamic = "force-static";
 
@@ -31,15 +31,7 @@ export default function StudyPage() {
         {caseStudies.map((study) => (
           <CaseStudyCard key={study.title} study={study} />
         ))}
-        {caseStudies.length < 3 && (
-          <div className="p-4 min-h-48 w-full h-full flex flex-col gap-1 items-center justify-center text-muted-foreground group/more">
-            <RabbitIcon
-              className="size-8 group-hover/more:-scale-x-100"
-              strokeWidth={1}
-            />
-            <p className="text-xs">More coming soon!</p>
-          </div>
-        )}
+        {caseStudies.length < 2 && <MoreComingSoon />}
       </div>
     </div>
   );
