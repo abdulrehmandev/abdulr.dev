@@ -11,5 +11,9 @@ export async function generateMetadata({
 
 export default async function WorkPage({ params }: PageProps<"/work/[slug]">) {
   const { slug } = await params;
-  return <IndividualWorkPage slug={slug} />;
+  return (
+    <div className="py-8">
+      <IndividualWorkPage slug={slug} />
+    </div>
+  );
 }

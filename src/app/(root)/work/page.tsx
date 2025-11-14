@@ -1,4 +1,4 @@
-import { allWork } from "@src/app/work/all-work";
+import { allWork } from "./all-work";
 import {
   PageHeader,
   PageHeaderDescription,
@@ -69,8 +69,8 @@ export default function StudyPage() {
                 break;
               case "detailed":
                 cardProps = {
-                  // href: `/work/${work.slug}`,
-                  // actions: [{ icon: <ExpandIcon />, label: "Expand" }],
+                  asLink: { href: `/work/${work.slug}` },
+                  actions: [{ icon: <ExpandIcon />, label: "Expand" }],
                   ...cardProps,
                 };
                 break;
@@ -85,20 +85,17 @@ export default function StudyPage() {
                   <CardDescription className="line-clamp-2">
                     {work.description}
                   </CardDescription>
-                  <div className="flex items-center gap-2 justify-between mt-4">
-                    <div className="flex items-center gap-0.5">
-                      {work.industry?.slice(0, 2).map((industry) => (
-                        <Badge key={industry} variant="primary">
-                          {industry}
-                        </Badge>
-                      ))}
-                      {work.tags?.slice(0, 2).map((tag) => (
-                        <Badge key={tag} size="sm">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                    <div className="flex items-center gap-0.5"></div>
+                  <div className="flex items-center gap-0.5 mt-4">
+                    {work.industry?.slice(0, 2).map((industry) => (
+                      <Badge key={industry} variant="primary">
+                        {industry}
+                      </Badge>
+                    ))}
+                    {work.tags?.slice(0, 2).map((tag) => (
+                      <Badge key={tag} size="sm">
+                        {tag}
+                      </Badge>
+                    ))}
                   </div>
                 </CardContent>
               </PrimaryCard>

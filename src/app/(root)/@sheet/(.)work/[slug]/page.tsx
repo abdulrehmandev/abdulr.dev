@@ -1,0 +1,30 @@
+import { SheetTitle } from "@src/ui/sheet";
+import type { Metadata } from "next";
+import { PageSheet, PageSheetContent } from "../../_components/sheet";
+import { ScrollArea } from "@src/ui/scroll-area";
+import { generateWorkPageMetadata } from "@src/app/(root)/work/_utils";
+import { IndividualWorkPage } from "@src/app/(root)/work/_components/individual-work-page";
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/work/[slug]">): Promise<Metadata> {
+  const { slug } = await params;
+  return generateWorkPageMetadata(slug);
+}
+
+export default async function WorkSheetPage({
+  params,
+}: PageProps<"/work/[slug]">) {
+  const { slug } = await params;
+
+  return (
+    <PageSheet>
+      <PageSheetContent>
+        <SheetTitle className="sr-only">{slug.split("-").join(" ")}</SheetTitle>
+        <ScrollArea className="h-[calc(100vh-32px)]">
+          <IndividualWorkPage slug={slug} />
+        </ScrollArea>
+      </PageSheetContent>
+    </PageSheet>
+  );
+}

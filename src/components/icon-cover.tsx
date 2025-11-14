@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { IconByName, IconName } from "./icon-mapper";
 import React from "react";

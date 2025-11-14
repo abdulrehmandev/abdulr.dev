@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export function AppHeader() {
   return (
-    <header className="px-6 py-3 w-full fixed z-50">
+    <header className="px-6 py-3 w-full fixed z-50 backdrop-blur-sm">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-6 w-fit">
           <Link

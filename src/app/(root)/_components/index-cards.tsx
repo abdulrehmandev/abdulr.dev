@@ -1,4 +1,4 @@
-import { allWork } from "@src/app/work/all-work";
+import { allWork } from "../work/all-work";
 import { Icons } from "@src/components/icons";
 import { getAllCaseStudies } from "@src/content/studies";
 import { socials } from "@src/lib/config";
@@ -137,24 +137,35 @@ export function RecentProjectsCard({
       {Object.values(allWork)
         .sort((a, b) => a.sortOrder - b.sortOrder)
         .slice(0, 4)
-        // Filter to only show those with case-studies or the expandable work (might even need to exclude case studies too)
-        .map((p, i) => (
+        // TODO: Filter to only show those with case-studies or the expandable work (might even need to exclude case studies too)
+        .map((w, i) => (
           <Card
-            key={`${p.title}-${i}`}
+            key={`${w.title}-${i}`}
             className="px-6 py-2.5 justify-center gap-1.5 group/c-card"
             asChild
           >
-            {/* TODO: Update this when work parallel route is in function */}
             <NextLink
-              href={p.type === "case-study" ? `/study/${p.slug}` : "/work"}
+              href={
+                w.type === "case-study"
+                  ? `/study/${w.slug}`
+                  : w.type === "detailed"
+                    ? `/work/${w.slug}`
+                    : "/work"
+              }
             >
               <div className="flex items-center gap-2">
-                <CardTitle className="text-sm truncate">{p.title}</CardTitle>
+                <CardTitle className="text-sm truncate">{w.title}</CardTitle>
                 <ArrowUpRight className="size-3.5 group-hover/c-card:opacity-100 opacity-0 transition" />
               </div>
             </NextLink>
           </Card>
         ))}
+      <NextLink
+        className="text-xs text-center w-fit mx-auto mt-0.5 underline"
+        href="/work"
+      >
+        View All Work
+      </NextLink>
     </div>
   );
 }

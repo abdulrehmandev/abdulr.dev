@@ -3,7 +3,7 @@ import { AppFooter } from "./_components/app-footer";
 import { AppHeader } from "./_components/app-header";
 import { AppSidebar } from "./_components/app-sidebar";
 
-export default function AppLayout({ children, modal }: LayoutProps<"/">) {
+export default function AppLayout({ children, sheet }: LayoutProps<"/">) {
   return (
     <>
       <SidebarProvider className="relative">
@@ -14,7 +14,7 @@ export default function AppLayout({ children, modal }: LayoutProps<"/">) {
           <AppFooter />
         </SidebarInset>
       </SidebarProvider>
-      {modal}
+      {sheet}
     </>
   );
 }
