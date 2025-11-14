@@ -10,10 +10,6 @@ type BaseWork = {
   date?: string;
   client?: string;
   industry?: string[];
-  featured?: {
-    as?: "case-study";
-    featureColor?: string;
-  };
   externalLink?: string;
 };
 type BasicWork = BaseWork & {

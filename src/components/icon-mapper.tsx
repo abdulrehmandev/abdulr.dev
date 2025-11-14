@@ -3,6 +3,7 @@ import {
   ChartGantt,
   ChartNoAxesColumn,
   ClipboardClock,
+  CloudCheck,
   Goal,
   Layers,
   Lightbulb,
@@ -27,6 +28,7 @@ const icons = {
   "clipboard-clock": ClipboardClock,
   building: Building2,
   network: Network,
+  "cloud-check": CloudCheck,
 };
 export type IconName = keyof typeof icons;
 

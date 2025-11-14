@@ -19,6 +19,111 @@ export const allWork: Record<string, Work> = {
     externalLink: "https://mytpen.app",
   },
 
+  notesgpt: {
+    slug: "notesgpt",
+    type: "detailed",
+    title: "NotesGPT: AI-Powered Note Management App",
+    description:
+      "An AI-powered note-taking application that allows users to organize, search, and chat with their notes using vector embeddings and natural language queries.",
+    cover: {
+      type: "image",
+      src: "/images/work/notesgpt/cover.jpg",
+      alt: "NotesGPT Web Snip",
+    },
+    tags: ["AI", "pgvector"],
+    sortOrder: 3,
+    date: "July 2024",
+    industry: ["EdTech", "SaaS"],
+    externalLink: "https://notesgpt.mytpen.app",
+    awards: ["Acquired by myTpen"],
+    content: `
+  ### Overview
+  NotesGPT is an intelligent note-taking platform built around vector search and conversational interaction.
+  Users can upload or write notes and instantly query them using AI-powered semantic search and chat capabilities.
+
+  ### Key Features
+  - AI-driven "Chat with your notes" functionality
+  - pgvector-based semantic search
+  - Multi-format note ingestion
+  - Clean and fast UI built with Tailwind CSS
+
+  Originally launched as an independent tool, the platform was later **acquired by myTpen** and integrated into their productivity suite.
+    `,
+    techStack: ["Next.js", "PostgreSQL", "pgvector", "Tailwind CSS", "OpenAI"],
+  },
+
+  hellodrew: {
+    slug: "hellodrew",
+    type: "detailed",
+    title: "Hello Drew: Real Estate AI Scheduling Agent",
+    description:
+      "A conversational AI agent for real estate professionals that automates scheduling, lead communication, and appointment booking through calls, SMS, and other messaging channels.",
+    cover: {
+      type: "image",
+      src: "/images/work/hellodrew/cover.jpg",
+      alt: "Hello Drew Web Snip",
+    },
+    tags: ["Retell AI", "Eleven Labs", "AI"],
+    sortOrder: 4,
+    date: "January 2025",
+    client: "SayHello Inc.",
+    industry: ["Real Estate", "SaaS"],
+    content: `
+  ### Overview
+  Hello Drew is an AI-driven agent designed to handle communication and scheduling for real estate professionals.
+  The platform automates outreach, qualification, and appointment bookings without the need for human interaction.
+
+  ### Key Features
+  - Voice and SMS scheduling via Retell AI & Twilio
+  - AI-powered lead communication flows
+  - Stripe-based subscription and onboarding
+  - Multi-step investor onboarding form with integrated payments
+
+  I contributed to the marketing website, SaaS onboarding experience, subscription system, and a small investor portal used for funding and lead tracking.
+    `,
+    techStack: [
+      "Next.js",
+      "Stripe",
+      "Twilio",
+      "Retell AI",
+      "Eleven Labs",
+      "OpenAI",
+      "Google Calendar APIs",
+      "PostgreSQL",
+    ],
+  },
+
+  sbmCmCloudSync: {
+    slug: "sbm-cm",
+    type: "detailed",
+    title: "CM to SBM: Automated Cloud Sync Pipeline",
+    description:
+      "A serverless integration pipeline that synchronizes data between CampMinder (CM) and School Bus Manager (SBM), eliminating manual updates for camp administrators.",
+    cover: {
+      type: "icon",
+      icon: "cloud-check",
+    },
+    tags: ["AWS Lambda", "Cloud Workflow", "Serverless"],
+    sortOrder: 5,
+    date: "July 2025",
+    client: "TheCampStack",
+    industry: ["EdTech", "Workflow"],
+    content: `
+  ### Overview
+  The CM → SBM Sync is a serverless automation workflow that ensures data consistency across two major camp management platforms.
+  Previously, administrators manually updated records from CampMinder to School Bus Manager, leading to delays and errors.
+
+  ### Key Features
+  - Automated data synchronization via AWS Lambda
+  - Fault-tolerant workflow with retries and logging
+  - Bi-directional API communication between CM and SBM
+  - Fully serverless and cost-efficient architecture
+
+  I designed and implemented the automation pipeline, handling API integrations, data transformation logic, and deployment of the workflow infrastructure.
+    `,
+    techStack: ["AWS Lambda", "External APIs", "TypeScript"],
+  },
+
   matchingSystem: {
     slug: "matching-system",
     type: "case-study",
