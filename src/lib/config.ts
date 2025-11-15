@@ -34,4 +34,5 @@ export const socials = {
   linkedin: "https://linkedin.com/in/abdulrdev",
   instagram: "https://instagram.com/iiiabdulrehman",
   phone: "+923127398185",
+  call: "https://cal.com/abdulrdev/consultation",
 } as const;

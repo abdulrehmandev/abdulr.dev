@@ -17,12 +17,13 @@ import { schema } from "@src/lib/schema";
 import { Badge } from "@src/ui/badge";
 import { Button } from "@src/ui/button";
 import { Separator } from "@src/ui/separator";
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Clock } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CaseStudyCard } from "../_components/case-study-card";
 import { CaseStudyMdxContent } from "../_components/mdx-study-content";
+import { getCurrentQuarter } from "@src/lib/utils";
 
 export const dynamic = "force-static";
 
@@ -118,6 +119,22 @@ export default async function StudyDetailPage({
         </div>
 
         <CaseStudyMdxContent content={study.content} />
+
+        <div className="flex items-center flex-col gap-3 justify-center mt-32 text-center">
+          <p className="text-sm">
+            Need help building, improving, or maintaining your product?
+          </p>
+
+          <Button size="lg" asChild>
+            <Link href="/contact">
+              Book an intro call <ArrowUpRight />
+            </Link>
+          </Button>
+
+          <p className="text-xs text-muted-foreground">
+            I’m currently taking work for Q{getCurrentQuarter()}.
+          </p>
+        </div>
 
         <Separator className="mt-20 rounded-full data-[orientation=horizontal]:h-0.75" />
 

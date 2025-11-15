@@ -21,17 +21,19 @@ export function IndividualWorkPage({ slug }: IndividualWorkPageProps) {
     <>
       <JsonLd data={schema.work(work)} />
       <div className="max-w-2xl mx-auto">
-        {work.cover.type === "image" ? (
-          <img
-            className="aspect-4/3 w-full border rounded-xs object-cover"
-            alt={work.title}
-            src={work.cover.src}
-          />
-        ) : work.cover.type === "icon" ? (
-          <IconCover icon={work.cover.icon} />
-        ) : (
-          work.cover.component
-        )}
+        <div className="overflow-hidden max-w-2xl">
+          {work.cover.type === "image" ? (
+            <img
+              className="aspect-4/3 w-full border rounded-xs object-contain"
+              alt={work.title}
+              src={work.cover.src}
+            />
+          ) : work.cover.type === "icon" ? (
+            <IconCover icon={work.cover.icon} />
+          ) : (
+            work.cover.component
+          )}
+        </div>
         <div className="p-6 grid gap-3">
           <div className="flex item-center gap-3 justify-between text-sm font-medium">
             <span>{work.date}</span>
@@ -40,7 +42,7 @@ export function IndividualWorkPage({ slug }: IndividualWorkPageProps) {
           <h1 className="font-serif text-2xl font-semibold text-primary text-pretty">
             {work.title}
           </h1>
-          <div className="flex items-center gap-0.5">
+          <div className="flex items-center flex-wrap gap-0.5">
             {work.industry?.map((industry) => (
               <Badge key={industry} variant="primary">
                 {industry}
@@ -53,7 +55,7 @@ export function IndividualWorkPage({ slug }: IndividualWorkPageProps) {
             ))}
           </div>
           <MDXContent content={work.content} />
-          <div className="flex items-center gap-0.5">
+          <div className="flex items-center flex-wrap gap-0.5">
             {work.techStack?.map((tech) => (
               <Badge key={tech}>{tech}</Badge>
             ))}
