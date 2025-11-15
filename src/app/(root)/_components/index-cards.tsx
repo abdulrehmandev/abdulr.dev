@@ -31,7 +31,7 @@ export function ProfileDescriptionCard({
       </P>
 
       <P>
-        You can <Link href="/blogs">read my writing</Link>, browse my{" "}
+        You can <Link href="/blog">read my writing</Link>, browse my{" "}
         <Link href={socials.github}>code</Link>, or{" "}
         <Link href={`mailto:${socials.mail}`}>reach out</Link> if you'd like to
         discuss your product or platform.

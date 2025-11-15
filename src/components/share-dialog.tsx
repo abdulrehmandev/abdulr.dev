@@ -69,7 +69,11 @@ export function ShareDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="ghost" size={isMobile ? "icon-sm" : undefined}>
+        <Button
+          aria-label="Share"
+          variant="ghost"
+          size={isMobile ? "icon-sm" : undefined}
+        >
           <Link2 />
           {!isMobile && "Share"}
         </Button>
