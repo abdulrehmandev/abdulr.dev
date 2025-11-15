@@ -5,54 +5,37 @@ import { H2 } from "@src/ui/typography";
 import React from "react";
 
 const techStack = [
-  // {
-  //   name: "Frontend",
-  //   techs: [
-  //     "React",
-  //     "Next.js",
-  //     "Shadcn",
-  //     "SCSS",
-  //     "Tailwindcss",
-  //     "Framer Motion",
-  //     "Tanstack Query",
-  //   ],
-  // }, Full-Stack, Cloud, AI & Automation, APIs, Data, UI/UX, Systems, Open Source
+  {
+    name: "Focus",
+    techs: [
+      "Full-Stack Engineering",
+      "SaaS",
+      "LLM Integrations",
+      "AI Automation",
+      "Cloud Workflows",
+      "Agentic Systems",
+      "APIs",
+      "Open Source",
+    ],
+  },
   {
     name: "Technicals",
     techs: [
       "Node.js",
       "TypeScript",
       "Python",
-      "AI",
-      "LLMs",
-      "Cloud",
-      "APIs",
-      "Agents",
-      "Automations",
-      "Cloud Workflows",
-      "Open Source",
+      "Cloudflare / AWS",
+      "Serverless",
+      "SQL",
+      "Docker",
     ],
   },
-  // {
-  //   name: "Database & Services",
-  //   techs: [
-  //     "AWS Lambda",
-  //     "Cloudflare Workers",
-  //     "Docker",
-  //     "Supabase",
-  //     "Postman",
-  //     "Prisma ORM",
-  //     "Drizzle ORM",
-  //     "Postgres",
-  //     "MongoDB",
-  //   ],
-  // },
 ];
 
 const currentlyLearning = [
-  "Prompt Engineering",
-  "Agentic Workflows",
-  "Human-in-loop Systems",
+  "Agentic workflows",
+  "Human-in-the-loop systems",
+  "Scalable automation pipelines",
 ];
 
 export function TechStack({ className }: { className?: string }) {

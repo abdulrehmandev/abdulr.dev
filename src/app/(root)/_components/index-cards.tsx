@@ -1,5 +1,3 @@
-import { allWork } from "../work/all-work";
-import { Icons } from "@src/components/icons";
 import { getAllCaseStudies } from "@src/content/studies";
 import { socials } from "@src/lib/config";
 import { cn } from "@src/lib/utils";
@@ -8,6 +6,7 @@ import { H2, Link, P } from "@src/ui/typography";
 import { ArrowUpRight } from "lucide-react";
 import NextLink from "next/link";
 import React from "react";
+import { allWork } from "../work/all-work";
 
 export function ProfileDescriptionCard({
   className,
@@ -18,16 +17,24 @@ export function ProfileDescriptionCard({
       <P>Hi there, I’m Abdul.</P>
 
       <P>
-        I’m an full stack developer with a love for ai saas, building technical
-        solution and cloud workflows. I’m currently working as freelance dev and
-        consultant remotely.
+        I help startups and growing teams design, build, and maintain their
+        software. From SaaS platforms to AI automation and internal tools, I
+        take ownership of the technical work so you can focus on product and
+        growth.
       </P>
 
       <P>
-        You can <Link href="/blogs">read my writing</Link> or{" "}
+        I currently work hands-on as a solo engineer, but operate with the
+        processes, quality, and reliability of a lean agency. My goal is to form
+        long-term retainer partnerships where I support ongoing development,
+        improvements, and technical strategy month after month.
+      </P>
+
+      <P>
+        You can <Link href="/blogs">read my writing</Link>, browse my{" "}
         <Link href={socials.github}>code</Link>, or{" "}
-        <Link href={socials.x}>follow me online</Link>.{" "}
-        <Link href={`mailto:${socials.mail}`}>Reach out</Link> if interested.
+        <Link href={`mailto:${socials.mail}`}>reach out</Link> if you'd like to
+        discuss your product or platform.
       </P>
     </Card>
   );
@@ -42,14 +49,13 @@ export function CurrentRoleCard({
       className={cn("flex flex-col gap-6 justify-between px-6 py-4", className)}
       {...props}
     >
-      <H2>Freelance Full Stack Developer</H2>
+      <H2 className="text-pretty break-keep">
+        Independent <span className="inline-block">Full-Stack</span> Engineer
+      </H2>
       <div className="flex items-end justify-between">
-        <p className="text-sm">Current Role</p>
-        <div className="flex items-center gap-1 text-foreground">
-          <Icons.upwork className="size-3.5" />
-          <Icons.mail className="size-4" />
-          <Icons.linkedin className="size-4.25" />
-        </div>
+        <p className="text-sm">
+          Helping teams build, improve & maintain software systems.
+        </p>
       </div>
     </Card>
   );
@@ -71,8 +77,7 @@ export function MytpenCard({
         Leading Development at myTpen
       </h2>
       <p className="text-sm">
-        Collaborating with global product teams in building the future of EdTech
-        SaaS.
+        Collaborating with global product teams to ship EdTech SaaS at scale.
       </p>
       <NextLink
         href="https://mytpen.app"

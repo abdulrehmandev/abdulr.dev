@@ -3,7 +3,13 @@ import NextLink, { LinkProps } from "next/link";
 
 export function H2({ className, ...props }: React.ComponentProps<"h2">) {
   return (
-    <h2 className="font-semibold text-2xl font-serif text-primary" {...props} />
+    <h2
+      className={cn(
+        "font-semibold text-2xl font-serif text-primary",
+        className,
+      )}
+      {...props}
+    />
   );
 }
 

@@ -19,8 +19,9 @@ import { TechStack } from "./_components/tech-stack";
 
 export const dynamic = "force-static";
 
-const title = "Full Stack Developer";
-const description = "Freelance Full Stack Developer";
+const title = "Freelance Full Stack Developer & Technical Partner";
+const description =
+  "Abdul Rehman is an independent full-stack engineer helping startups build, improve, and maintain web apps, SaaS platforms, and AI automation systems. Available for long-term retainer partnerships.";
 
 export const metadata: Metadata = {
   title,
@@ -45,7 +46,9 @@ export default function IndexPage() {
               <h1 className="text-2xl font-serif text-primary font-semibold">
                 Abdul Rehman
               </h1>
-              <p className="font-medium">Full Stack Developer</p>
+              <p className="font-medium">
+                Full Stack Developer & Technical Partner
+              </p>
               <div className="flex flex-col sm:flex-row sm:items-center text-muted-foreground text-base gap-1 md:gap-4">
                 <span className="flex items-center gap-1.5">
                   <MapPin className="size-3.5" /> <p>Gujrat, Pakistan</p>
