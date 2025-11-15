@@ -51,7 +51,9 @@ export function AppFooter() {
             <Tooltip key={social.name}>
               <TooltipTrigger asChild>
                 <Button variant="ghost" size="icon" asChild>
-                  <Link href={social.href}>{social.icon}</Link>
+                  <Link href={social.href} aria-label={`View ${social.name}`}>
+                    {social.icon}
+                  </Link>
                 </Button>
               </TooltipTrigger>
               <TooltipContent>

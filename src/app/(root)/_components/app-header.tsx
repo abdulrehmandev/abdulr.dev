@@ -1,8 +1,6 @@
-import { ThemeSwitcher } from "@src/components/theme-switcher";
-import { Button } from "@src/ui/button";
+// import { ThemeSwitcher } from "@src/components/theme-switcher";
+import { ShareDialog } from "@src/components/share-dialog";
 import { SidebarTrigger } from "@src/ui/sidebar";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@src/ui/tooltip";
-import { Link2 } from "lucide-react";
 import Link from "next/link";
 
 export function AppHeader() {
@@ -20,26 +18,8 @@ export function AppHeader() {
         </div>
 
         <div className="flex items-center gap-2">
-          <ThemeSwitcher />
-          <Button disabled className="hidden sm:flex" variant="ghost">
-            <Link2 />
-            Share
-          </Button>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                disabled
-                className="flex sm:hidden"
-                variant="ghost"
-                size="icon-sm"
-              >
-                <Link2 />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Share</p>
-            </TooltipContent>
-          </Tooltip>
+          {/*<ThemeSwitcher />*/}
+          <ShareDialog />
           <SidebarTrigger className="flex sm:hidden" />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { SheetTitle } from "@src/ui/sheet";
+import { SheetDescription, SheetTitle } from "@src/ui/sheet";
 import type { Metadata } from "next";
 import { PageSheet, PageSheetContent } from "../../_components/sheet";
 import { ScrollArea } from "@src/ui/scroll-area";
@@ -25,6 +25,7 @@ export default async function WorkSheetPage({
     <PageSheet>
       <PageSheetContent>
         <SheetTitle className="sr-only">{slug.split("-").join(" ")}</SheetTitle>
+        <SheetDescription className="sr-only">Work Details</SheetDescription>
         <ScrollArea className="h-[calc(100vh-32px)]">
           <IndividualWorkPage slug={slug} />
 
