@@ -1,12 +1,14 @@
+import { JsonLd } from "@src/components/jsonld";
+import { MoreComingSoon } from "@src/components/more-coming-soon";
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
 } from "@src/components/page-header";
 import { getAllCaseStudies } from "@src/content/studies";
+import { schema } from "@src/lib/schema";
 import type { Metadata } from "next";
 import { CaseStudyCard } from "./_components/case-study-card";
-import { MoreComingSoon } from "@src/components/more-coming-soon";
 
 export const dynamic = "force-static";
 
@@ -22,17 +24,27 @@ export default function StudyPage() {
   const caseStudies = getAllCaseStudies();
 
   return (
-    <div className="space-y-8">
-      <PageHeader>
-        <PageHeaderHeading>{title}</PageHeaderHeading>
-        <PageHeaderDescription>{description}</PageHeaderDescription>
-      </PageHeader>
-      <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
-        {caseStudies.map((study) => (
-          <CaseStudyCard key={study.title} study={study} />
-        ))}
-        {caseStudies.length < 2 && <MoreComingSoon />}
+    <>
+      <JsonLd
+        data={schema.collection({
+          name: "Case Studies - Abdul R",
+          url: "https://abdulr.dev/study",
+          description:
+            "Case studies showcasing Abdul R's full stack development work, SaaS projects, and client solutions.",
+        })}
+      />
+      <div className="space-y-8">
+        <PageHeader>
+          <PageHeaderHeading>{title}</PageHeaderHeading>
+          <PageHeaderDescription>{description}</PageHeaderDescription>
+        </PageHeader>
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+          {caseStudies.map((study) => (
+            <CaseStudyCard key={study.title} study={study} />
+          ))}
+          {caseStudies.length < 2 && <MoreComingSoon />}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

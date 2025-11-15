@@ -19,7 +19,7 @@ type BasicWork = BaseWork & {
   techStack?: never;
   awards?: never;
 };
-type DetailedWork = BaseWork & {
+export type DetailedWork = BaseWork & {
   type: "detailed";
   content: string;
   gallery?: { label?: string; src: string }[];

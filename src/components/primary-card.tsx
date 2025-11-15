@@ -71,6 +71,7 @@ function PrimaryCardCover({
           src={cover.src}
           className="aspect-4/3 size-full border rounded-xs object-cover"
           alt={cover.alt}
+          loading="eager"
         />
       );
       break;

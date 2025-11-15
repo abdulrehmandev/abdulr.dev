@@ -10,6 +10,15 @@ const nextConfig: NextConfig = {
   // cacheComponents: true,
   // Configure `pageExtensions` to include MDX files
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  // Configure Images to optimize cloudinary images (our CDN)
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+    ],
+  },
 };
 
 const withMDX = createMDX({

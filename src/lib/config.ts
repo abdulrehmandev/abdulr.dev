@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "abdulr.dev",
+  name: "Abdul R",
   url: "https://abdulr.dev",
   ogImage: "https://abdulr.dev/og.jpg", // @todo
   description: "Portfolio", // @todo
@@ -33,4 +33,5 @@ export const socials = {
   x: "https://x.com/iiiabdulrehman",
   linkedin: "https://linkedin.com/in/abdulrdev",
   instagram: "https://instagram.com/iiiabdulrehman",
+  phone: "+923127398185",
 } as const;

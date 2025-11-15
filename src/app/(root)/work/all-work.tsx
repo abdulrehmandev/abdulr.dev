@@ -27,7 +27,7 @@ export const allWork: Record<string, Work> = {
       "An AI-powered note-taking application that allows users to organize, search, and chat with their notes using vector embeddings and natural language queries.",
     cover: {
       type: "image",
-      src: "/images/work/notesgpt/cover.jpg",
+      src: "https://res.cloudinary.com/deixw73xo/image/upload/v1763194394/cover_vaooy0.jpg",
       alt: "NotesGPT Web Snip",
     },
     tags: ["AI", "pgvector"],
@@ -60,7 +60,7 @@ export const allWork: Record<string, Work> = {
       "A conversational AI agent for real estate professionals that automates scheduling, lead communication, and appointment booking through calls, SMS, and other messaging channels.",
     cover: {
       type: "image",
-      src: "/images/work/hellodrew/cover.jpg",
+      src: "https://res.cloudinary.com/deixw73xo/image/upload/v1763194346/cover_ux1vno.jpg",
       alt: "Hello Drew Web Snip",
     },
     tags: ["Retell AI", "Eleven Labs", "AI"],
@@ -150,7 +150,7 @@ export const allWork: Record<string, Work> = {
       "A mini SaaS helping people learn German from Croatian using a chatbot. Built with Next.js and OpenAI.",
     cover: {
       type: "image",
-      src: "/images/work/einwelt/cover.png",
+      src: "https://res.cloudinary.com/deixw73xo/image/upload/v1763194338/cover_dso3vl.jpg",
       alt: "Einwelt Web Snip",
     },
     tags: ["OpenAI", "Next.js", "Firebase Auth", "Chakra UI"],
@@ -168,7 +168,7 @@ export const allWork: Record<string, Work> = {
       "A 10+ page marketing website for a development agency. Fully responsive and optimized.",
     cover: {
       type: "image",
-      src: "/images/work/developersworld/cover.png",
+      src: "https://res.cloudinary.com/deixw73xo/image/upload/v1763194294/cover_bavgwx.jpg",
       alt: "DevelopersWorld Web Snip",
     },
     tags: ["Next.js", "Chakra UI"],
@@ -187,7 +187,7 @@ export const allWork: Record<string, Work> = {
       "A complete booking and pricing system for pedicab rides in Manhattan Central Park, featuring dynamic pricing, availability checks, and route-based fare calculation.",
     cover: {
       type: "image",
-      src: "/images/work/nypedicab/cover.png",
+      src: "https://res.cloudinary.com/deixw73xo/image/upload/v1763194404/cover_vpidmm.jpg",
     },
     tags: [
       "Google Maps API",
@@ -282,7 +282,7 @@ The company has since pivoted to a Web3-focused real estate platform.
       "A centralized dashboard for managing patients, staff, and behavioral tallies for an organization supporting autistic individuals.",
     cover: {
       type: "image",
-      src: "/images/work/abilitybeyond/cover.png",
+      src: "https://res.cloudinary.com/deixw73xo/image/upload/v1763194213/cover_ej1wby.jpg",
       alt: "Ability Beyond Main Dashboard",
     },
     tags: [
@@ -329,7 +329,7 @@ The dashboard I built helped centralize operations—tracking patients, their be
       "A property investment discovery platform. I handled production fixes and enhancements to make the app production-ready.",
     cover: {
       type: "image",
-      src: "/images/work/investclearly/cover.jpg",
+      src: "https://res.cloudinary.com/deixw73xo/image/upload/v1763194387/cover_h9zmlm.jpg",
     },
     tags: ["Real Estate APIs", "TypeORM", "PostgreSQL", "Next.js"],
     sortOrder: 5,
