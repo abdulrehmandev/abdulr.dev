@@ -1,3 +1,4 @@
+import { env } from "@src/env";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -12,4 +13,8 @@ export function getCurrentQuarter() {
   if (month >= 3 && month <= 5) return 2;
   if (month >= 6 && month <= 8) return 3;
   return 4;
+}
+
+export function slugToAbsoluteUrl(path: string, slug: string) {
+  return `${env.NEXT_PUBLIC_APP_URL}${path}/${slug}`;
 }

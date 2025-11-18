@@ -48,7 +48,9 @@ export const schema = {
     url: `https://abdulr.dev/study/${study.slug}`,
     name: study.title,
     description: study.description,
-    // "image": "IMAGE_URL",
+    image: `/og?title=${encodeURIComponent(
+      study.title,
+    )}&description=${encodeURIComponent(study.description)}`,
     author: {
       "@type": "Person",
       name: "Abdul R",
@@ -65,7 +67,9 @@ export const schema = {
     url: `https://abdulr.dev/work/${work.slug}`,
     name: work.title,
     description: work.description,
-    // "image": "IMAGE_URL",
+    image: `/og?title=${encodeURIComponent(
+      work.title,
+    )}&description=${encodeURIComponent(work.description)}`,
     author: {
       "@type": "Person",
       name: "Abdul R",

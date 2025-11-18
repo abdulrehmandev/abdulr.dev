@@ -14,6 +14,7 @@ import {
 } from "@src/components/page-section";
 import { getAllCaseStudies, getCaseStudyBySlug } from "@src/content/studies";
 import { schema } from "@src/lib/schema";
+import { getCurrentQuarter, slugToAbsoluteUrl } from "@src/lib/utils";
 import { Badge } from "@src/ui/badge";
 import { Button } from "@src/ui/button";
 import { Separator } from "@src/ui/separator";
@@ -23,7 +24,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CaseStudyCard } from "../_components/case-study-card";
 import { CaseStudyMdxContent } from "../_components/mdx-study-content";
-import { getCurrentQuarter } from "@src/lib/utils";
 
 export const dynamic = "force-static";
 
@@ -43,6 +43,32 @@ export async function generateMetadata({
     title: study.meta.title,
     description: study.meta.description,
     keywords: study.meta.tags,
+    openGraph: {
+      title: study.meta.title,
+      description: study.meta.description,
+      type: "article",
+      url: slugToAbsoluteUrl("/study", study.meta.slug),
+      images: [
+        {
+          url: `/og?title=${encodeURIComponent(
+            study.meta.title,
+          )}&description=${encodeURIComponent(study.meta.description)}`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: study.meta.title,
+      description: study.meta.description,
+      images: [
+        {
+          url: `/og?title=${encodeURIComponent(
+            study.meta.title,
+          )}&description=${encodeURIComponent(study.meta.description)}`,
+        },
+      ],
+      creator: "@iiiabdulrehman",
+    },
   };
 }
 

@@ -1,8 +1,9 @@
 export const siteConfig = {
   name: "Abdul R",
   url: "https://abdulr.dev",
-  ogImage: "https://abdulr.dev/og.jpg", // @todo
-  description: "Portfolio", // @todo
+  ogImage: "https://abdulr.dev/opengraph-image.png",
+  description:
+    "ndependent full-stack developer providing engineering support, feature development, and long-term technical partnership for startups and growing businesses.",
   links: {
     twitter: "https://twitter.com/iiiabdulrehman",
     github: "https://github.com/abdulrehmandev",
