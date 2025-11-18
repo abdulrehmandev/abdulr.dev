@@ -16,6 +16,7 @@ import {
 import { ExpandIcon, SquareArrowOutUpRight } from "lucide-react";
 import type { Metadata } from "next";
 import { allWork } from "./all-work";
+import { toAbsoluteUrl } from "@src/lib/utils";
 
 export const dynamic = "force-static";
 
@@ -45,6 +46,7 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: { canonical: toAbsoluteUrl("/work") },
 };
 
 export default function StudyPage() {
@@ -53,7 +55,7 @@ export default function StudyPage() {
       <JsonLd
         data={schema.collection({
           name: "Work - Abdul R",
-          url: "https://abdulr.dev/work",
+          url: toAbsoluteUrl("/work"),
           description:
             "A showcase of development projects built by Abdul R including apps, websites, and full stack solutions.",
         })}

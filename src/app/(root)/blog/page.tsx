@@ -5,6 +5,7 @@ import {
   PageHeaderHeading,
 } from "@src/components/page-header";
 import { schema } from "@src/lib/schema";
+import { toAbsoluteUrl } from "@src/lib/utils";
 import { FrownIcon } from "lucide-react";
 import { Metadata } from "next";
 
@@ -36,6 +37,7 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: { canonical: toAbsoluteUrl("/blog") },
 };
 
 export default function BlogPage() {
@@ -44,7 +46,7 @@ export default function BlogPage() {
       <JsonLd
         data={schema.collection({
           name: "Blog - Abdul R",
-          url: "https://abdulr.dev/blog",
+          url: "https://www.abdulr.dev/blog",
           description:
             "Blog posts on software development, product building, freelancing, and web technologies.",
         })}

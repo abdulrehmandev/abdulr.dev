@@ -1,4 +1,4 @@
-import { slugToAbsoluteUrl } from "@src/lib/utils";
+import { toAbsoluteUrl } from "@src/lib/utils";
 import { Metadata } from "next";
 import { allWork } from "./all-work";
 
@@ -22,7 +22,7 @@ export function generateWorkPageMetadata(slug: string): Metadata {
       title: work.title,
       description: work.description,
       type: "article",
-      url: slugToAbsoluteUrl("/work", work.slug),
+      url: toAbsoluteUrl("/work", work.slug),
       images: [
         {
           url: `/og?title=${encodeURIComponent(
@@ -44,5 +44,6 @@ export function generateWorkPageMetadata(slug: string): Metadata {
       ],
       creator: "@iiiabdulrehman",
     },
+    alternates: { canonical: toAbsoluteUrl("/work", work.slug) },
   };
 }

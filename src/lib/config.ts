@@ -1,7 +1,10 @@
+import { env } from "@src/env";
+import { toAbsoluteUrl } from "./utils";
+
 export const siteConfig = {
   name: "Abdul R",
-  url: "https://abdulr.dev",
-  ogImage: "https://abdulr.dev/opengraph-image.png",
+  url: env.NEXT_PUBLIC_APP_URL,
+  ogImage: toAbsoluteUrl("/opengraph-image.png"),
   description:
     "ndependent full-stack developer providing engineering support, feature development, and long-term technical partnership for startups and growing businesses.",
   links: {

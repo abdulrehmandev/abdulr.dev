@@ -14,7 +14,7 @@ import {
 } from "@src/components/page-section";
 import { getAllCaseStudies, getCaseStudyBySlug } from "@src/content/studies";
 import { schema } from "@src/lib/schema";
-import { getCurrentQuarter, slugToAbsoluteUrl } from "@src/lib/utils";
+import { getCurrentQuarter, toAbsoluteUrl } from "@src/lib/utils";
 import { Badge } from "@src/ui/badge";
 import { Button } from "@src/ui/button";
 import { Separator } from "@src/ui/separator";
@@ -47,7 +47,7 @@ export async function generateMetadata({
       title: study.meta.title,
       description: study.meta.description,
       type: "article",
-      url: slugToAbsoluteUrl("/study", study.meta.slug),
+      url: toAbsoluteUrl("/study", study.meta.slug),
       images: [
         {
           url: `/og?title=${encodeURIComponent(
@@ -69,6 +69,7 @@ export async function generateMetadata({
       ],
       creator: "@iiiabdulrehman",
     },
+    alternates: { canonical: toAbsoluteUrl("/study", study.meta.slug) },
   };
 }
 

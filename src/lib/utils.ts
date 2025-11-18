@@ -15,6 +15,6 @@ export function getCurrentQuarter() {
   return 4;
 }
 
-export function slugToAbsoluteUrl(path: string, slug: string) {
-  return `${env.NEXT_PUBLIC_APP_URL}${path}/${slug}`;
+export function toAbsoluteUrl(path: string, slug?: string) {
+  return `${env.NEXT_PUBLIC_APP_URL}${path}${slug ? `/${slug}` : ""}`;
 }

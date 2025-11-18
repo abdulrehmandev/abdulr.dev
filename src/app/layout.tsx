@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Abdul Rehman",
-      url: "https://abdulr.dev",
+      url: env.NEXT_PUBLIC_APP_URL,
     },
   ],
   creator: "Abdul Rehman",
@@ -51,6 +51,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
+  alternates: { canonical: env.NEXT_PUBLIC_APP_URL },
 };
 
 export default function RootLayout({

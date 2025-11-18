@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://abdulr.dev/sitemap.xml
+Sitemap: https://www.abdulr.dev/sitemap.xml

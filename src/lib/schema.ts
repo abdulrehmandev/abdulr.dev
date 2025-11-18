@@ -1,6 +1,8 @@
 import { CaseStudyMeta } from "@src/types/case-study.type";
 import { socials } from "./config";
 import { DetailedWork } from "@src/types/work.type";
+import { env } from "@src/env";
+import { toAbsoluteUrl } from "./utils";
 
 export const schema = {
   home: () => ({
@@ -8,7 +10,7 @@ export const schema = {
     "@type": "Person",
     name: "Abdul Rehman",
     jobTitle: "Full Stack Developer",
-    url: "https://abdulr.dev",
+    url: env.NEXT_PUBLIC_APP_URL,
     description:
       "Portfolio of Abdul R, a freelance full stack developer building web apps, SaaS, and MVPs.",
     image: "/images/profile.jpg",
@@ -45,7 +47,7 @@ export const schema = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     additionalType: "https://schema.org/CaseStudy",
-    url: `https://abdulr.dev/study/${study.slug}`,
+    url: toAbsoluteUrl("/study", study.slug),
     name: study.title,
     description: study.description,
     image: `/og?title=${encodeURIComponent(
@@ -54,7 +56,7 @@ export const schema = {
     author: {
       "@type": "Person",
       name: "Abdul R",
-      url: "https://abdulr.dev",
+      url: env.NEXT_PUBLIC_APP_URL,
     },
     datePublished: study.date,
     dateModified: study.date,
@@ -64,7 +66,7 @@ export const schema = {
   work: (work: DetailedWork) => ({
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    url: `https://abdulr.dev/work/${work.slug}`,
+    url: toAbsoluteUrl("/work", work.slug),
     name: work.title,
     description: work.description,
     image: `/og?title=${encodeURIComponent(
@@ -73,7 +75,7 @@ export const schema = {
     author: {
       "@type": "Person",
       name: "Abdul R",
-      url: "https://abdulr.dev",
+      url: env.NEXT_PUBLIC_APP_URL,
     },
     datePublished: work.date,
     dateModified: work.date,

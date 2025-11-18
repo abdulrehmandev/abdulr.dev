@@ -9,6 +9,7 @@ import { getAllCaseStudies } from "@src/content/studies";
 import { schema } from "@src/lib/schema";
 import type { Metadata } from "next";
 import { CaseStudyCard } from "./_components/case-study-card";
+import { toAbsoluteUrl } from "@src/lib/utils";
 
 export const dynamic = "force-static";
 
@@ -37,6 +38,7 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: { canonical: toAbsoluteUrl("/study") },
 };
 
 export default function StudyPage() {
@@ -47,7 +49,7 @@ export default function StudyPage() {
       <JsonLd
         data={schema.collection({
           name: "Case Studies - Abdul R",
-          url: "https://abdulr.dev/study",
+          url: toAbsoluteUrl("/study"),
           description:
             "Case studies showcasing Abdul R's full stack development work, SaaS projects, and client solutions.",
         })}
