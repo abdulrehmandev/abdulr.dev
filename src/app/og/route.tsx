@@ -34,8 +34,12 @@ export async function GET(request: Request) {
   return new ImageResponse(
     (
       <div
-        tw="flex h-full w-full bg-white text-black"
-        style={{ fontFamily: "Geist Sans" }}
+        tw="flex h-full w-full"
+        style={{
+          fontFamily: "Geist Sans",
+          background: "#F8F8F5",
+          color: "black",
+        }}
       >
         <div tw="flex absolute bottom-24 right-24">
           <svg
