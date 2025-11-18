@@ -34,7 +34,7 @@ export async function GET(request: Request) {
   return new ImageResponse(
     (
       <div
-        tw="flex h-full w-full bg-background text-foreground"
+        tw="flex h-full w-full bg-white text-black"
         style={{ fontFamily: "Geist Sans" }}
       >
         <div tw="flex absolute bottom-24 right-24">
