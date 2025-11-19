@@ -5,6 +5,7 @@ import { Button } from "@src/ui/button";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { getCurrentQuarter } from "@src/lib/utils";
+import { socials } from "@src/lib/config";
 
 export async function generateMetadata({
   params,
@@ -25,7 +26,7 @@ export default async function WorkPage({ params }: PageProps<"/work/[slug]">) {
         </p>
 
         <Button size="lg" asChild>
-          <Link href="/contact">
+          <Link href={socials.call}>
             Book an intro call <ArrowUpRight />
           </Link>
         </Button>

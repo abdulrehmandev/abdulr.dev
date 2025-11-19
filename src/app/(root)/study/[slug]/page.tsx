@@ -24,6 +24,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CaseStudyCard } from "../_components/case-study-card";
 import { CaseStudyMdxContent } from "../_components/mdx-study-content";
+import { socials } from "@src/lib/config";
 
 export const dynamic = "force-static";
 
@@ -153,7 +154,7 @@ export default async function StudyDetailPage({
           </p>
 
           <Button size="lg" asChild>
-            <Link href="/contact">
+            <Link href={socials.call}>
               Book an intro call <ArrowUpRight />
             </Link>
           </Button>
