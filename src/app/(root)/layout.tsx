@@ -6,7 +6,7 @@ export default function AppLayout({ children, sheet }: LayoutProps<"/">) {
     <>
       <div className="container max-w-5xl mx-auto">
         <AppHeader />
-        <div className="flex flex-1 flex-col px-3 md:px-6 pb-24">
+        <div className="flex flex-1 flex-col px-4 md:px-6 pb-24">
           {children}
         </div>
         <AppFooter />

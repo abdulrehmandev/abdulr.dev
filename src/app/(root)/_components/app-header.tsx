@@ -39,7 +39,7 @@ export function AppHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="px-3 md:px-6 py-3 w-full">
+    <header className="pl-4 pr-3 md:px-6 py-3 w-full">
       <div className="flex md:items-center justify-between flex-col md:flex-row gap-2">
         <div className="flex items-center justify-between gap-6">
           <Link

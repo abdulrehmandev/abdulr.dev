@@ -17,6 +17,14 @@ import {
   RecentProjectsCard,
 } from "./_components/index-cards";
 import { TechStack } from "./_components/tech-stack";
+import {
+  Dialog,
+  // DialogContent,
+  DialogPortal,
+  DialogTitle,
+  DialogTrigger,
+} from "@radix-ui/react-dialog";
+import { DialogContent, DialogOverlay } from "@src/ui/dialog";
 
 export const dynamic = "force-static";
 
@@ -54,16 +62,38 @@ export default function IndexPage() {
       <JsonLd data={schema.home()} />
 
       <div className="pt-12">
-        <div className="px-3 md:px-0 flex flex-col md:flex-row justify-between md:items-end gap-6">
+        <div className="md:px-0 flex flex-col md:flex-row justify-between md:items-end gap-6">
           <div className="flex flex-row gap-6">
             <div className="space-y-1.5">
-              <Image
-                src="https://res.cloudinary.com/deixw73xo/image/upload/v1763193786/profile_q4svc8.jpg"
-                alt="Abdul Rehman"
-                className="rounded-full object-cover w-20 h-20 grayscale hover:grayscale-0"
-                width={80}
-                height={80}
-              />
+              <Dialog>
+                <DialogTrigger>
+                  <Image
+                    // src="https://res.cloudinary.com/deixw73xo/image/upload/v1763193786/profile_q4svc8.jpg"
+                    src="/pfp.jpeg"
+                    alt="Abdul Rehman"
+                    className="rounded-full object-cover w-20 h-20 grayscale hover:grayscale-0 cursor-zoom-in"
+                    width={80}
+                    height={80}
+                  />
+                </DialogTrigger>
+                <DialogPortal>
+                  <DialogOverlay />
+                  <DialogContent
+                    showCloseButton={false}
+                    className="bg-transparent border-0 shadow-none p-0"
+                  >
+                    <DialogTitle className="sr-only">View</DialogTitle>
+                    <Image
+                      src="/pfp.jpeg"
+                      alt="Abdul Rehman"
+                      className="rounded-3xl object-cover h-full w-full aspect-square max-h-160 bg-red-100"
+                      quality={100}
+                      width={1024}
+                      height={1024}
+                    />
+                  </DialogContent>
+                </DialogPortal>
+              </Dialog>
               <h1 className="text-2xl font-serif text-primary-title font-semibold">
                 Hey, I'm Abdul
               </h1>

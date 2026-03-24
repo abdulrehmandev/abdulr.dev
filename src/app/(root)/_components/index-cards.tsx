@@ -13,7 +13,7 @@ export function ProfileDescriptionCard({
   ...props
 }: React.ComponentProps<"div">) {
   return (
-    <Card className={cn("px-6 py-4 gap-4", className)} {...props}>
+    <Card className={cn("px-3 sm:px-6 py-4 gap-4", className)} {...props}>
       <P>Hi there, I’m Abdul.</P>
 
       <P>
@@ -55,7 +55,10 @@ export function CurrentRoleCard({
 }: React.ComponentProps<"div">) {
   return (
     <Card
-      className={cn("flex flex-col gap-6 justify-between px-6 py-4", className)}
+      className={cn(
+        "flex flex-col gap-6 justify-between px-3 sm:px-6 py-4",
+        className,
+      )}
       {...props}
     >
       <H2 className="text-pretty break-keep">
@@ -77,7 +80,7 @@ export function MytpenCard({
   return (
     <Card
       className={cn(
-        "flex flex-col gap-1 justify-between px-6 py-4 bg-gradient-to-b from-[#ff553e] to-[#fa1100] text-white group/mytpen-card",
+        "flex flex-col gap-1 justify-between px-3 sm:px-6 py-4 bg-gradient-to-b from-[#ff553e] to-[#fa1100] text-white group/mytpen-card",
         className,
       )}
       {...props}
@@ -113,7 +116,7 @@ export function RecentCaseStudiesCard({
         .map((c) => (
           <Card
             key={c.title}
-            className="relative px-6 py-3 justify-center gap-1.5 group/c-card"
+            className="relative px-3 sm:px-6 py-3 justify-center gap-1.5 group/c-card"
             asChild
             hoverable
           >
@@ -143,7 +146,7 @@ export function RecentProjectsCard({
 }: React.ComponentProps<"div">) {
   return (
     <div className={cn("space-y-2 flex flex-col", className)} {...props}>
-      <Card className="p-6 pb-4 gap-1 h-full justify-between group/projects-header">
+      <Card className="p-3  sm:p-6 pb-4 gap-1 h-full justify-between group/projects-header">
         <H2 className="">Recent Work</H2>
         <p className="text-sm">
           Notable client projects and experiments that showcase my recent work
@@ -157,7 +160,7 @@ export function RecentProjectsCard({
         .map((w, i) => (
           <Card
             key={`${w.title}-${i}`}
-            className="px-6 py-2.5 justify-center gap-1.5 group/c-card"
+            className="px-3 sm:px-6 py-2.5 justify-center gap-1.5 group/c-card"
             asChild
             hoverable
           >

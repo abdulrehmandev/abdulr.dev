@@ -43,7 +43,7 @@ export function TechStack({ className }: { className?: string }) {
     <Card asChild>
       <aside
         className={cn(
-          "group/tech-stack *:cursor-default px-6 pt-4 pb-4 h-full",
+          "group/tech-stack *:cursor-default px-3 sm:px-6 pt-4 pb-4 h-full",
           className,
         )}
       >

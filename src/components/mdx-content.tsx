@@ -13,6 +13,7 @@ export function MDXContent({
     <div className="prose prose-gray dark:prose-invert max-w-none">
       <MDXRemote
         source={content}
+        options={{ blockJS: false }}
         components={{ ...mdxBaseComponents, ...customComponents }}
       />
     </div>

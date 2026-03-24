@@ -15,7 +15,7 @@ function Card({
       data-slot="card"
       data-hoverable={hoverable}
       className={cn(
-        "bg-card text-card-foreground flex flex-col rounded-sm border [box-shadow:hsl(218,_13%,_50%,_0.1)_0_-3px_0_0_inset] dark:[box-shadow:hsl(218,_13%,_70%,_0.05)_0_-3px_0_0_inset] data-[hoverable=true]:hover:border-border-primary dark:data-[hoverable=true]:hover:border-primary/50 data-[hoverable=true]:hover:[box-shadow:var(--sh-alt)] transition cursor-default data-[hoverable=true]:cursor-pointer",
+        "bg-card text-card-foreground flex flex-col rounded-sm border [box-shadow:hsl(218,_13%,_50%,_0.1)_0_-3px_0_0_inset] dark:[box-shadow:#a9b0bc14_0_-3px_0_0_inset] data-[hoverable=true]:hover:border-border-primary dark:data-[hoverable=true]:hover:border-primary/50 data-[hoverable=true]:hover:[box-shadow:var(--sh-alt)] transition cursor-default data-[hoverable=true]:cursor-pointer",
         className,
       )}
       {...props}

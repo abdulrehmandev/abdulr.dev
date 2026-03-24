@@ -22,7 +22,6 @@ export function ThemeSwitcher({
     return null;
   }
 
-  console.log(theme);
   return (
     <Tooltip>
       <TooltipTrigger asChild>
