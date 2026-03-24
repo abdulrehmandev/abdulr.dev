@@ -3,7 +3,9 @@ import { z } from "zod";
 
 export const env = createEnv({
   server: {
-    // SERVER_SECRET: z.string().min(1),
+    GEMINI_API_KEY: z.string().min(1).optional(),
+    UPSTASH_REDIS_REST_URL: z.string().min(1).optional(),
+    UPSTASH_REDIS_REST_TOKEN: z.string().min(1).optional(),
   },
 
   /**
@@ -22,6 +24,9 @@ export const env = createEnv({
    */
   runtimeEnvStrict: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+    GEMINI_API_KEY: process.env.GEMINI_API_KEY,
+    UPSTASH_REDIS_REST_URL: process.env.UPSTASH_REDIS_REST_URL,
+    UPSTASH_REDIS_REST_TOKEN: process.env.UPSTASH_REDIS_REST_TOKEN,
   },
 
   /**

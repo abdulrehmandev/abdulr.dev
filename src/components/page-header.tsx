@@ -32,7 +32,7 @@ function PageHeaderHeading({
   return (
     <h1
       className={cn(
-        "leading-tighter max-w-2xl text-4xl font-medium font-serif text-primary tracking-tight text-balance lg:leading-[1.1] xl:text-6xl",
+        "leading-tighter max-w-2xl text-4xl font-medium font-serif text-primary-title tracking-tight text-balance lg:leading-[1.1] xl:text-5xl",
         className,
       )}
       {...props}

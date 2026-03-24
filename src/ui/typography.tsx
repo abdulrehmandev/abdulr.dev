@@ -5,7 +5,7 @@ export function H2({ className, ...props }: React.ComponentProps<"h2">) {
   return (
     <h2
       className={cn(
-        "font-semibold text-2xl font-serif text-primary",
+        "font-semibold text-2xl font-serif text-primary-title",
         className,
       )}
       {...props}
@@ -26,7 +26,7 @@ export function Link({
   return (
     <NextLink
       className={cn(
-        "text-primary underline decoration-primary/20 hover:decoration-primary/50",
+        "text-link underline decoration-link/50 hover:decoration-link",
         className,
       )}
       {...props}

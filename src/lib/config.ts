@@ -19,10 +19,8 @@ export const siteConfig = {
     "automations",
   ],
   navItems: [
-    { href: "/", label: "About" },
-    { label: "Case studies", href: "/study" },
     { label: "Work", href: "/work" },
-    { label: "Blogs", href: "/blog" },
+    { label: "Articles", href: "/articles" },
   ],
 };
 
@@ -39,4 +37,5 @@ export const socials = {
   instagram: "https://instagram.com/iiiabdulrehman",
   phone: "+923127398185",
   call: "https://cal.com/abdulrdev/consultation",
+  goodreads: "https://www.goodreads.com/user/show/199678883-abdul-rehman",
 } as const;

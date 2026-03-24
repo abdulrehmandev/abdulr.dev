@@ -47,7 +47,7 @@ export function TechStack({ className }: { className?: string }) {
           className,
         )}
       >
-        <div className="space-y-1 font-serif text-primary">
+        <div className="space-y-1 font-serif text-primary-title">
           <div className="flex items-center gap-0 group-hover/tech-stack:gap-3 transition-all text-4xl">
             <span>{"{"}</span>
             <span>{"}"}</span>

@@ -80,7 +80,7 @@ export default function RootLayout({
       </head>
       <body
         className={cn(
-          "text-foreground group/body overscroll-none font-sans antialiased",
+          "text-foreground bg-linear-to-b from-primary/3 to-background group/body overscroll-none font-sans antialiased",
           fontVariables,
         )}
       >

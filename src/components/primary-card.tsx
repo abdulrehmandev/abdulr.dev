@@ -42,6 +42,7 @@ export function PrimaryCard({
         { "cursor-pointer": asLink ? true : false },
         className,
       )}
+      hoverable
       asChild={!!asLink}
       {...props}
     >

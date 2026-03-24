@@ -6,7 +6,9 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@src/ui/tooltip";
 
-export function ThemeSwitcher() {
+export function ThemeSwitcher({
+  ...props
+}: React.ComponentProps<typeof Button>) {
   const { theme, setTheme } = useTheme();
 
   const [mounted, setMounted] = useState(false);
@@ -20,6 +22,7 @@ export function ThemeSwitcher() {
     return null;
   }
 
+  console.log(theme);
   return (
     <Tooltip>
       <TooltipTrigger asChild>
@@ -27,7 +30,7 @@ export function ThemeSwitcher() {
           variant="ghost"
           size="icon-sm"
           onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-          disabled
+          {...props}
         >
           <Icons.contrast />
         </Button>

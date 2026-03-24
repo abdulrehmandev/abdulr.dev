@@ -32,9 +32,18 @@ export function ProfileDescriptionCard({
 
       <P>
         You can <Link href="/blog">read my writing</Link>, browse my{" "}
-        <Link href={socials.github}>code</Link>, or{" "}
-        <Link href={`mailto:${socials.mail}`}>reach out</Link> if you'd like to
-        discuss your product or platform.
+        <Link href={socials.github} target="_blank">
+          code
+        </Link>
+        ,{" "}
+        <Link href={socials.goodreads} target="_blank">
+          books
+        </Link>{" "}
+        I have read, or{" "}
+        <Link href={`mailto:${socials.mail}`} target="_blank">
+          reach out
+        </Link>{" "}
+        if you'd like to discuss your product or platform.
       </P>
     </Card>
   );
@@ -50,7 +59,7 @@ export function CurrentRoleCard({
       {...props}
     >
       <H2 className="text-pretty break-keep">
-        Independent <span className="inline-block">Full-Stack</span> Engineer
+        Independent <span className="inline-block">Software Engineer</span>
       </H2>
       <div className="flex items-end justify-between">
         <p className="text-sm">
@@ -106,6 +115,7 @@ export function RecentCaseStudiesCard({
             key={c.title}
             className="relative px-6 py-3 justify-center gap-1.5 group/c-card"
             asChild
+            hoverable
           >
             <NextLink href={`/study/${c.slug}`}>
               <span className="bg-primary/10 text-primary text-[10px] font-medium absolute top-1 right-1 px-0.5 py-px">
@@ -140,6 +150,7 @@ export function RecentProjectsCard({
         </p>
       </Card>
       {Object.values(allWork)
+        .filter((work) => work.type !== "case-study")
         .sort((a, b) => a.sortOrder - b.sortOrder)
         .slice(0, 4)
         // TODO: Filter to only show those with case-studies or the expandable work (might even need to exclude case studies too)
@@ -148,15 +159,10 @@ export function RecentProjectsCard({
             key={`${w.title}-${i}`}
             className="px-6 py-2.5 justify-center gap-1.5 group/c-card"
             asChild
+            hoverable
           >
             <NextLink
-              href={
-                w.type === "case-study"
-                  ? `/study/${w.slug}`
-                  : w.type === "detailed"
-                    ? `/work/${w.slug}`
-                    : "/work"
-              }
+              href={w.type === "detailed" ? `/work/${w.slug}` : "/work"}
             >
               <div className="flex items-center gap-2">
                 <CardTitle className="text-sm truncate">{w.title}</CardTitle>

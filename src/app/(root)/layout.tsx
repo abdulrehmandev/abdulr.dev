@@ -1,19 +1,16 @@
-import { SidebarInset, SidebarProvider } from "@src/ui/sidebar";
 import { AppFooter } from "./_components/app-footer";
 import { AppHeader } from "./_components/app-header";
-import { AppSidebar } from "./_components/app-sidebar";
 
 export default function AppLayout({ children, sheet }: LayoutProps<"/">) {
   return (
     <>
-      <SidebarProvider className="relative">
-        <AppSidebar />
+      <div className="container max-w-5xl mx-auto">
         <AppHeader />
-        <SidebarInset className="container mx-auto max-w-5xl">
-          <div className="flex flex-1 flex-col px-6 py-24">{children}</div>
-          <AppFooter />
-        </SidebarInset>
-      </SidebarProvider>
+        <div className="flex flex-1 flex-col px-3 md:px-6 pb-24">
+          {children}
+        </div>
+        <AppFooter />
+      </div>
       {sheet}
     </>
   );

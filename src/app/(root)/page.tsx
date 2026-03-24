@@ -8,6 +8,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import NextLink from "next/link";
 import { CurrentTime } from "./_components/current-time";
+import { DigitalCloneChat } from "./_components/digital-clone-chat";
 import {
   CurrentRoleCard,
   MytpenCard,
@@ -51,26 +52,29 @@ export default function IndexPage() {
   return (
     <>
       <JsonLd data={schema.home()} />
+
       <div className="pt-12">
-        <div className="flex flex-col md:flex-row justify-between md:items-end gap-6">
+        <div className="px-3 md:px-0 flex flex-col md:flex-row justify-between md:items-end gap-6">
           <div className="flex flex-row gap-6">
             <div className="space-y-1.5">
               <Image
                 src="https://res.cloudinary.com/deixw73xo/image/upload/v1763193786/profile_q4svc8.jpg"
                 alt="Abdul Rehman"
-                className="rounded-[30px] object-cover w-10 h-10"
-                width={40}
-                height={40}
+                className="rounded-full object-cover w-20 h-20 grayscale hover:grayscale-0"
+                width={80}
+                height={80}
               />
-              <h1 className="text-2xl font-serif text-primary font-semibold">
-                Abdul Rehman
+              <h1 className="text-2xl font-serif text-primary-title font-semibold">
+                Hey, I'm Abdul
               </h1>
-              <p className="font-medium">
-                Full Stack Developer & Technical Partner
+              <p className="font-medium md:max-w-4/5">
+                Software engineer, advocate of AI adaptability, sports
+                enthusiast. Ask my digital clone anything, including what I'd
+                build if I had your idea and a weekend.
               </p>
               <div className="flex flex-col sm:flex-row sm:items-center text-muted-foreground text-base gap-1 md:gap-4">
                 <span className="flex items-center gap-1.5">
-                  <MapPin className="size-3.5" /> <p>Gujrat, Pakistan</p>
+                  <MapPin className="size-3.5" /> <p>Pakistan</p>
                 </span>
                 <p className="text-xs font-mono font-medium">
                   PKT <CurrentTime />
@@ -79,7 +83,7 @@ export default function IndexPage() {
             </div>
           </div>
 
-          <div className="flex flex-row-reverse gap-6 lg:gap-0 md:flex-col w-fit items-center md:items-end group/reach-out">
+          {/* <div className="flex flex-row-reverse gap-6 lg:gap-0 md:flex-col w-fit items-center md:items-end group/reach-out">
             <p className="hidden md:block group-hover/reach-out:opacity-100 opacity-0 text-xs text-muted-foreground mb-0.5 transition-opacity font-mono">
               Taking 1 contract for Q{getCurrentQuarter()}
             </p>
@@ -89,21 +93,23 @@ export default function IndexPage() {
                 Reach out <ArrowUpRight />
               </NextLink>
             </Button>
-          </div>
+          </div> */}
         </div>
 
         <div className="relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-16">
-          <ProfileDescriptionCard className="col-span-1 md:col-span-2 lg:row-start-1 lg:row-end-2" />
+          <DigitalCloneChat className="col-span-1 md:col-span-2 lg:col-span-3 mb-12" />
+
+          <ProfileDescriptionCard className="col-span-1 md:col-span-2 lg:row-start-2 lg:row-end-3" />
 
           <CurrentRoleCard />
 
-          <MytpenCard className="md:row-start-3 md:col-start-1 lg:row-start-auto lg:col-start-auto" />
+          <MytpenCard className="md:row-start-4 md:col-start-1 lg:row-start-auto lg:col-start-auto" />
 
-          <TechStack className="md:col-start-2 md:row-start-2 md:row-end-4 lg:col-start-3 lg:row-start-1 lg:row-end-3" />
+          <TechStack className="md:col-start-2 md:row-start-3 md:row-end-5 lg:col-start-3 lg:row-start-2 lg:row-end-4" />
 
-          <RecentProjectsCard className="lg:row-start-2 lg:row-end-4" />
+          <RecentProjectsCard className="lg:row-start-3 lg:row-end-5" />
 
-          <RecentCaseStudiesCard className="row-start-5 md:row-start-auto h-fit lg:h-full" />
+          <RecentCaseStudiesCard className="row-start-6 md:row-start-auto h-fit lg:h-full" />
         </div>
       </div>
     </>
