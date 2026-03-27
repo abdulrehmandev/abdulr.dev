@@ -43,3 +43,11 @@ next-env.d.ts
 
 # Personal Tracking Content
 CONTENT.md
+
+# OpenNext
+.open-next
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
