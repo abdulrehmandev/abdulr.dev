@@ -5,7 +5,7 @@ import { MDXComponents } from "mdx/types";
 function h2({ ...props }: React.ComponentProps<"h2">) {
   return (
     <h2
-      className="text-3xl font-semibold font-serif text-primary mb-4 mt-8 first:mt-0 border-b pb-2"
+      className="text-3xl font-semibold font-serif text-primary-title mb-4 mt-8 first:mt-0 border-b pb-2"
       {...props}
     />
   );
@@ -14,7 +14,7 @@ function h2({ ...props }: React.ComponentProps<"h2">) {
 function h3({ ...props }: React.ComponentProps<"h3">) {
   return (
     <h3
-      className="text-[22px] font-semibold font-serif text-primary mb-3 mt-6 first:mt-0 "
+      className="text-[22px] font-semibold font-serif text-primary-title mb-3 mt-6 first:mt-0 "
       {...props}
     />
   );
@@ -39,7 +39,7 @@ function strong({ ...props }: React.ComponentProps<"strong">) {
 
 function a({ ...props }: React.ComponentProps<"a">) {
   return (
-    <a className="text-primary hover:underline underline-offset-4" {...props} />
+    <a className="text-link hover:underline underline-offset-4" {...props} />
   );
 }
 

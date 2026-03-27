@@ -26,7 +26,7 @@ export function PageSectionHeading({
   return (
     <h2
       className={cn(
-        "font-semibold font-serif text-primary text-2xl",
+        "font-semibold font-serif text-primary-title text-2xl",
         className,
       )}
       {...props}

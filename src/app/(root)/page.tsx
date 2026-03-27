@@ -86,7 +86,7 @@ export default function IndexPage() {
                     <Image
                       src="/pfp.jpeg"
                       alt="Abdul Rehman"
-                      className="rounded-3xl object-cover h-full w-full aspect-square max-h-160 bg-red-100"
+                      className="rounded-3xl object-cover h-full w-full aspect-square max-h-160"
                       quality={100}
                       width={1024}
                       height={1024}

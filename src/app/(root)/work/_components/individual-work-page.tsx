@@ -39,7 +39,7 @@ export function IndividualWorkPage({ slug }: IndividualWorkPageProps) {
             <span>{work.date}</span>
             <span>{work.client}</span>
           </div>
-          <h1 className="font-serif text-2xl font-semibold text-primary text-pretty">
+          <h1 className="font-serif text-2xl font-semibold text-primary-title text-pretty">
             {work.title}
           </h1>
           <div className="flex items-center flex-wrap gap-0.5">

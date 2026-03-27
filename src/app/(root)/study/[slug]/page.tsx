@@ -113,21 +113,21 @@ export default async function StudyDetailPage({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12">
           <div className="space-y-1 w-full">
             <p className="uppercase font-mono text-xs">Client</p>
-            <h4 className="text-base sm:text-lg text-primary font-serif font-semibold">
+            <h4 className="text-base sm:text-lg text-primary-title font-serif font-semibold">
               {study.meta.client}
             </h4>
           </div>
 
           <div className="space-y-1 w-full">
             <p className="uppercase font-mono text-xs">Industry</p>
-            <h4 className="text-base sm:text-lg text-primary font-serif font-semibold">
+            <h4 className="text-base sm:text-lg text-primary-title font-serif font-semibold">
               {study.meta.industry.join(" / ")}
             </h4>
           </div>
 
           <div className="space-y-1 w-full">
             <p className="uppercase font-mono text-xs">Scale</p>
-            <h4 className="text-base sm:text-lg text-primary font-serif font-semibold">
+            <h4 className="text-base sm:text-lg text-primary-title font-serif font-semibold">
               {study.meta.scale}
             </h4>
           </div>

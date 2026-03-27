@@ -45,7 +45,9 @@ function Feature({
 }) {
   return (
     <Card className="p-5">
-      {icon && <IconByName name={icon} className="w-6 h-6 text-primary mb-3" />}
+      {icon && (
+        <IconByName name={icon} className="w-6 h-6 text-primary-title mb-3" />
+      )}
       <CardTitle className="mt-0">{title}</CardTitle>
       {link && (
         <a
@@ -73,7 +75,7 @@ function MetricsGrid({ ...props }: React.ComponentProps<"div">) {
 function Metric({ label, value }: { label: string; value: string }) {
   return (
     <Card className="px-5 pt-3 pb-4 space-y-1.5">
-      <h4 className="text-2xl text-primary font-serif font-semibold">
+      <h4 className="text-2xl text-primary-title font-serif font-semibold">
         {value}
       </h4>
       <p className="uppercase font-mono text-xs">{label}</p>
@@ -118,7 +120,9 @@ function ArchitectureFlowStep({
 }) {
   return (
     <div className="bg-card border-b border-r flex flex-row items-center gap-3 px-4 py-2">
-      <span className="text-primary font-serif font-semibold">{number}.</span>
+      <span className="text-primary-title font-serif font-semibold">
+        {number}.
+      </span>
       <p>{children}</p>
     </div>
   );

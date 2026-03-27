@@ -73,11 +73,12 @@ function SheetContent({
         {...props}
       >
         {children}
-        <SheetPrimitive.Close
-          className="absolute top-4 right-4 hover:bg-background"
-          asChild
-        >
-          <Button variant="outline" size="sm">
+        <SheetPrimitive.Close asChild>
+          <Button
+            variant="default"
+            size="sm"
+            className="absolute top-4 right-4"
+          >
             <XIcon className="size-4" />
             <span>Close</span>
           </Button>
